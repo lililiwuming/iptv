@@ -136,7 +136,7 @@ if(getVar("QJS")&&getVar("QJS")!="null"){
 }
 var filename='阿里云历史记录.txt';
 var 记录=[];
-if(getVar("标题")!='null'&&getVar("地址").indexOf("$$root")==-1){
+if(getVar("标题")&&getVar("地址")&&getVar("标题")!='null'&&getVar("地址").indexOf("$$root")==-1){
 var title=getVar("标题");
 var url=getVar("地址");
 记录.push({title:title,url:url});
