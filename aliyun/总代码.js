@@ -29,7 +29,7 @@ if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1||getVar("地址").indexOf(
   "";
 }
 ######目录重组数据root2
-if(getVar("地址").length>1&&getVar("地址")!="null"){
+if(getVar("地址")&&getVar("地址").length>1&&getVar("地址")!="null"){
 if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1){
     var xxx_id="share_id-"+getVar("地址").match(/\.com\/s\/([0-9a-zA-Z]+)/)[1];
     var file_id="root";
