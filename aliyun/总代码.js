@@ -1,16 +1,16 @@
 ######share_token1
-if(getVar("url").length>1&&getVar("url")!="null"){
-if(getVar("url").indexOf("aliyundrive.com/s/")!=-1||getVar("url").indexOf("share_id-")!=-1){
-    if(getVar("url").indexOf("aliyundrive.com/s/")!=-1){
-    var share_id=getVar("url").match(/\.com\/s\/([0-9a-zA-Z]+)/)[1];
-    }else if(getVar("url").indexOf("share_id-")!=-1){
-    var share_id=getVar("url").split("$$")[0].split("share_id-")[1];
+if(getVar("地址").length>1&&getVar("地址")!="null"){
+if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1||getVar("地址").indexOf("share_id-")!=-1){
+    if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1){
+    var share_id=getVar("地址").match(/\.com\/s\/([0-9a-zA-Z]+)/)[1];
+    }else if(getVar("地址").indexOf("share_id-")!=-1){
+    var share_id=getVar("地址").split("$$")[0].split("share_id-")[1];
     }
     if(getVar("pwd")!="null"&&getVar("pwd").length>1){
         var pwd=getVar("pwd");
     }else{
-        if(getVar("url").split("$$")[2]){
-            var pwd=getVar("url").split("$$")[2];
+        if(getVar("地址").split("$$")[2]){
+            var pwd=getVar("地址").split("$$")[2];
         }else{
         var pwd="";
         }
@@ -20,7 +20,7 @@ if(getVar("url").indexOf("aliyundrive.com/s/")!=-1||getVar("url").indexOf("share
     }else{
     JSON.parse(getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/share_link/get_share_token",postJson:JSON.stringify({share_pwd:pwd,share_id:share_id})}))).share_token;
     }
-}else if(getVar("url").indexOf("$$")!=-1){
+}else if(getVar("地址").indexOf("$$")!=-1){
     "";
 }else{
     alert("ce请输入完整的阿里云盘分享链接,比如https://www.aliyundrive.com/s/wUFXj7116uS");
@@ -29,19 +29,19 @@ if(getVar("url").indexOf("aliyundrive.com/s/")!=-1||getVar("url").indexOf("share
   "";
 }
 ######目录重组数据root2
-if(getVar("url").length>1&&getVar("url")!="null"){
-if(getVar("url").indexOf("aliyundrive.com/s/")!=-1){
-    var xxx_id="share_id-"+getVar("url").match(/\.com\/s\/([0-9a-zA-Z]+)/)[1];
+if(getVar("地址").length>1&&getVar("地址")!="null"){
+if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1){
+    var xxx_id="share_id-"+getVar("地址").match(/\.com\/s\/([0-9a-zA-Z]+)/)[1];
     var file_id="root";
-}else if(getVar("url").indexOf("$$")!=-1){
-    var xxx_id=getVar("url").split("$$")[0];
-    var file_id=getVar("url").split("$$")[1];
+}else if(getVar("地址").indexOf("$$")!=-1){
+    var xxx_id=getVar("地址").split("$$")[0];
+    var file_id=getVar("地址").split("$$")[1];
 }
 if(getVar("pwd")!="null"&&getVar("pwd").length>1){
     var pwd=getVar("pwd");
 }else{
-    if(getVar("url").split("$$")[2]){
-        var pwd=getVar("url").split("$$")[2];
+    if(getVar("地址").split("$$")[2]){
+        var pwd=getVar("地址").split("$$")[2];
     }else{
     var pwd="";
     }
@@ -90,13 +90,13 @@ if(JSON.parse(目录数据).items){
     if(xxx_id.indexOf("share_id")!=-1){
         for(var i in items){
            if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
-           items[i].url="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("url").split("$$")[3];
+           items[i].url="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("地址").split("$$")[3];
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
            }else if(items[i].type=="folder"){
             if(file_id=="root"){
                 FNAME=";";
             }else{
-                FNAME=getVar("url").split("$$")[3];
+                FNAME=getVar("地址").split("$$")[3];
             }
             items[i].url="q:root?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
@@ -108,13 +108,13 @@ if(JSON.parse(目录数据).items){
     }else if(xxx_id.indexOf("drive_id")!=-1){
         for(var i in items){
             if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
-            items[i].url="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("url").split("$$")[2];
+            items[i].url="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("地址").split("$$")[2];
             items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
             }else if(items[i].type=="folder"){
                 if(file_id=="root"){
                     FNAME=";";
                 }else{
-                    FNAME=getVar("url").split("$$")[2];
+                    FNAME=getVar("地址").split("$$")[2];
                 }
             items[i].url="q:root?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
@@ -136,9 +136,9 @@ if(getVar("QJS")&&getVar("QJS")!="null"){
 }
 var filename='阿里云历史记录.txt';
 var 记录=[];
-if(getVar("name")!='null'&&getVar("url").indexOf("$$root")==-1){
-var title=getVar("name");
-var url=getVar("url");
+if(getVar("标题")!='null'&&getVar("地址").indexOf("$$root")==-1){
+var title=getVar("标题");
+var url=getVar("地址");
 记录.push({title:title,url:url});
 if(_.read(filename)){
 var 新记录=记录.concat(JSON.parse(_.read(filename)).filter(d=>d.url!=记录[0].url));
@@ -170,7 +170,7 @@ for(var i in 过滤){
 if(过滤[i].download_url){
     过滤[i].url="http://ip111.cn/?wd="+过滤[i].download_url+"###"+过滤[i].drive_id+"###"+过滤[i].file_id;
 }else{
-    过滤[i].url="http://ip111.cn/?wd="+过滤[i].thumbnail+"$$"+过滤[i].share_id+"$$"+过滤[i].file_id+"$$"+过滤[i].file_extension+"$$"+过滤[i].category+"$$"+getVar("url").split("$$")[2]+"$$"+getVar("url").split("$$")[3]+"$$"+过滤[i].parent_file_id+"$$"+过滤[i].name;
+    过滤[i].url="http://ip111.cn/?wd="+过滤[i].thumbnail+"$$"+过滤[i].share_id+"$$"+过滤[i].file_id+"$$"+过滤[i].file_extension+"$$"+过滤[i].category+"$$"+getVar("地址").split("$$")[2]+"$$"+getVar("地址").split("$$")[3]+"$$"+过滤[i].parent_file_id+"$$"+过滤[i].name;
 }
 }
 JSON.stringify(过滤);
@@ -180,13 +180,13 @@ if(getVar("QJS")&&getVar("QJS")!="null"){
 }else{
     eval(e2Rex(getHttp('https://egwang186.coding.net/p/egwang186/d/iptv/git/raw/master/aliyun/QJS.js'),'.dn64()'));
 }
-if(getVar("url").indexOf("$$")!=-1){
+if(getVar("地址").indexOf("$$")!=-1){
     var cm=android.webkit.CookieManager.getInstance();
     var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
     if(ALICOOKIE&&ALICOOKIE!="null"&&ALICOOKIE.indexOf("access_token")!=-1&&ALICOOKIE.indexOf("refresh_token")!=-1){
         //
-        var pwd=getVar("url").split("?wd=")[1].split("$$")[5];
-        var share_id=getVar("url").split("?wd=")[1].split("$$")[1];
+        var pwd=getVar("地址").split("?wd=")[1].split("$$")[5];
+        var share_id=getVar("地址").split("?wd=")[1].split("$$")[1];
         var refresh_token=ALICOOKIE.match(/refresh_token=(.*?)[\s;]/)[1];
         var d = [];
         var A=JSON.stringify({url:"https://auth.aliyundrive.com/v2/account/token",postJson:JSON.stringify({refresh_token:refresh_token,grant_type:"refresh_token"})});
@@ -221,10 +221,10 @@ if(getVar("url").indexOf("$$")!=-1){
     }else{
         alert("COOKIE被清除了,请重新登陆阿里云盘网页");
     }
-    var file_id=getVar("url").split("?wd=")[1].split("$$")[2];
-    var 后缀=getVar("url").split("?wd=")[1].split("$$")[3];
-    var 类型=getVar("url").split("?wd=")[1].split("$$")[4];
-    var u=getVar("url").split("?wd=")[1].split("$$")[0];
+    var file_id=getVar("地址").split("?wd=")[1].split("$$")[2];
+    var 后缀=getVar("地址").split("?wd=")[1].split("$$")[3];
+    var 类型=getVar("地址").split("?wd=")[1].split("$$")[4];
+    var u=getVar("地址").split("?wd=")[1].split("$$")[0];
     if(类型=="audio"){
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,get_audio_play_info:true,file_id:file_id})}));
     }else{
@@ -239,12 +239,12 @@ if(getVar("url").indexOf("$$")!=-1){
     }else{
     //var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
             var file_data={};
-            var 路径=getVar("url").split("?wd=")[1].split("$$")[6];
+            var 路径=getVar("地址").split("?wd=")[1].split("$$")[6];
             var 最后文件夹名=路径.split(";")[路径.split(';').length-2];
             file_data.parent_name=路径+最后文件夹名;
-            file_data.folder_id=getVar("url").split("?wd=")[1].split("$$")[7];
+            file_data.folder_id=getVar("地址").split("?wd=")[1].split("$$")[7];
             file_data.file_id=file_id;file_data.share_id=share_id;file_data.share_pwd=pwd;file_data.expiration="";
-            file_data.file_name=getVar("url").split("?wd=")[1].split("$$")[8];
+            file_data.file_name=getVar("地址").split("?wd=")[1].split("$$")[8];
             var _d=e2Rex(encodeURI(JSON.stringify(file_data)),".en64()").replace(/\//g,"$");
             var 转码1080='http://116.85.31.19:4000/apis/yun-play/'+_d+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
             var 转码720='http://116.85.31.19:4000/apis/yun-play/'+_d+'/'+access_token+'/'+share_token+'/HD/index.m3u8';
@@ -265,9 +265,9 @@ var access_token=JSON.parse(code).access_token;
 }else{
 alert("请重新登陆阿里云盘网页");
 }
-    var file_id=getVar("url").split("?wd=")[1].split("###")[2];
-    var drive_id=getVar("url").split("?wd=")[1].split("###")[1];
-    var u=getVar("url").split("?wd=")[1].split("###")[0];
+    var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
+    var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
+    var u=getVar("地址").split("?wd=")[1].split("###")[0];
     var 转码1080='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
     var 转码720='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
     JSON.stringify([{name:"原始文件播放",url:u,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720}]);
@@ -286,8 +286,8 @@ var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
     }else{
         alert("请重新登陆阿里云盘网页");
     }
-var xxx_id=getVar("url").split("$$")[0];
-var file_id=getVar("url").split("$$")[1];
+var xxx_id=getVar("地址").split("$$")[0];
+var file_id=getVar("地址").split("$$")[1];
 if(xxx_id.indexOf("share_id")!=-1){
     var HEAD=JSON.stringify({"Authorization":access_token,"X-Share-Token":getVar("share_token")});
     var data=JSON.stringify({share_id:xxx_id.split("-")[1],file_id:file_id});
@@ -304,7 +304,7 @@ if(JSON.parse(code).code){
   }
 }else{
 var url=JSON.parse(code).preview_url+"??"+JSON.parse(code).access_token;
-var name=getVar("name");
+var name=getVar("标题");
 JSON.stringify([{name:name,url:url}]);
 }
 ######搜索链接9
@@ -330,9 +330,9 @@ JSON.stringify([{name:name,url:url}]);
     {"title":"小纸条","url":"https://u.gitcafe.net/?wd="}
 ]
 ######多链接10
-if(getVar("url")!="null"){
-if(getVar("url").indexOf("aliyundrive.com/s/")!=-1){
-var list=getVar("url").match(/[\s\S]*?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
+if(getVar("地址")!="null"){
+if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1){
+var list=getVar("地址").match(/[\s\S]*?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
 var items=[];
 for(var i in list){
     var title=list[i].replace(/\s/g,"").replace(/<.+?>/g,"").split("https://")[0]||"加个标题吧，能从历史记录找到我";
@@ -368,8 +368,8 @@ var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
     }else{
         alert("请重新登陆阿里云盘网页");
     }
-var xxx_id=getVar("url").split("$$")[0];
-var file_id=getVar("url").split("$$")[1];
+var xxx_id=getVar("地址").split("$$")[0];
+var file_id=getVar("地址").split("$$")[1];
 if(xxx_id.indexOf("share_id")!=-1){
     var HEAD=JSON.stringify({"Authorization":access_token,"X-Share-Token":getVar("share_token")});
     var data=JSON.stringify({share_id:xxx_id.split("-")[1],file_id:file_id,expire_sec:600});
