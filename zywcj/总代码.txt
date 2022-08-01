@@ -1,7 +1,7 @@
 var URL=getVar("url");
 function 头部导航(){
 var res={};var items=[];
-if(列表){
+if(列表[0]){
 for(var j=0;j<列表.length;j++){
      var 标题=e2Rex(列表[j],标题规则)?e2Rex(列表[j],标题规则):e2Rex(列表[j],标题规则1);
      var 地址=e2Rex(列表[j],地址规则);
@@ -33,7 +33,7 @@ var 列表=e2Arr(源码,".json(class)");
 var 标题规则=".json(type_name)";var 地址规则=".json(type_id)";var 前="&ac=videolist&pg=#PN#&t=";var 后="";头部导航();      
 }else{
 var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(class)");
-if(列表){
+if(列表[0]){
       if(URL.indexOf("/videos")!=-1){
       var 标题规则=".json(type_name)";var 标题规则1=".json(type_title)";var 地址规则=".json(type_id)";var 前="?ac=list&pg=#PN#&t=";var 后="";头部导航();   
       }else{
@@ -138,6 +138,8 @@ if(标题=="xhzy"){
       选集地址="https://www.goingstock.net/addons/dp/player/dp.php?key=0&from=player_1&id=&uid=https://www.goingstock.net/&url="+选集地址;
 }else if(URL.indexOf("ttky8.com")!=-1){
       选集地址="http://ip111.cn/?wd="+选集地址;
+}else if(URL.indexOf("api.lmlemon.com/")!=-1){
+      选集地址="http://api.lmlemon.com/api/viode/json?url="+选集地址;
 }else if(标题.indexOf("Tcm3u8")!=-1){
       选集地址="http://ip111.cn/?wd=https://api.iopenyun.com:88/vips/?url="+选集地址;
 }else if(标题.indexOf("bjhu")!=-1){
