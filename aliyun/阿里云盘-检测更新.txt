@@ -25,7 +25,6 @@ if(getVar("地址").indexOf("tx.me/s/")!=-1||getVar("地址").indexOf("docs.qq.c
 var filename='阿里云历史记录.txt';
 _.read(filename);</js>,表项:/'.var(读取历史).json()'/[标题:'.json(title)',地址:'.json(url)',图片:'',简介:'.json(url)'],上页:'',下页:''],事件:[{标识:"",事件:"点击表项",操作:'打开("view/管理按钮.mk")'}]}},{a:"检测更新.mk",v:{类型:"通用列表",源:'读源码({模式:"OKHTTP",地址:"https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/阿里云盘-检测更新.txt"})',属性:{样式:"单文",列数:1.0,图片宽度:0.0,图片高度:0.0,图片圆角:0.0},数据:[更新提示:<js>var CODE=getCode();
 var 当前版本=e2Rex(getVar("QMINFO"),".xml(version).t()").replace(/\s/g,"");
-alert(当前版本)
 var 最新版本=e2Rex(CODE,".get(.版本).t()");
 if(当前版本!=最新版本){
 e2Rex(CODE,".get(.更新提示)");
