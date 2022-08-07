@@ -330,10 +330,9 @@ JSON.stringify([{name:name,url:url}]);
     {"title":"小纸条","url":"https://u.gitcafe.net/?wd="}
 ]
 ######多链接10
-alert(getVar("地址"))
-if(getVar("地址")&&getVar("地址")!="null"){
-if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1){
-var list=getVar("地址").match(/[\s\S]*?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
+if(getVar("url")&&getVar("url")!="null"){
+if(getVar("url").indexOf("aliyundrive.com/s/")!=-1){
+var list=getVar("url").match(/[\s\S]*?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
 var items=[];
 for(var i in list){
     var title=list[i].replace(/\s/g,"").replace(/<.+?>/g,"").split("https://")[0]||"加个标题吧，能从历史记录找到我";
