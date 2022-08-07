@@ -330,8 +330,6 @@ JSON.stringify([{name:name,url:url}]);
     {"title":"小纸条","url":"https://u.gitcafe.net/?wd="}
 ]
 ######多链接10
-var uu=获取url();
-alert(uu)
 if(getVar("url")&&getVar("url")!="null"){
 if(getVar("url").indexOf("aliyundrive.com/s/")!=-1){
 var list=getVar("url").match(/[\s\S]*?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
