@@ -10,7 +10,7 @@
 <p>mapi:js/https://gitea.com/egwang186/iptv/raw/branch/main/aliyun/阿里云文档预览.js</p>
 </li></ul>
 <ul class="更新提示">
-<li><font color="red"><b>有新版本!!![添加阿里小站]点击安装</b></font>
+<li><font color="red"><b>有新版本!!![远程代码写入本地,每天首次打开更新一次]点击安装</b></font>
 <p>mapi:qm/[{a:"main.eon",v:{类型:"轻站",名称:"阿里云盘",标识:"2b790766bab84809dff175605fa81036",图标:"t:阿里#08736C",版本:4.0,轻站:{主页:"view/TAB.mk",搜索页:"view/搜索链接.mk"}}},view:[{a:"阿里云盘资源站列表.mk",v:{类型:"通用列表",属性:{样式:"左图右文B",列数:1.0,图片宽度:0.0,图片高度:0.0,图片圆角:0.0,分页按钮模式:true},数据:[前:<js>getVar("地址").split("#PN#")[0];</js>,后:<js>getVar("地址").split("#PN#")[1];</js>,Pn:<js>if(getVar("PN")=="null"){
 if(getVar("地址").indexOf("tx.me/s/")!=-1||getVar("地址").indexOf("docs.qq.com")!=-1||getVar("地址").indexOf("pan666.cn")!=-1){
 "";
