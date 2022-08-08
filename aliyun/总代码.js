@@ -132,6 +132,7 @@ if(JSON.parse(目录数据).items){
 if(getVar("QJS")&&getVar("QJS")!="null"){
     eval(getVar("QJS"));
 }else{
+    alert("tt")
     eval(e2Rex(getHttp('https://gitea.com/egwang186/iptv/raw/branch/main/aliyun/tugoqjs.js'),'.dn64()'));
 }
 var filename='阿里云历史记录.txt';
