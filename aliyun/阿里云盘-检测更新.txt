@@ -78,6 +78,6 @@ var 新记录=JSON.parse(_.read(filename)).filter(item=>JSON.stringify(item)!=ge
 _.write(JSON.stringify(新记录),filename);
 _.read(filename);</js>,'界面.text.文本(删除)'],界面:"
 线性面板.宽度(-1).高度(-1)
->文本框.标识(\"text\").内距(\"10\").宽度(-1).粗体(\"true\").外距(\"10\").背景(\"灰色\").高度(-2)",事件:[],功能:[]}}],res:[],data:[{a:"config.eon",v:}]]</p>
+>文本框.标识(\"text\").内距(\"10\").宽度(-1).粗体(\"true\").外距(\"10\").背景(\"灰色\").高度(-2)",事件:[],功能:[]}}],res:[],data:[{a:"config.eon",v:{}}]]</p>
 </li>
 </ul>
