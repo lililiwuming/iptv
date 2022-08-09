@@ -11,6 +11,6 @@
 </li></ul>
 <ul class="更新提示">
 <li><font color="red"><b>有新版本!!![远程代码写入本地,每天首次打开更新一次]点击安装</b></font>
-<p>mapi:qm/https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/阿里云盘.mkz</p>
+<p>https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/阿里云盘.mkz</p>
 </li>
 </ul>
