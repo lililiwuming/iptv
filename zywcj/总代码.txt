@@ -45,9 +45,7 @@ var 前="?ac=videolist&pg=#PN#&t=";var 后="";头部导航();
 }
 ######通用列表
 var baseURL=getVar("地址").split(/[?&]ac=.*?list/)[0];
-alert(getVar("PN"))
 var NEXTPAGE=Number(getVar("PN"))+1;
-alert(NEXTPAGE)
 function 通用列表(){
 var res={};var items=[];var LIST=[];
 var LIMIT=列表.length;
