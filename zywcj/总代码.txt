@@ -84,7 +84,7 @@ return JSON.stringify(res);
 var 源码=getVar("源码");
 if(源码.indexOf("<rss")!=-1){
 var 列表=e2Arr(源码,".xml(list video)");
-var 标题规则=".xml(name).ty(CDATA).tz2(])";var 地址规则=".c(?ac=videolist&ids=).xml(id).z(\\d+)";var 图片规则=".xml(pic).t().z(\\S.*\\S).th( ##%20)";var 简介规则=".c(<font color=\"blue\"><b>).xml(dt).t().ct(</b></font><br>)";var 图片底部规则=".xml(last).t()";var 左上规则=".tx(<p style=\"background-color:blue\"><font color=\"white\" size=\"40px\">).xml(type).t().ct(</font></p>)";var 右上规则=".tx(<p style=\"background-color:#CC00FF\"><font color=\"white\">).xml(note).t().ct(</font></p>)";通用列表();
+var 标题规则=".xml(name).ty(CDATA).tz2(])";var 地址规则=".c(?ac=videolist&ids=).xml(id).z(\\d+)";var 图片规则=".xml(pic).t().z(\\S.+\\S).th( ##%20)";var 简介规则=".c(<font color=\"blue\"><b>).xml(dt).t().ct(</b></font><br>)";var 图片底部规则=".xml(last).t()";var 左上规则=".tx(<p style=\"background-color:blue\"><font color=\"white\" size=\"40px\">).xml(type).t().ct(</font></p>)";var 右上规则=".tx(<p style=\"background-color:#CC00FF\"><font color=\"white\">).xml(note).t().ct(</font></p>)";通用列表();
 }else if(baseURL.indexOf("/vodd/json")!=-1){
 var 列表=e2Arr(源码,".json(data)");
 var 标题规则=".json(vod_name)";var 地址规则=".c(?ac=videolist&ids=).json(vod_id)";var 图片规则=".json(vod_pic)";var 简介规则=".c(<font color=\"blue\"><b>).json(vod_play_from).ct(</b></font><br>)";var 图片底部规则=".json(vod_addtime)";var 左上规则=".tx(<p style=\"background-color:blue\"><font color=\"white\" size=\"40px\">).json(type_name).ct(</font></p>)";var 右上规则=".tx(<p style=\"background-color:#CC00FF\"><font color=\"white\">).json(vod_type).ct(</font></p>)";通用列表();
@@ -358,7 +358,7 @@ if(源码.indexOf("<rss")!=-1){
 var 列表=e2Arr(源码,".xml(video)");
 var 标题规则=".xml(name).ty(CDATA).tz2(])";
 var 地址规则=".c(?ac=videolist&ids=).xml(id).z(\\d+)";
-var 图片规则=".xml(pic).t().z(http.*\\S).th( ##%20)";
+var 图片规则=".xml(pic).t().z(http.+\\S).th( ##%20)";
 var 简介规则=".xml(dt).t().c().xml(last).t()";
 var 作者规则=".xml(note).t()";搜索列表();
 }else if(getVar("Url").indexOf("/vodd/json")!=-1){
