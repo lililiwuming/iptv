@@ -23,7 +23,7 @@ if(getVar("地址").indexOf("aliyundrive.com/s/")!=-1||getVar("地址").indexOf(
 }else if(getVar("地址").indexOf("$$")!=-1){
     "";
 }else{
-    alert("ce请输入完整的阿里云盘分享链接,比如https://www.aliyundrive.com/s/wUFXj7116uS");
+    alert("请输入完整的阿里云盘分享链接,比如https://www.aliyundrive.com/s/wUFXj7116uS");
 }
 }else{
   "";
@@ -129,12 +129,7 @@ if(JSON.parse(目录数据).items){
     alert("来晚了，该分享已失效");
 }
 ######历史记录3
-if(getVar("QJS")&&getVar("QJS")!="null"){
-    eval(getVar("QJS"));
-}else{
-    alert("tt")
-    eval(e2Rex(getHttp('https://gitea.com/egwang186/iptv/raw/branch/main/aliyun/tugoqjs.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename='阿里云历史记录.txt';
 var 记录=[];
 if(getVar("标题")&&getVar("地址")&&getVar("标题")!='null'&&getVar("地址").indexOf("$$root")==-1){
@@ -149,11 +144,7 @@ var 新记录=记录;
 _.write(JSON.stringify(新记录),filename);
 }
 ######读取历史4
-if(getVar("QJS")&&getVar("QJS")!="null"){
-    eval(getVar("QJS"));
-}else{
-    eval(e2Rex(getHttp('https://gitea.com/egwang186/iptv/raw/branch/main/aliyun/tugoqjs.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename='阿里云历史记录.txt';
 _.read(filename);
 ######alicookie5
@@ -176,11 +167,7 @@ if(过滤[i].download_url){
 }
 JSON.stringify(过滤);
 ######视频地址7
-if(getVar("QJS")&&getVar("QJS")!="null"){
-    eval(getVar("QJS"));
-}else{
-    eval(e2Rex(getHttp('https://gitea.com/egwang186/iptv/raw/branch/main/aliyun/tugoqjs.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 if(getVar("地址").indexOf("$$")!=-1){
     var cm=android.webkit.CookieManager.getInstance();
     var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
