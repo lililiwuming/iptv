@@ -1,9 +1,5 @@
 ######远程订阅写入本地1
-if(getVar("QJS")&&getVar("QJS")!="null"){
-  eval(getVar("QJS"));
-}else{
-  eval(e2Rex(getHttp('https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/QJS.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename = '资源采集远程索引.txt';
 var 记录 = "";
 if (getVar("rurl") != 'null' && getVar("rurl").indexOf(",http") > 1) {
@@ -20,11 +16,7 @@ if (getVar("rurl") != 'null' && getVar("rurl").indexOf(",http") > 1) {
   "请输入正确格式(支持批量):名称,地址";
 }
 ######读取远程订阅2
-if(getVar("QJS")&&getVar("QJS")!="null"){
-  eval(getVar("QJS"));
-}else{
-  eval(e2Rex(getHttp('https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/QJS.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename = '资源采集远程索引.txt';
 if (_.read(filename)) {
   var code = _.read(filename).match(/.+?,.+/g);
@@ -41,11 +33,7 @@ for (var i in code) {
 }
 JSON.stringify(items);
 ######单一搜索读取远程订阅3
-if(getVar("QJS")&&getVar("QJS")!="null"){
-  eval(getVar("QJS"));
-}else{
-  eval(e2Rex(getHttp('https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/QJS.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename = '资源采集远程索引.txt';
 var code = _.read(filename).match(/.+?,.+/g);
 var items = [];
@@ -56,11 +44,7 @@ for (var i in code) {
 }
 JSON.stringify(items);
 ######侧边栏搜索读取远程订阅4
-if(getVar("QJS")&&getVar("QJS")!="null"){
-  eval(getVar("QJS"));
-}else{
-  eval(e2Rex(getHttp('https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/QJS.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename = '资源采集远程索引.txt';
 var code = _.read(filename).match(/.+?,.+/g);
 var items = [];
@@ -71,11 +55,7 @@ for (var i in code) {
 }
 JSON.stringify(items);
 ######管理订阅5
-if(getVar("QJS")&&getVar("QJS")!="null"){
-  eval(getVar("QJS"));
-}else{
-  eval(e2Rex(getHttp('https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/QJS.js'),'.dn64()'));
-}
+eval(readStr("QJS"));
 var filename='资源采集远程索引.txt';
 var code=_.read(filename).match(/.+?,.+/g);
 var items=[];
