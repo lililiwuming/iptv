@@ -1,3 +1,4 @@
+######头部导航1
 var URL=getVar("地址");
 function 头部导航(){
 var res={};var items=[];
@@ -18,7 +19,7 @@ var 标题规则=".json(list_name).th( ##)";var 地址规则=".json(list_id)";va
 var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(class)");
 var 标题规则=".json(type_name)";var 标题规则1=".json(type_title)";var 地址规则=".json(type_id)";var 前="?ac=list&pg=#PN#&t=";var 后="";头部导航();
 }
-######通用列表
+######通用列表2
 var baseURL=getVar("地址").split("?")[0];
 var NEXTPAGE=Number(getVar("PN"))+1;
 function 通用列表(){
@@ -68,7 +69,7 @@ var 标题规则=".json(news_name)";var 地址规则=".c(?ac=detail&ids=).json(n
 var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(list)");
 var 标题规则=".json(art_name)";var 地址规则=".c(?ac=detail&ids=).json(art_id)";var 图片规则=".json(art_pic)";var 简介规则=".c(<font color=\"#0997F7\"><b>).json(art_from).ct(</b></font><br>)";var 图片底部规则=".json(art_time)";var 左上规则=".tx(<p style=\"background-color:#7091fc\"><font color=\"#FFFFFF\" size=\"40px\">).json(type_name).ct(</font></p>)";var 右上规则=".tx(<p style=\"background-color:#CC00FF\"><font color=\"#FFFFFF\">).json(art_remarks).ct(</font></p>)";通用列表();
 }
-######选集列表
+######选集列表3
 var URL=getVar("地址");
 function 选集列表(){
 var res={};
@@ -80,7 +81,7 @@ var 简介=e2Rex(getVar("源码"),".json(data).json(news_content)");选集列表
 }else{
 var 简介=e2Rex(getVar("源码"),".json(list).json(art_content)");选集列表();
 }
-######搜索列表
+######搜索列表4
 function 搜索列表(){
 var res={};var items=[];var LIST=[];
 var LIMIT=列表.length;
