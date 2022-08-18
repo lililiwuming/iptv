@@ -397,9 +397,9 @@ if(uu.indexOf("www.meiju11.com")!=-1){
 }else if(uu.indexOf("https://www.nfjx.xyz/player/?url=")!=-1){
 var resp=JZ(JSON.stringify({url:uu,head:{"Referer":"http://yanaifei.cn/","User-Agent":"Mozilla/5.0 Android"}})).code;
 var playurl=resp.match(/var config[\s\S]+?"url":"(.+?)"/)[1];
-JSON.stringify({url:playurl});
+JSON.stringify({url:playurl,name:"地址"});
 }else if(uu.indexOf("magnet:?xt=")!=-1){
-JSON.stringify({url:uu});
+JSON.stringify({url:uu,name:"地址"});
 }else if(uu.indexOf("play.ekvod.com/play")!=-1){
 var resp=JZ(JSON.stringify({url:uu}));
 function v_decrypt(data,token_key,token_iv) {
@@ -416,15 +416,15 @@ var _token_iv = CryptoJS.enc.Utf8.parse(bt_token);
 var key_token = CryptoJS.enc.Utf8.parse("G8ad2WUbKPaO55mx");
 var 加密链接=resp.code.match(/getVideoInfo.+?"(.+?)"/)[1];
 var realurl=getVideoInfo(加密链接);
-JSON.stringify({url:realurl,head:{"User-Agent":"Mozilla/5.0","Origin":"https://play.ekvod.com","Referer":""}});
+JSON.stringify({url:realurl,name:"地址",head:{"User-Agent":"Mozilla/5.0","Origin":"https://play.ekvod.com","Referer":""}});
 }else if(uu.indexOf("yparse.jn1.cc/index.php")!=-1||uu.indexOf("dmplay.xyz/j0?url=")!=-1){
 "web="+uu;
 }else if(uu.indexOf("mgtv.com.byteamone.cn")!=-1){
 var playurl=uu.split("url=")[1];
-JSON.stringify({url:playurl,head:{"Referer":"","User-Agent":"Mozilla/5.0"}});
+JSON.stringify({url:playurl,name:"地址",head:{"Referer":"","User-Agent":"Mozilla/5.0"}});
 }else if(uu.indexOf("hjjjjhd.top")!=-1){
 var playurl=uu.split("url=")[1];
-JSON.stringify({url:playurl,head:{"Referer":uu}});
+JSON.stringify({url:playurl,name:"地址",head:{"Referer":uu}});
 }else if(uu.indexOf("http://ip111.cn/?wd=")!=-1){
 var playurl=uu.split("wd=")[1];
 if(playurl.indexOf("http://1.117.152.239:39000/jiexi.php?url=")!=-1){
@@ -433,12 +433,12 @@ resp.code;
 }else if(playurl.indexOf("dxcc.meijutt.top")!=-1){
 var RF="https://www.psinu.com/static/player/aliplayer.html";
 var real=decodeURI(playurl);
-JSON.stringify({url:real,head:{"Referer":RF,"User-Agent":"Mozilla/5.0 Windows NT 10.0"}});
+JSON.stringify({url:real,name:"地址",head:{"Referer":RF,"User-Agent":"Mozilla/5.0 Windows NT 10.0"}});
 }else if(playurl.indexOf("tc.yuanmajs.cn/jxplayer.php")!=-1){
 var resp=getHttp(playurl);
 var realurl=e2Rex(resp,".get(video).a(src)");
 var UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
-JSON.stringify({url:realurl,head:{"Origin":"https://tc.yuanmajs.cn","User-Agent":UA}});
+JSON.stringify({url:realurl,name:"地址",head:{"Origin":"https://tc.yuanmajs.cn","User-Agent":UA}});
 }else if(playurl.indexOf("xing1.vip/player")!=-1){
 var resp=getHttp(playurl);
 var le_token=resp.match(/le_token.+?"(.+?)"/)[1];
@@ -447,7 +447,7 @@ var _token_key = CryptoJS.enc.Utf8.parse("A42EAC0C2B408472");
 var _token_iv = CryptoJS.enc.Utf8.parse(le_token);
 var 解密地址=CryptoJS.AES.decrypt(加密地址,_token_key,{'iv':_token_iv}).toString(CryptoJS.enc.Utf8);
 var UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
-JSON.stringify({url:解密地址,head:{"Referer":playurl,"User-Agent":UA}});
+JSON.stringify({url:解密地址,name:"地址",head:{"Referer":playurl,"User-Agent":UA}});
 }else if(playurl.indexOf("api.iopenyun.com:88")!=-1){
 "web="+playurl;
 }else if(playurl.indexOf("SSPLUS_SSPLUS_SS")!=-1){
@@ -466,7 +466,7 @@ function decrypt(str, key, iv) {
 var $ds = playurl.split('|');
 var str = decrypt($ds[2], $ds[1], $ds[0]);
 var urlObj = JSON.parse(str);
-JSON.stringify({url:urlObj[0].url});
+JSON.stringify({url:urlObj[0].url,name:"地址"});
 }else if(playurl.indexOf("www.ml0513.com/?url=")!=-1){
 "web="+playurl+'@{"Referer":"https://www.siguyy.net/"}';
 }else if(playurl.indexOf("https://www.baidu.com")!=-1){
@@ -486,7 +486,7 @@ var _token_iv = CryptoJS.enc.Utf8.parse(bt_token);
 var key_token = CryptoJS.enc.Utf8.parse("b9kfPepZc6mI7Ry7");
 var 加密链接=resp.code.match(/getVideoInfo.+?"(.+?)"/)[1];
 var realurl=getVideoInfo(加密链接);
-JSON.stringify({url:realurl,head:{"User-Agent":"Mozilla/5.0","Referer":"https://www.juhaokan.cc/"}});
+JSON.stringify({url:realurl,name:"地址",head:{"User-Agent":"Mozilla/5.0","Referer":"https://www.juhaokan.cc/"}});
 }else if(playurl.indexOf("duoduozy.com")!=-1||playurl.indexOf("m3u8.cache.suoyo.cc")!=-1){
 /*var uuu="https://bo.movie06.com/ddplay/play.php?url="+playurl;
 var resp=getHttp(JSON.stringify({url:uuu,head:{"referer":"https://www.duoduozy.com/"}}));
@@ -495,7 +495,7 @@ JSON.stringify({url:uuuu});*/
 "web=https://jhpc.manduhu.com/duoduo/?url="+playurl+'@{"Referer":"http://555dy3.com/"}';
 }else if(playurl.indexOf("api.cultureplus.shop/play/")!=-1){
 var referer="https://jx.jxbdzyw.com/m3u8/?url="+playurl;
-JSON.stringify({url:playurl,head:{"Referer":referer}});
+JSON.stringify({url:playurl,name:"地址",head:{"Referer":referer}});
 }else if(playurl.indexOf("mayigq.com/vodzip/player.php?vid=")!=-1){
      "web="+playurl+'@{"Referer":"https://www.mayigq.com"}'; 
 /*var resp1=getHttp(JSON.stringify({url:playurl,head:{'Referer':'https://www.mayigq.com'}}));
@@ -512,21 +512,21 @@ while(a.head.location||a.head.Location){
 }
 JSON.stringify({url:finalurl});*/
 }else if(playurl.indexOf("cat.wkfile.com")!=-1){
-JSON.stringify({url:playurl,head:{"User-Agent":"Mozilla/5.0","Referer":"https://qian.wkfile.com/"}});
+JSON.stringify({url:playurl,name:"地址",head:{"User-Agent":"Mozilla/5.0","Referer":"https://qian.wkfile.com/"}});
 }else if(playurl.indexOf("api.m3u8.tv:5678")!=-1){
 var resp=JZ(JSON.stringify({url:playurl,head:{"User-Agent":UA,"Cookie":COOKIE}}));
 if(e2Rex(resp.code,".json(url)").length>1){
 var realurl=JSON.parse(resp.code).url;
 if(playurl.indexOf("mgtv.com")!=-1){
-JSON.stringify({url:realurl,head:{"User-Agent":"Mozilla/5.0","Referer":""}});
+JSON.stringify({url:realurl,name:"地址",head:{"User-Agent":"Mozilla/5.0","Referer":""}});
 }else{
-JSON.stringify({url:realurl});
+JSON.stringify({url:realurl,name:"地址"});
 }
 }else{
 "web=http://1.117.152.239:39000/?url="+playurl.split("url=")[1];
 }
 }else{
-JSON.stringify({url:playurl,head:{"User-Agent":"Lavf/58.12.100","Connection":"close"}});
+JSON.stringify({url:playurl,name:"地址",head:{"User-Agent":"Lavf/58.12.100","Connection":"close"}});
 }
 }else if(uu.indexOf("php?pid=")!=-1||uu.indexOf("?u=http")!=-1||uu.indexOf("url=")!=-1||uu.indexOf("v=http")!=-1||uu.indexOf("json.php?id=")!=-1){
 var resp=JZ(JSON.stringify({url:uu,head:{"User-Agent":UA,"Cookie":COOKIE}}));
@@ -546,7 +546,7 @@ var id=uu.split("url=")[1];
 var uuu="https://json.5lp.net/json.php?url="+id;
 var resp=JZ(JSON.stringify({url:uuu}));
 var playurl=JSON.parse(resp.code).url||JSON.parse(resp.code).msg;
-JSON.stringify({url:playurl});
+JSON.stringify({url:playurl,name:"地址"});
 }
 }
 }else if(resp.code.indexOf("#EXTINF")!=-1){
@@ -554,10 +554,10 @@ if(uu.indexOf("?")!=-1){
 if(uu.indexOf("www.mgtv.com")!=-1){
 JSON.stringify([{name:"播放不了请切换mp4",url:uu+"&_type=.m3u8",head:{"User-Agent":"Mozilla/5.0","Referer":""}},{name:"mp4",url:uu+"&_type=.mp4",head:{"User-Agent":"Mozilla/5.0","Referer":""}}]);
 }else{
-JSON.stringify({url:uu+"&_type=.m3u8"});
+JSON.stringify({url:uu+"&_type=.m3u8",name:"地址"});
 }
 }else{
-JSON.stringify({url:uu+"?type=.m3u8"});
+JSON.stringify({url:uu+"?type=.m3u8",name:"地址"});
 }
 }else{
 if(e2Rex(resp.code,".json(url)").length>1){
@@ -566,9 +566,9 @@ if(playurl.indexOf(".titan.mgtv.com")!=-1){
 JSON.stringify({url:playurl,head:{"User-Agent":UA,"Referer":""}});
 }else{
       if(playurl.indexOf("auuyruyc.com")!=-1){
-      JSON.stringify({url:playurl+"&type=.m3u8"});
+      JSON.stringify({url:playurl+"&type=.m3u8",name:"地址"});
       }else{
-      JSON.stringify({url:playurl});
+      JSON.stringify({url:playurl,name:"地址"});
       }
 }
 }else if(uu.split("url=")[1].indexOf("alizy-")!=-1){
@@ -576,7 +576,7 @@ var id=uu.split("url=")[1];
 var uuu="https://api.jhdyw.vip/?url="+id;
 var resp2=JZ(JSON.stringify({url:uuu}));
 var playurl=JSON.parse(resp2.code).url||JSON.parse(resp2.code).msg;
-JSON.stringify({url:playurl});
+JSON.stringify({url:playurl,name:"地址"});
 }else if(uu.split("url=")[1].indexOf("http")!=-1){
 "web=http://1.117.152.239:39000/?url="+uu.split("url=")[1];
 }else{
@@ -584,7 +584,7 @@ var id=uu.split("url=")[1];
 var uuu="https://vip.gaotian.love/api/?key=sRy0QAq8hqXRlrEtrq&url="+id;
 var resp2=JZ(JSON.stringify({url:uuu}));
 var playurl=JSON.parse(resp2.code).url||JSON.parse(resp2.code).msg;
-JSON.stringify({url:playurl});
+JSON.stringify({url:playurl,name:"地址"});
 }
 }
 }else if(uu.indexOf("juztv.com/jx.php")!=-1){
@@ -592,7 +592,7 @@ var resp=getHttp(JSON.stringify({url:uu}));
 var uuu='https://www.juztv.com/'+resp.match(/var u="(.*?)"/)[1];
 var resp2=getHttp(JSON.stringify({url:uuu,head:{'Referer':uu}}));
 var playurl=resp2.match(/<video src="(.*?)"/)[1];
-JSON.stringify({url:playurl});
+JSON.stringify({url:playurl,name:"地址"});
 }else{
 "web="+uu;
 }
