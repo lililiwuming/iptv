@@ -526,7 +526,7 @@ JSON.stringify({url:realurl,name:"地址"});
 "web=http://1.117.152.239:39000/?url="+playurl.split("url=")[1];
 }
 }else{
-JSON.stringify({url:playurl,name:"地址",head:{"User-Agent":"Lavf/58.12.100","Connection":"close"}});
+JSON.stringify({url:playurl,name:"地址"});
 }
 }else if(uu.indexOf("php?pid=")!=-1||uu.indexOf("?u=http")!=-1||uu.indexOf("url=")!=-1||uu.indexOf("v=http")!=-1||uu.indexOf("json.php?id=")!=-1){
 var resp=JZ(JSON.stringify({url:uu,head:{"User-Agent":UA,"Cookie":COOKIE}}));
