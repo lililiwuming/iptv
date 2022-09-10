@@ -10,7 +10,7 @@ if(getVar("按钮")=="添加远程订阅"){
         for(var j in 输入条目){
            var title=输入条目[j].split(",")[0];
            var url=输入条目[j].split(",")[1];
-           记录.push("####iptv\n###type\niptv\n###分类\niptv\n###数据\n"+title+"\n##\n远程$"+url+"\n####");
+           记录.push("####\n###type\niptv\n###分类\niptv\n###数据\n"+title+"\n##\n远程$"+url+"\n####");
         }
     }else{
         alert("格式输入错误");
@@ -21,7 +21,7 @@ if(getVar("按钮")=="添加远程订阅"){
     if(getVar("iptvtext").indexOf(",http")!=-1){
         var 输入条目=getVar("iptvtext").match(/.+,http.+/g).join("\n");
         var sort=getVar("iptvsort")||"未分类";
-        记录.push("####iptv\n###type\niptv\n###分类\niptv\n###数据\n"+sort+"\n##\n"+输入条目+"\n####");
+        记录.push("####\n###type\niptv\n###分类\niptv\n###数据\n"+sort+"\n##\n"+输入条目+"\n####");
     }else{
         alert("格式输入错误");
     }
@@ -75,7 +75,7 @@ if(新记录.length==0) {
       var 当前分类=item.match(/#####(.+)/)[1];
       var 分类=记录[i].split(/####/)[1].split(/###.*/)[2].replace(/\s+/g,"");
       if(当前分类 == 分类){
-      var data=item.match(/####[\s\S]+?####}/g);
+      var data=item.replace(/#####.*/g,"").match(/####[\s\S]+?####}/g);
       data=当前条目.concat(data);
       item="#####"+当前分类+"\n"+data.join("\n")+"\n#####";
       return true
