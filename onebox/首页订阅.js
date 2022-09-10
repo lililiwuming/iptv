@@ -55,7 +55,7 @@ https://gitcode.net/egwang186/iptv/-/raw/master/onebox/huya.png
 ###分类地址
 "https://www.huya.com/cache.php?m=LiveList&do=getLiveListByPage&gameId=分类&tagAll=0&callback=getLiveListJsonpCallback&page=翻页";
 ###搜索地址
-https://search.cdn.huya.com/?m=Search&do=getSearchContent&q=关键字&uid=0&v=4&typ=-5&livestate=0&rows=40
+"https://search.cdn.huya.com/?m=Search&do=getSearchContent&q=关键字&uid=0&v=4&typ=-5&livestate=0&rows=40";
 ###rule
 ##首页规则
 var 列表=getVar("源码").replace(/\s+/g,"").match(/\{"lUid"[^\{]+?sRoomName.+?sRecommendTagName.+?\}/g);var 标题规则=".json(sRoomName)";var 地址规则=".c(/).json(lProfileRoom)";var 图片规则=".json(sScreenshot)";var 简介规则=".json(sIntroduction)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
