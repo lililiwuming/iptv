@@ -75,15 +75,26 @@ if(新记录.length==0) {
       var 当前分类=item.match(/#####(.+)/)[1];
       var 分类=记录[i].split(/####/)[1].split(/###.*/)[2].replace(/\s+/g,"");
       if(当前分类 == 分类){
-      var data=item.replace(/#####.*/g,"").match(/####[\s\S]+?####}/g);
-      data=当前条目.concat(data);
-      item="#####"+当前分类+"\n"+data.join("\n")+"\n#####";
       return true
       }
     });
     if (!res) {
     //如果没找相同类型添加一个类型
     新记录.push("#####"+分类+"\n"+记录[i]+"\n#####");
+    }else{
+        新记录=新记录.map((item)=>{
+            //判断类型，有就添加到当前项
+              var 当前分类=item.match(/#####(.+)/)[1];
+              var 分类=记录[i].split(/####/)[1].split(/###.*/)[2].replace(/\s+/g,"");
+              if(当前分类 == 分类){
+              var data=item.replace(/#####.*/g,"").match(/####[\s\S]+?####}/g);
+              data=当前条目.concat(data);
+              item="#####"+当前分类+"\n"+data.join("\n")+"\n#####";
+              return item
+              }else{
+              return item
+              }
+            });
     }
 }
 }
