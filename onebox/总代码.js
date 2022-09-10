@@ -67,13 +67,13 @@ if(_.read(filename).indexOf("#####")!=-1){
 for(var i in 记录){
 var 当前条目=[];当前条目.push(记录[i]);
 if(新记录.length==0) {
-    var 分类=记录[i].split(/####/)[1].split(/###/)[2];
+    var 分类=记录[i].split(/####/)[1].split(/###.*/)[2];
     新记录.push("#####"+分类+"\n"+记录[i]+"\n#####");
 }else{
     let res=新记录.some(item=>{
     //判断类型，有就添加到当前项
       var 当前分类=item.match(/#####(.+)/)[1];
-      var 分类=记录[i].split(/####/)[1].split(/###/)[2];
+      var 分类=记录[i].split(/####/)[1].split(/###.*/)[2];
       if(当前分类 == 分类){
       var data=item.match(/####[\s\S]+?####}/g);
       data=当前条目.concat(data);
