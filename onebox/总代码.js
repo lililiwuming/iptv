@@ -412,6 +412,7 @@ function 通用列表(){
     }
     return JSON.stringify(res);
 }
+eval(readStr("QJS"));
 var baseURL=getVar("baseURL");
 eval(getVar("列表规则"));通用列表();
 ######选集列表7
@@ -676,6 +677,7 @@ function 选集列表(){
     res.desc=detail;
     return JSON.stringify(res);
 }
+eval(readStr("QJS"));
 var baseURL=getVar("baseURL");
 if(typeof(type) == "undefined"){
     var 类型="";
