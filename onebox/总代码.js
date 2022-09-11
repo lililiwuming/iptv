@@ -133,12 +133,17 @@ function 选集列表(){
     var play_={};
     play_.title=标题;
     play_.list=LIST;
-    return items.push(play_);
+    return play_;
     };
     }
     d.push(fn(index));
   }
-    _.submit(d, 分类.length); //n 改为你想开启的线程数
+  var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
+  for (let i = 0; i < s.length; i++) {
+    for (let z of s[i].get()) {
+      items.push(z);
+    }
+  }
     res.data=items;
     return JSON.stringify(res);
 }
