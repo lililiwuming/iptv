@@ -617,6 +617,7 @@ function 选集列表(){
         }else{
         var 接口=baseURL;
         }
+        var 接口=接口;
         var LIST=[];
         var d = [];
         for (let index = 0; index < 列表.length; index++) {
