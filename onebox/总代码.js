@@ -620,15 +620,15 @@ function 选集列表(){
         }else{
         var 接口=baseURL;
         }
-        
+        alert("1"+接口)
         var LIST=[];
         var d = [];
-        var 接口=接口;
         for (let index = 0; index < 列表.length; index++) {
             function fn(j) {
               return function () {
             var 选集=e2Rex(列表[j],选集规则);
             var 选集地址=e2Rex(列表[j],选集地址规则);
+            alert("2"+接口)
             if(baseURL.indexOf("xgapp.php/v")!=-1||baseURL.indexOf("api.php/app/")!=-1||baseURL.search(/\.php\/.+?\.vod/)!=-1){
                if(选集地址.indexOf(".m3u8")>15||选集地址.indexOf(".mp4")>15){
                    if(选集地址.indexOf(".ruifenglb.com")!=-1){
