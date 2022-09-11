@@ -625,7 +625,7 @@ function 选集列表(){
         var d = [];
         for (let index = 0; index < 列表.length; index++) {
             function fn(j) {
-              return function () {
+              return function (接口) {
             var 选集=e2Rex(列表[j],选集规则);
             var 选集地址=e2Rex(列表[j],选集地址规则);
             alert("2"+接口)
@@ -658,7 +658,6 @@ function 选集列表(){
                 if(baseURL.indexOf("gimytv.com")!=-1){
                     var 选集地址=接口+选集地址+'@{"user-agent":"Mozilla/5.0 Windows10","Referer":"'+接口+'"}';
                 }else{
-                    alert(接口)
                     var 选集地址=接口+选集地址;
                 }
             }
