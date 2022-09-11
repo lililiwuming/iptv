@@ -620,9 +620,10 @@ function 选集列表(){
         }else{
         var 接口=baseURL;
         }
-        var 接口=接口;
+        
         var LIST=[];
         var d = [];
+        var 接口=接口;
         for (let index = 0; index < 列表.length; index++) {
             function fn(j) {
               return function () {
@@ -657,6 +658,7 @@ function 选集列表(){
                 if(baseURL.indexOf("gimytv.com")!=-1){
                     var 选集地址=接口+选集地址+'@{"user-agent":"Mozilla/5.0 Windows10","Referer":"'+接口+'"}';
                 }else{
+                    alert(接口)
                     var 选集地址=接口+选集地址;
                 }
             }
