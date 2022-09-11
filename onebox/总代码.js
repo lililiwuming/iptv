@@ -113,7 +113,10 @@ if(getVar("地址").indexOf("远程$")!=-1){
 }
 function 选集列表(){
     var res={};var items=[];
-    for(var i=0;i<分类.length;i++){
+    var d = [];
+    for (let index = 0; index < 分类.length; index++) {
+            function fn(i) {
+              return function () {
         var 分类CODE=分类[i];
         var 列表=e2Arr(分类CODE,列表规则).filter(Boolean);
         if(线路){
@@ -122,28 +125,24 @@ function 选集列表(){
         var 标题=e2Rex(分类CODE,标题规则);
         }
         var LIST=[];
-        var d = [];
-        for (let index = 0; index < 列表.length; index++) {
-            function fn(j) {
-              return function () {
-                   //这里改成你想要进行的操作
-                   var 选集=e2Rex(列表[j],选集规则);
-                   var 选集地址=e2Rex(列表[j],选集地址规则);
-                   return {title:选集,url:选集地址};
-              };
-            }
-            d.push(fn(index));
+        for(var j=0;j<列表.length;j++){
+            var 选集=e2Rex(列表[j],选集规则);
+            var 选集地址=e2Rex(列表[j],选集地址规则);
+            LIST.push({title:选集,url:选集地址});
         }
-          var s = _.submit(d, 列表.length); //n 改为你想开启的线程数
-          for (let i = 0; i < s.length; i++) {
-            for (let z of s[i].get()) {
-              LIST.push(z);
-            }
-          }
     var play_={};
     play_.title=标题;
     play_.list=LIST;
-    items.push(play_);
+    return play_;
+    };
+    }
+    d.push(fn(index));
+  }
+    var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
+    for (let i = 0; i < s.length; i++) {
+      for (let z of s[i].get()) {
+        items.push(z);
+      }
     }
     res.data=items;
     return JSON.stringify(res);
@@ -421,7 +420,10 @@ eval(getVar("列表规则"));通用列表();
 ######选集列表7
 function CMS选集列表(){
     var res={};var items=[];var detail=[];
-    for(var i=0;i<分类.length;i++){
+    var d = [];
+    for (let index = 0; index < 分类.length; index++) {
+            function fn(i) {
+              return function () {
         var 分类CODE=分类[i];
         var 列表=e2Arr(分类CODE,列表规则).filter(Boolean);
         if(线路){
@@ -430,10 +432,7 @@ function CMS选集列表(){
         var 标题=e2Rex(分类CODE,标题规则);
         }
         var LIST=[];
-        var d = [];
-        for (let index = 0; index < 列表.length; index++) {
-            function fn(j) {
-              return function () {
+        for(var j=0;j<列表.length;j++){
             if(列表[j].indexOf("$")!=-1){
                 var 选集=e2Rex(列表[j],选集规则);
                 if(选集==""){
@@ -565,21 +564,21 @@ function CMS选集列表(){
           }
     }
     //结束判断
-            return {title:选集,url:选集地址};
-        };
-      }
-      d.push(fn(index));
-  }
-    var s = _.submit(d, 列表.length); //n 改为你想开启的线程数
-    for (let i = 0; i < s.length; i++) {
-      for (let z of s[i].get()) {
-        LIST.push(z);
-      }
-    }
+            LIST.push({title:选集,url:选集地址});
+        }
     var play_={};
     play_.title=标题;
     play_.list=LIST;
-    items.push(play_);
+    return play_;
+    };
+    }
+    d.push(fn(index));
+  }
+    var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
+    for (let i = 0; i < s.length; i++) {
+      for (let z of s[i].get()) {
+        items.push(z);
+      }
     }
     detail.push({desc:简介});
     res.data=items;
@@ -588,7 +587,10 @@ function CMS选集列表(){
 }
 function 选集列表(){
     var res={};var items=[];var detail=[];
-    for(var i=0;i<分类.length;i++){
+    var d = [];
+    for (let index = 0; index < 分类.length; index++) {
+            function fn(i) {
+              return function () {
         var 分类CODE=分类[i];
         var 列表=e2Arr(分类CODE,列表规则);
         if(线路){
@@ -620,16 +622,10 @@ function 选集列表(){
         }else{
         var 接口=baseURL;
         }
-        alert("1"+接口)
         var LIST=[];
-        var d = [];
-        for (let index = 0; index < 列表.length; index++) {
-            function fn(j) {
-                alert("2"+接口)
-              return function (接口) {
+        for(var j=0;j<列表.length;j++){
             var 选集=e2Rex(列表[j],选集规则);
             var 选集地址=e2Rex(列表[j],选集地址规则);
-            
             if(baseURL.indexOf("xgapp.php/v")!=-1||baseURL.indexOf("api.php/app/")!=-1||baseURL.search(/\.php\/.+?\.vod/)!=-1){
                if(选集地址.indexOf(".m3u8")>15||选集地址.indexOf(".mp4")>15){
                    if(选集地址.indexOf(".ruifenglb.com")!=-1){
@@ -662,28 +658,30 @@ function 选集列表(){
                     var 选集地址=接口+选集地址;
                 }
             }
-            return {title:选集,url:选集地址};
-        };
-      }
-      d.push(fn(index));
-  }
-    var s = _.submit(d, 列表.length); //n 改为你想开启的线程数
-    for (let i = 0; i < s.length; i++) {
-      for (let z of s[i].get()) {
-        LIST.push(z);
-      }
-    }
+            LIST.push({title:选集,url:选集地址});
+        }
     var play_={};
     play_.title=标题;
     play_.list=LIST;
-    items.push(play_);
+    return play_;
+    };
     }
+    d.push(fn(index));
+  }
+    var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
+    for (let i = 0; i < s.length; i++) {
+      for (let z of s[i].get()) {
+        items.push(z);
+      }
+    }
+
+
+
     detail.push({desc:简介});
     res.data=items;
     res.desc=detail;
     return JSON.stringify(res);
 }
-eval(readStr("QJS"));
 var baseURL=getVar("baseURL");
 if(typeof(type) == "undefined"){
     var 类型="";
