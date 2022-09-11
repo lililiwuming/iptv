@@ -13,7 +13,7 @@ if(getVar("按钮")=="添加远程订阅"){
            记录.push("####\n###type\niptv\n###分类\niptv\n###数据\n"+title+"\n##\n远程$"+url+"\n####");
         }
     }else{
-        alert("格式输入错误");
+        alert("格式输入错误: 分类名称不用填，订阅地址格式：xxx,http...");
     }
 }else if(getVar("按钮")=="添加源文本"){
     var filename=iptvfile;
@@ -23,7 +23,7 @@ if(getVar("按钮")=="添加远程订阅"){
         var sort=getVar("iptvsort")||"未分类";
         记录.push("####\n###type\niptv\n###分类\niptv\n###数据\n"+sort+"\n##\n"+输入条目+"\n####");
     }else{
-        alert("格式输入错误");
+        alert("格式输入错误, 分类名称必填，源文本格式：xxx,http...");
     }
 }else if(getVar("按钮")=="添加cms"){
     var filename=webfile;
@@ -47,7 +47,7 @@ if(getVar("按钮")=="添加远程订阅"){
            记录.push("####\n###type\n"+type+"\n###分类\n"+sort+"\n###标题\n"+title+"\n###图片\n"+img+"\n###BaseURL\n"+baseURL+"\n###首页地址\n"+首页地址+"\n###分类地址\n"+分类地址+"\n###搜索地址\n"+搜索地址+"\n###rule\n####");
         }
     }else{
-        alert("格式输入错误");
+        alert("格式输入错误分类名称必填，订阅地址格式：xxx,http...");
     }
 }else if(getVar("按钮")=="添加站源"){
     var filename=webfile;
