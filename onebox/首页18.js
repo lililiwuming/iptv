@@ -32,7 +32,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.videos div.item)")
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址"),head:{"Referer":"https://xchina.xyz"}});
+JSON.stringify({name:"地址",url:getVar("地址"),head:{"Referer":"https://xchina.xyz"}});
 ####
 
 ####
@@ -67,7 +67,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.cell.video)");if(!
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址")});
+JSON.stringify({name:"地址",url:getVar("地址")});
 ####
 
 ####
@@ -101,7 +101,7 @@ var 源码=getHttp(JSON.stringify({url:"http://api.vipmisss.com:81/xcdsw/json.tx
 ##搜索翻页
 var b="翻页+全部=";b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址").split("http://ip111.cn/?wd=")[1]});
+JSON.stringify({name:"地址",url:getVar("地址").split("http://ip111.cn/?wd=")[1]});
 ####
 
 ####
@@ -136,7 +136,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.shadow.p-1)");if(!
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-var 头=getVar("地址").split("/hls")[0];var code=getHttp(getVar("地址")).match(/#EXT-X-STREAM-INF[^#]+/g);var playlist=[];for(var i in code){var name=code[i].match(/RESOLUTION=(.+)/)[1];var url=头+"/"+code[i].match(/hls.+/)[0];playlist.push({name:name,url:url});}JSON.stringify(playlist);
+var 头=getVar("地址").split("/hls")[0];var code=getHttp(getVar("地址")).match(/#EXT-X-STREAM-INF[^#]+/g);var playlist=[];for(var i in code){var title=code[i].match(/RESOLUTION=(.+)/)[1];var url=头+"/"+code[i].match(/hls.+/)[0];playlist.push({name:title,url:url});}JSON.stringify(playlist);
 ####
 
 ####
@@ -171,7 +171,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(ul.stui-vodlist li)");
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址")});
+JSON.stringify({name:"地址",url:getVar("地址")});
 ####
 
 ####
@@ -206,7 +206,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.video-img-box.mb-e
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址")});
+JSON.stringify({name:"地址",url:getVar("地址")});
 ####
 
 ####
@@ -241,7 +241,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.post-item-wrap)");
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址")});
+JSON.stringify({name:"地址",url:getVar("地址")});
 ####
 
 ####
@@ -276,7 +276,7 @@ var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.stui-vodlist__box)
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({url:getVar("地址")});
+JSON.stringify({name:"地址",url:getVar("地址")});
 ####
 
 #####
