@@ -10,6 +10,7 @@ VCtv
 ##
 远程$https://raw.fastgit.org/vamoschuck/TV/main/M3U
 ####
+
 ####
 ###type
 iptv
@@ -20,6 +21,7 @@ TV88
 ##
 远程$https://cdn.staticaly.com/gh/tvbw/mytv/main/tv88
 ####
+
 ####
 ###type
 iptv
@@ -36,6 +38,22 @@ iptv
 央视|1台综合,http://117.148.179.157/PLTV/88888888/224/3221232791/index.m3u8
 央视|2台财经,http://117.148.179.157/PLTV/88888888/224/3221232777/index.m3u8
 央视|2台财经,http://117.148.179.157/PLTV/88888888/224/3221233238/index.m3u8
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
+Youtube
+##
+中天新闻,https://www.youtube.com/watch?v=_QbRXRnHMVY
+台视新闻,https://www.youtube.com/watch?v=xL0ch83RAK8
+三立新闻,https://www.youtube.com/watch?v=EB4g7wecgTI
+凤凰资讯台,https://www.youtube.com/watch?v=8ysjF7BCtRE
+民视新闻,https://www.youtube.com/watch?v=P8DRJChuQQQ
+东森新闻,https://www.youtube.com/watch?v=R2iMq5LKXco
 ####
 #####
 

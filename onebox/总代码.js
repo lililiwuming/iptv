@@ -252,6 +252,9 @@ JSON.stringify(items);
         }
     }else if(uu.indexOf("mitv://")!=-1){
         var u=uu.replace("mitv://","P2p://");
+    }else if(uu.indexOf("www.youtube.com/watch?v=")!=-1){
+        var resp=getHttp(JSON.stringify({url:"https://www.azrotv.com/extras/youtube/",post:{"url":uu}}));
+        var u=e2Rex(resp,".get(textarea).t()");
     }else{
         var u=uu;
     }
