@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <a class="版本">2209123</a>
 <ul class="默认提示">
