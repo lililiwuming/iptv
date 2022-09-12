@@ -6,9 +6,9 @@ iptv
 ###分类
 iptv
 ###数据
-镇弟
+VCtv
 ##
-远程$https://wds.ecsxs.com/223721.js
+远程$https://raw.fastgit.org/vamoschuck/TV/main/M3U
 ####
 ####
 ###type
