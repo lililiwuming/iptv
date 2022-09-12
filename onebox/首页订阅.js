@@ -16,6 +16,16 @@ iptv
 ###分类
 iptv
 ###数据
+TV88
+##
+远程$https://cdn.staticaly.com/gh/tvbw/mytv/main/tv88
+####
+####
+###type
+iptv
+###分类
+iptv
+###数据
 央视
 ##
 央视|🥨🍄,http://111.40.196.9/PLTV/88888888/224/3221225511/index.m3u8
