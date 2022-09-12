@@ -269,7 +269,7 @@ var a="分类+国产=ChinaPorn+日本=JapanPorn+欧美=WesternPorn+韩国=KoreaP
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.stui-vodlist__box)");var 标题规则=".get(h4).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(a).a(data-original)";var 简介规则=".get(span.pic-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".c()");var 线路="";var 简介="";var 列表规则=".ty(player_data=).json(url).dn(64).dn(utf8)";var 标题规则="";var 选集规则=".var(name)";var 选集地址规则=".c()";
+var 分类=e2Arr(getVar("源码"),".c()");var 线路="";var 简介="";var 列表规则=".ty(player_data=).json(url).dn(64).dn(utf8)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".c()";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.stui-vodlist__box)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=URL;var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h4).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(a).a(data-original)";var 简介规则=".get(span.pic-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
