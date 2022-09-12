@@ -6,7 +6,7 @@ web
 ###分类
 普通站源
 ###标题
-XChina
+XChina(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/xchina.png
 ###BaseURL
@@ -41,7 +41,7 @@ web
 ###分类
 普通站源
 ###标题
-搬淫家
+搬淫家(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/byj.png
 ###BaseURL
@@ -180,7 +180,7 @@ web
 ###分类
 普通站源
 ###标题
-JableTV
+JableTV(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/jable.png
 ###BaseURL
@@ -215,7 +215,7 @@ web
 ###分类
 普通站源
 ###标题
-CableAV
+CableAV(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/cable.png
 ###BaseURL
