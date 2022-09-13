@@ -28,6 +28,17 @@ iptv
 ###分类
 iptv
 ###数据
+野火直播
+##
+远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/野火直播.txt
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
 央视
 ##
 央视|1台综合,http://111.40.196.25/PLTV/88888888/224/3221225548/index.m3u8
