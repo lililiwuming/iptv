@@ -172,14 +172,13 @@ if(code.indexOf("#genre#")!=-1){
     }else{
         var type="未分类";
     }
-var 当前条目=[];当前条目.push({title:选集,url:"http://ip111.cn/?wd="+选集地址});
-return {title:type,list:当前条目};
+items.push({title:选集,url:"http://ip111.cn/?wd="+选集地址});
     };
     }
     d.push(fn(index));
   }
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
-for (let i = 0; i < s.length; i++) {
+/*for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
         if(items.length==0) {
             items.push(z);
@@ -197,7 +196,7 @@ for (let i = 0; i < s.length; i++) {
             }
         }
     }
-  }
+  }*/
 res.data=items;
 JSON.stringify(res);
 }else if(code.search(/\$c_start.+?\$c_end/)!=-1){
