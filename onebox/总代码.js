@@ -18,7 +18,7 @@ if(getVar("按钮")=="添加远程订阅"){
 }else if(getVar("按钮")=="添加源文本"){
     var filename=iptvfile;
     var 记录=[];
-    if(getVar("iptvtext").indexOf(",.+?://")!=-1){
+    if(getVar("iptvtext").search(/,.+?:\/\//)!=-1){
         var 输入条目=getVar("iptvtext").match(/.+,.+?:\/\/.+/g).join("\n");
         var sort=getVar("iptvsort")||"未分类";
         记录.push("####\n###type\niptv\n###分类\niptv\n###数据\n"+sort+"\n##\n"+输入条目+"\n####");
