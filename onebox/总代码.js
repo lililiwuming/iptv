@@ -235,6 +235,7 @@ for (let z of s[i].get()) {
     }else{
         let 寻找=items.some(item=>{
         //判断类型，有就添加到当前项
+          alert(z.title)
           if(item.title == z.title){
           item.list=item.list.concat(z.list);
           return true
