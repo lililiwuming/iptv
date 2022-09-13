@@ -173,7 +173,7 @@ if(code.indexOf("#genre#")!=-1){
         var type="未分类";
     }
     var 当前条目=[];当前条目.push({title:选集,url:"http://ip111.cn/?wd="+选集地址});
-        return [{title:type,list:当前条目}];
+        return {title:type,list:当前条目};
     };
     }
     d.push(fn(index));
@@ -182,18 +182,18 @@ var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
         if(items.length==0) {
-            items=z;
+            items.push(z);
         }else{
             let 寻找=items.some(item=>{
             //判断类型，有就添加到当前项
-              if(item.title == z.title){
+              if(item.title == z.title&&item.list.length<50){
               item.list=item.list.concat(z.list);
               return true
               }
             });
             if (!寻找) {
             //如果没找相同类型添加一个类型
-            items=items.concat(z);
+            items.push(z);
             }
         }
     }
@@ -209,7 +209,7 @@ JSON.stringify(res);
     var 选集规则=".tz(,)";选集列表();
 }else{
     var code=code.match(/.+?,.+/g);
-    var res={};var items=[];
+    var res={};var items=[];var d=[];
     for (let index = 0; index < code.length; index++) {
         function fn(i) {
           return function () {
@@ -222,7 +222,7 @@ JSON.stringify(res);
         var 选集标题=选集;
     }
     var 当前条目=[];当前条目.push({title:选集标题,url:"http://ip111.cn/?wd="+选集地址});
-    return [{title:type,list:当前条目}];
+    return {title:type,list:当前条目};
 };
 }
 d.push(fn(index));
@@ -231,20 +231,18 @@ var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
 for (let z of s[i].get()) {
     if(items.length==0) {
-        items=z;
+        items.push(z);
     }else{
         let 寻找=items.some(item=>{
         //判断类型，有就添加到当前项
-          if(item.title == z.title){
+          if(item.title == z.title&&item.list.length<50){
           item.list=item.list.concat(z.list);
           return true
           }
         });
         if (!寻找) {
         //如果没找相同类型添加一个类型
-        items=items.concat(z);
-        }else{
-
+        items.push(z);
         }
     }
 }
