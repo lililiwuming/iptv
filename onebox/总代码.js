@@ -109,7 +109,6 @@ eval(readStr("QJS"));
 if(getVar("地址").indexOf("远程$")!=-1){
     var u=getVar("地址").split("远程$")[1];
     if(readStr(u).length>500){
-        alert("1")
         var code=readStr(u);
     }else{
         var code=getHttp(u);
@@ -163,8 +162,10 @@ if(code.indexOf("#genre#")!=-1){
     var 选集规则=".tz(,)";选集列表();
 }else if(code.indexOf("#EXTINF:")!=-1){
     var code=code.match(/#EXTINF:.+[\s]+.+/g);
-    var res={};var items=[];
-for(var i in code){
+    var res={};var items=[];var d=[];
+    for (let index = 0; index < code.length; index++) {
+        function fn(i) {
+          return function () {
     var 选集=code[i].match(/,(.*)/)[1]||"无选集名称";var 选集地址=code[i].match(/,.*[\s]+(.+)/)[1]||"无播放地址";
     if(code[i].search(/group-title=".*?"/)!=-1){
         var type=code[i].match(/group-title="(.*?)"/)[1]||"不规范分类";
@@ -184,10 +185,15 @@ if(items.length==0) {
     });
     if (!寻找) {
     //如果没找相同类型添加一个类型
-      items.push({title:type,list:当前条目});
+    items.push({title:type,list:当前条目});
     }
 }
-}
+return "完成";
+    };
+    }
+    d.push(fn(index));
+  }
+_.submit(d, code.length); //n 改为你想开启的线程数
 res.data=items;
 JSON.stringify(res);
 }else if(code.search(/\$c_start.+?\$c_end/)!=-1){
