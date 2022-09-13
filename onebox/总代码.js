@@ -108,7 +108,12 @@ alert("写入失败");
 eval(readStr("QJS"));
 if(getVar("地址").indexOf("远程$")!=-1){
     var u=getVar("地址").split("远程$")[1];
-    var code=getHttp(u);
+    if(readStr(u).length>500){
+        var code=readStr(u);
+    }else{
+        var code=getHttp(u);
+        WriteStr(u,code);
+    }
 }else{
     var code=getVar("地址");
 }
