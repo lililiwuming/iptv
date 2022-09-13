@@ -109,6 +109,7 @@ eval(readStr("QJS"));
 if(getVar("地址").indexOf("远程$")!=-1){
     var u=getVar("地址").split("远程$")[1];
     if(readStr(u).length>500){
+        alert("1")
         var code=readStr(u);
     }else{
         var code=getHttp(u);
