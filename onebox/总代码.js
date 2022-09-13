@@ -18,8 +18,8 @@ if(getVar("按钮")=="添加远程订阅"){
 }else if(getVar("按钮")=="添加源文本"){
     var filename=iptvfile;
     var 记录=[];
-    if(getVar("iptvtext").indexOf(",http")!=-1){
-        var 输入条目=getVar("iptvtext").match(/.+,http.+/g).join("\n");
+    if(getVar("iptvtext").indexOf(",.+?://")!=-1){
+        var 输入条目=getVar("iptvtext").match(/.+,.+?:\/\/.+/g).join("\n");
         var sort=getVar("iptvsort")||"未分类";
         记录.push("####\n###type\niptv\n###分类\niptv\n###数据\n"+sort+"\n##\n"+输入条目+"\n####");
     }else{
@@ -147,7 +147,23 @@ function 选集列表(){
   var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
   for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
-      items.push(z);
+      if(z.list.length/50 > 1){
+        var zz=[];
+        for (let j = 0; j < z.list.length;) {
+            var 
+            zz.push(z.list.slice(j, j+=Math.ceil(z.list.length/50)));
+        }
+        for(let k=0;k<zz.length;k++){
+            let 尾=(k+1)*50;
+            let 头=尾-50+1;
+            if(尾>z.list.length){
+                尾=z.list.length;
+            }
+            items.push({title:z.title+头+"-"+尾,list:zz[k]})
+        }
+      }else{
+        items.push(z);
+      }
     }
   }
     res.data=items;
@@ -608,7 +624,23 @@ function CMS选集列表(){
     var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
     for (let i = 0; i < s.length; i++) {
       for (let z of s[i].get()) {
-        items.push(z);
+        if(z.list.length/50 > 1){
+            var zz=[];
+            for (let j = 0; j < z.list.length;) {
+                var 
+                zz.push(z.list.slice(j, j+=Math.ceil(z.list.length/50)));
+            }
+            for(let k=0;k<zz.length;k++){
+                let 尾=(k+1)*50;
+                let 头=尾-50+1;
+                if(尾>z.list.length){
+                    尾=z.list.length;
+                }
+                items.push({title:z.title+头+"-"+尾,list:zz[k]})
+            }
+        }else{
+            items.push(z);
+        }
       }
     }
     detail.push({desc:简介});
@@ -702,12 +734,25 @@ function 选集列表(){
     var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
     for (let i = 0; i < s.length; i++) {
       for (let z of s[i].get()) {
-        items.push(z);
+        if(z.list.length/50 > 1){
+            var zz=[];
+            for (let j = 0; j < z.list.length;) {
+                var 
+                zz.push(z.list.slice(j, j+=Math.ceil(z.list.length/50)));
+            }
+            for(let k=0;k<zz.length;k++){
+                let 尾=(k+1)*50;
+                let 头=尾-50+1;
+                if(尾>z.list.length){
+                    尾=z.list.length;
+                }
+                items.push({title:z.title+头+"-"+尾,list:zz[k]})
+            }
+        }else{
+            items.push(z);
+        }
       }
     }
-
-
-
     detail.push({desc:简介});
     res.data=items;
     res.desc=detail;
