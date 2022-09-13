@@ -186,8 +186,8 @@ for (let i = 0; i < s.length; i++) {
         }else{
             let 寻找=items.some(item=>{
             //判断类型，有就添加到当前项
-              if(item.title == z.title){
-              item.list=item.list.concat(z.list);
+              if(item.title == z[0].title){
+              item.list=item.list.concat(z[0].list);
               return true
               }
             });
@@ -235,17 +235,14 @@ for (let z of s[i].get()) {
     }else{
         let 寻找=items.some(item=>{
         //判断类型，有就添加到当前项
-          alert(z.title)
-          if(item.title == z.title){
-          item.list=item.list.concat(z.list);
+          if(item.title == z[0].title){
+          item.list=item.list.concat(z[0].list);
           return true
           }
         });
         if (!寻找) {
         //如果没找相同类型添加一个类型
         items=items.concat(z);
-        }else{
-
         }
     }
 }
