@@ -209,7 +209,7 @@ JSON.stringify(res);
     var 选集规则=".tz(,)";选集列表();
 }else{
     var code=code.match(/.+?,.+/g);
-    var res={};var items=[];
+    var res={};var items=[];var d=[];
     for (let index = 0; index < code.length; index++) {
         function fn(i) {
           return function () {
