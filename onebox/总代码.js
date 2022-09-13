@@ -149,8 +149,7 @@ function 选集列表(){
     for (let z of s[i].get()) {
       if(z.list.length/50 > 1){
         var zz=[];
-        for (let j = 0; j < z.list.length;) {
-            var 
+        for (let j = 0; j < z.list.length;){
             zz.push(z.list.slice(j, j+=Math.ceil(z.list.length/50)));
         }
         for(let k=0;k<zz.length;k++){
@@ -159,7 +158,7 @@ function 选集列表(){
             if(尾>z.list.length){
                 尾=z.list.length;
             }
-            items.push({title:z.title+头+"-"+尾,list:zz[k]})
+            items.push({title:z.title+头+"-"+尾,list:zz[k]});
         }
       }else{
         items.push(z);
@@ -626,8 +625,7 @@ function CMS选集列表(){
       for (let z of s[i].get()) {
         if(z.list.length/50 > 1){
             var zz=[];
-            for (let j = 0; j < z.list.length;) {
-                var 
+            for (let j = 0; j < z.list.length;){
                 zz.push(z.list.slice(j, j+=Math.ceil(z.list.length/50)));
             }
             for(let k=0;k<zz.length;k++){
@@ -636,7 +634,7 @@ function CMS选集列表(){
                 if(尾>z.list.length){
                     尾=z.list.length;
                 }
-                items.push({title:z.title+头+"-"+尾,list:zz[k]})
+                items.push({title:z.title+头+"-"+尾,list:zz[k]});
             }
         }else{
             items.push(z);
@@ -736,8 +734,7 @@ function 选集列表(){
       for (let z of s[i].get()) {
         if(z.list.length/50 > 1){
             var zz=[];
-            for (let j = 0; j < z.list.length;) {
-                var 
+            for (let j = 0; j < z.list.length;){
                 zz.push(z.list.slice(j, j+=Math.ceil(z.list.length/50)));
             }
             for(let k=0;k<zz.length;k++){
@@ -746,7 +743,7 @@ function 选集列表(){
                 if(尾>z.list.length){
                     尾=z.list.length;
                 }
-                items.push({title:z.title+头+"-"+尾,list:zz[k]})
+                items.push({title:z.title+头+"-"+尾,list:zz[k]});
             }
         }else{
             items.push(z);
