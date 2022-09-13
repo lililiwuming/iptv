@@ -172,31 +172,32 @@ if(code.indexOf("#genre#")!=-1){
     }else{
         var type="未分类";
     }
-items.push({title:选集,url:"http://ip111.cn/?wd="+选集地址});
+    var 当前条目=[];当前条目.push({title:选集,url:"http://ip111.cn/?wd="+选集地址});
+        return [{title:type,list:当前条目}];
     };
     }
     d.push(fn(index));
   }
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
-/*for (let i = 0; i < s.length; i++) {
+for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
         if(items.length==0) {
-            items.push(z);
+            items=z;
         }else{
             let 寻找=items.some(item=>{
             //判断类型，有就添加到当前项
               if(item.title == z.title){
-              item.list=item.list.concat(z);
+              item.list=item.list.concat(z.list);
               return true
               }
             });
             if (!寻找) {
             //如果没找相同类型添加一个类型
-            items.push(z);
+            items=items.concat(z);
             }
         }
     }
-  }*/
+  }
 res.data=items;
 JSON.stringify(res);
 }else if(code.search(/\$c_start.+?\$c_end/)!=-1){
@@ -209,7 +210,9 @@ JSON.stringify(res);
 }else{
     var code=code.match(/.+?,.+/g);
     var res={};var items=[];
-for(var i in code){
+    for (let index = 0; index < code.length; index++) {
+        function fn(i) {
+          return function () {
     var 选集=code[i].match(/(.+),/)[1];var 选集地址=code[i].match(/,[\s]*?(.+)/)[1];
     if(code[i].indexOf("|")!=-1){
         var type=选集.split("|")[0];
@@ -218,20 +221,31 @@ for(var i in code){
         var type=getVar("name")+"-无子分类";
         var 选集标题=选集;
     }
-var 当前条目=[];当前条目.push({title:选集标题,url:"http://ip111.cn/?wd="+选集地址});
-if(items.length==0) {
-    items.push({title:type,list:当前条目});
-}else{
-    let 寻找=items.some(item=>{
-    //判断类型，有就添加到当前项
-      if(item.title == type){
-      item.list=item.list.concat(当前条目);
-      return true
-      }
-    });
-    if (!寻找) {
-    //如果没找相同类型添加一个类型
-      items.push({title:type,list:当前条目});
+    var 当前条目=[];当前条目.push({title:选集标题,url:"http://ip111.cn/?wd="+选集地址});
+    return [{title:type,list:当前条目}];
+};
+}
+d.push(fn(index));
+}
+var s=_.submit(d, code.length); //n 改为你想开启的线程数
+for (let i = 0; i < s.length; i++) {
+for (let z of s[i].get()) {
+    if(items.length==0) {
+        items=z;
+    }else{
+        let 寻找=items.some(item=>{
+        //判断类型，有就添加到当前项
+          if(item.title == z.title){
+          item.list=item.list.concat(z.list);
+          return true
+          }
+        });
+        if (!寻找) {
+        //如果没找相同类型添加一个类型
+        items=items.concat(z);
+        }else{
+
+        }
     }
 }
 }
