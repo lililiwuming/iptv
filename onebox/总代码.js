@@ -158,7 +158,7 @@ function 选集列表(){
             if(尾>z.list.length){
                 尾=z.list.length;
             }
-            items.push({title:z.title+头+"-"+尾,list:zz[k]});
+            items.push({title:z.title+"|"+zz[k][0].title,list:zz[k]});
         }
       }else{
         items.push(z);
@@ -634,7 +634,7 @@ function CMS选集列表(){
                 if(尾>z.list.length){
                     尾=z.list.length;
                 }
-                items.push({title:z.title+头+"-"+尾,list:zz[k]});
+                items.push({title:z.title+"|"+zz[k][0].title,list:zz[k]});
             }
         }else{
             items.push(z);
@@ -743,7 +743,7 @@ function 选集列表(){
                 if(尾>z.list.length){
                     尾=z.list.length;
                 }
-                items.push({title:z.title+头+"-"+尾,list:zz[k]});
+                items.push({title:z.title+"|"+zz[k][0].title,list:zz[k]});
             }
         }else{
             items.push(z);
