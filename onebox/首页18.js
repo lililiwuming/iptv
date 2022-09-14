@@ -199,7 +199,7 @@ try{var 源码=getHttp("https://jable.tv/categories/");}catch(err){alert("哦，
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.video-img-box.mb-e-20)");var 标题规则=".get(.title a).t()";var 地址规则=".get(.title a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".t()";var 图片底部规则=".get(span.label).t()";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=getVar("源码").match(/<video[\s\S]+?</h4>/g);var 简介=e2Rex(getVar("源码"),".get(div.info-header)");var 线路="";var 列表规则=".z(var hlsUrl.+)";var 标题规则=".get(h4).t()";var 选集规则="播放";var 选集地址规则=".ty(').tz(')";
+var 分类=getVar("源码").match(/<video[\s\S]+?</h4>/g);var 简介=e2Rex(getVar("源码"),".get(div.info-header)");var 线路="";var 列表规则=".z(var hlsUrl[\s\S]+?;)";var 标题规则=".get(h4).t()";var 选集规则="播放";var 选集地址规则=".ty(').tz(')";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.video-img-box.mb-e-20)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=URL;var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.title a).t()";var 地址规则=".get(.title a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
