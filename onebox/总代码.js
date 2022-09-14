@@ -147,14 +147,14 @@ function 选集列表(){
   var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
   for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
-      if(z.list.length/200 > 1){
+      if(z.list.length/100 > 1){
         var zz=[];
         for (let j = 0; j < z.list.length;){
-            zz.push(z.list.slice(j, j+=200));
+            zz.push(z.list.slice(j, j+=100));
         }
         for(let k=0;k<zz.length;k++){
-            let 尾=(k+1)*200;
-            let 头=尾-200+1;
+            let 尾=(k+1)*100;
+            let 头=尾-100+1;
             if(尾>z.list.length){
                 尾=z.list.length;
             }
@@ -201,7 +201,7 @@ for (let i = 0; i < s.length; i++) {
         }else{
             let 寻找=items.some(item=>{
             //判断类型，有就添加到当前项
-              if(item.title == z.title&&item.list.length<200){
+              if(item.title == z.title&&item.list.length<100){
               item.list=item.list.concat(z.list);
               return true
               }
@@ -250,7 +250,7 @@ for (let z of s[i].get()) {
     }else{
         let 寻找=items.some(item=>{
         //判断类型，有就添加到当前项
-          if(item.title == z.title&&item.list.length<200){
+          if(item.title == z.title&&item.list.length<100){
           item.list=item.list.concat(z.list);
           return true
           }
