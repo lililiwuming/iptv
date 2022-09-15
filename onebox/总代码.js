@@ -172,7 +172,7 @@ if(code.indexOf("#genre#")!=-1){
     var 分类=code.split(/.+?#genre#.*/).filter(item=>item.indexOf("://")!=-1);
     var 线路=code.match(/.+?#genre#.*/g);
     var 列表规则=".z(.+?,.+)";
-    var 标题规则=".tz(#genre#)";
+    var 标题规则=".tz(,#genre#)";
     var 选集地址规则=".c(http://ip111.cn/?wd=).ty(,)";
     var 选集规则=".tz(,)";选集列表();
 }else if(code.indexOf("#EXTINF:")!=-1){
