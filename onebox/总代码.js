@@ -131,15 +131,12 @@ function 选集列表(){
         var 标题=e2Rex(分类CODE,标题规则);
         }
         var LIST=[];
-        for(var j=0;j<列表.length;j++){
-            var 选集=e2Rex(列表[j],选集规则);
-            var 选集地址=e2Rex(列表[j],选集地址规则);
+        for(let j=0;j<列表.length;j++){
+            let 选集=e2Rex(列表[j],选集规则);
+            let 选集地址=e2Rex(列表[j],选集地址规则);
             LIST.push({title:选集,url:选集地址});
         }
-    var play_={};
-    play_.title=标题;
-    play_.list=LIST;
-    return play_;
+    return {title:标题,list:LIST};
     };
     }
     d.push(fn(index));
