@@ -144,6 +144,23 @@ Youtube(播放需VPN)
 民视新闻,https://www.youtube.com/watch?v=P8DRJChuQQQ
 东森新闻,https://www.youtube.com/watch?v=R2iMq5LKXco
 ####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
+随机直播
+##
+抖音,http://mmitv.top/test/douyin.php?id=top
+花椒,http://mmitv.top/test/hjzb.php?id=top
+6间房,http://mmitv.top/test/6room.php?id=top
+千帆,http://mmitv.top/test/qf56.php?id=top
+我秀,http://mmitv.top/test/woxiu.php?id=top
+快手,http://mmitv.top/test/ks.php
+网络热歌,https://api.vvhan.com/api/rand.music?sort=%E7%83%AD%E6%AD%8C%E6%A6%9C
+####
 #####
 
 
