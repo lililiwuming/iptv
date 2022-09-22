@@ -56,7 +56,7 @@ iptv
 ###分类
 iptv
 ###数据
-Youtube
+Youtube(播放需VPN)
 ##
 中天新闻,https://www.youtube.com/watch?v=_QbRXRnHMVY
 台视新闻,https://www.youtube.com/watch?v=xL0ch83RAK8
