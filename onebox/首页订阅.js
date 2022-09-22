@@ -158,7 +158,6 @@ iptv
 6间房,http://mmitv.top/test/6room.php?id=top
 千帆,http://mmitv.top/test/qf56.php?id=top
 我秀,http://mmitv.top/test/woxiu.php?id=top
-快手,http://mmitv.top/test/ks.php
 热歌榜,https://api.uomg.com/api/rand.music?sort=热歌榜
 新歌榜,https://api.uomg.com/api/rand.music?sort=新歌榜
 飙升榜,https://api.uomg.com/api/rand.music?sort=飙升榜
