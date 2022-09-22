@@ -159,7 +159,11 @@ iptv
 千帆,http://mmitv.top/test/qf56.php?id=top
 我秀,http://mmitv.top/test/woxiu.php?id=top
 快手,http://mmitv.top/test/ks.php
-网络热歌,https://api.vvhan.com/api/rand.music?sort=%E7%83%AD%E6%AD%8C%E6%A6%9C
+热歌榜,https://api.uomg.com/api/rand.music?sort=热歌榜
+新歌榜,https://api.uomg.com/api/rand.music?sort=新歌榜
+飙升榜,https://api.uomg.com/api/rand.music?sort=飙升榜
+抖音榜,https://api.uomg.com/api/rand.music?sort=抖音榜
+电音榜,https://api.uomg.com/api/rand.music?sort=电音榜
 ####
 #####
 
