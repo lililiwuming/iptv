@@ -214,7 +214,7 @@ web
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/1920.png
 ###BaseURL
-"https://1920.video";
+"http://h1080p.com";
 ###首页地址
 getVar("baseURL")+"/";
 ###分类地址
