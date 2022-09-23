@@ -223,9 +223,9 @@ getVar("baseURL")+"/index.php/vod/show/id/分类/page/翻页.html";
 getVar("baseURL")+"/index.php/vod/search/wd/关键字/page/翻页.html";
 ###rule
 ##首页规则
-var 列表=e2Arr(getVar("源码"),".get(div.swiper-slide)");var 标题规则=".get(div.v-title span).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(src).or().get(a).a(style).z2([\\(]\\(.+?\\)[\\)])";var 简介规则=".get(div.v-ins).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.swiper-slide)");var 标题规则=".get(div[class~=.*title]).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(src).or().get(a).a(style).z2([\\(]\\(.+?\\)[\\)])";var 简介规则=".get(div[class~=.*ins]).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##筛选数据
-var a="分类+电影=1+电视剧=2+动漫=4+纪录=5+蓝光=7+国产剧=301+港台剧=302+日韩剧=303+欧美剧=304+动作片=201+喜剧片=202+爱情片=203+科幻片=204+剧情片=205";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
+var a="分类+电影=1+电视剧=2+动漫=3+番剧=28+剧场版=30+综艺=31+内地剧=2/area/内地+港剧=2/area/香港+台剧=2/area/台湾+韩剧=2/area/韩国+日本剧=2/area/日本+美剧=2/area/美国+动作片=1/class/动作+喜剧片=1/class/喜剧+爱情片=1/class/爱情+科幻片=1/class/科幻+恐怖片=1/class/恐怖+剧情片=1/class/剧情";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
