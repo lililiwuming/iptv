@@ -210,7 +210,7 @@ web
 ###分类
 普通站源
 ###标题
-荣耀蓝光
+氢视频
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/h1080p.png
 ###BaseURL
