@@ -245,6 +245,41 @@ web
 ###分类
 普通站源
 ###标题
+蓝光影院
+###图片
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/lgyy.png
+###BaseURL
+"https://www.lgyy.cc";
+###首页地址
+getVar("baseURL")+"/";
+###分类地址
+getVar("baseURL")+"/vodshow/分类--------翻页---.html";
+###搜索地址
+getVar("baseURL")+"/vodsearch/关键字----------翻页---.html";
+###rule
+##首页规则
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+##筛选数据
+var a="分类+电影=1+电视剧=2+动漫=5+纪录=4+国产剧=13+港台剧=14+日韩剧=15+欧美剧=16+动作片=6+喜剧片=7+爱情片=8+科幻片=9+恐怖片=10+剧情片=11";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
+##分类规则
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+##选集规则
+var 分类=e2Arr(getVar("源码"),".get(div.module-play-list)");var 线路=e2Arr(getVar("源码"),".get(div.module-tab-items div.module-tab-item)");var 简介=e2Rex(getVar("源码"),".get(div.module-info-content).t()");var 列表规则=".get(a)";var 标题规则=".t()";var 选集规则=".get(a).t()";var 选集地址规则=".get(a).a(href)";
+##搜索规则
+var 列表=e2Arr(getVar("源码"),".get(div.module-card-item.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("搜索地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE=""};
+##搜索翻页
+var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
+"翻页"+b;
+##免嗅探规则
+"web="+getVar("地址");
+####
+
+####
+###type
+web
+###分类
+普通站源
+###标题
 555电影
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/555dy.png
