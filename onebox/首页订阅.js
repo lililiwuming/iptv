@@ -126,7 +126,6 @@ NewTV精品体育,http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225724/
 NewTV精品大剧,http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225737/index.m3u8?servicetype=1& 
 NewTV精品纪录,http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225681/index.m3u8?servicetype=1& 
 NewTV金牌综艺,http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225755/index.m3u8?servicetype=1& 
-CCTV-5 体育,http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225680/index.m3u8?servicetype=1& 
 ####
 
 ####
