@@ -39,6 +39,17 @@ iptv
 ###分类
 iptv
 ###数据
+探索TV
+##
+远程$https://t.tansuo.tv/tv.txt
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
 野火直播
 ##
 远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/野火直播.txt
