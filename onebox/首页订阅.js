@@ -28,6 +28,17 @@ iptv
 ###分类
 iptv
 ###数据
+githubKS
+##
+远程$https://1771245847.github.io/ks.txt
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
 野火直播
 ##
 远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/野火直播.txt
