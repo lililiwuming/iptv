@@ -1,10 +1,10 @@
-#####18
+#####网页18站源
 
 ####
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 XChina(VPN)
 ###图片
@@ -39,7 +39,7 @@ JSON.stringify({name:"地址",url:getVar("地址"),head:{"Referer":"https://xchi
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 搬淫家(VPN)
 ###图片
@@ -74,7 +74,7 @@ JSON.stringify({name:"地址",url:getVar("地址")});
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 直播盒子
 ###图片
@@ -108,7 +108,7 @@ JSON.stringify({name:"地址",url:getVar("地址").split("http://ip111.cn/?wd=")
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 肉视频
 ###图片
@@ -143,7 +143,7 @@ var 头=getVar("地址").split("/hls")[0];var code=getHttp(getVar("地址")).mat
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 黄色仓库
 ###图片
@@ -178,7 +178,7 @@ JSON.stringify({name:"地址",url:getVar("地址")});
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 JableTV(VPN)
 ###图片
@@ -213,7 +213,7 @@ JSON.stringify({name:"地址",url:getVar("地址")});
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 CableAV(VPN)
 ###图片
@@ -248,7 +248,7 @@ JSON.stringify({name:"地址",url:getVar("地址")});
 ###type
 web
 ###分类
-普通站源
+网页18站源
 ###标题
 风月同天
 ###图片
