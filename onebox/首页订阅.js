@@ -39,6 +39,17 @@ iptv
 ###分类
 iptv
 ###数据
+EdemTV
+##
+远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/EdemTV_with_EPG_logo.m3u
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
 央视卫视
 ##
 CCTV-1 综合,http://cdnrrs.gx.chinamobile.com/PLTV/77777777/224/3221225934/index.m3u8?servicetype=1& 
