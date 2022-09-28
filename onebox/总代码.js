@@ -132,21 +132,11 @@ function 选集列表(){
         var 标题=e2Rex(分类CODE,标题规则);
         }
         var LIST=[];
-        var ddd=[];
         for(let j=0;j<列表.length;j++){
-            var obj=function(){
-                let 选集=e2Rex(列表[j],选集规则);
-                let 选集地址=e2Rex(列表[j],选集地址规则);
-                return {title:选集,url:选集地址};
-            }
-            ddd.push(obj);
+            let 选集=e2Rex(列表[j],选集规则);
+            let 选集地址=e2Rex(列表[j],选集地址规则);
+            LIST.push({title:选集,url:选集地址});
         }
-        var sss=_.submit(ddd,列表.length);
-        for (let P = 0; P < sss.length; P++) {
-            for (let zzz of sss[P].get()) {
-              LIST.push(zzz);
-            }
-          }
     return {title:标题,list:LIST};
     };
     }
