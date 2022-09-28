@@ -13,8 +13,13 @@ return JSON.stringify(res);
 }
 var 源码=getCode();
 if(URL.indexOf("/art/json")!=-1){
-var 列表=e2Arr(源码,".json(list)");
-var 标题规则=".json(list_name).th( ##)";var 地址规则=".json(list_id)";var 前="?ac=list&pg=#PN#&t=";var 后="";头部导航();
+    if(e2Arr(源码,".json(class)").length<1){
+        var 列表=e2Arr(源码,".json(list)");
+        var 标题规则=".json(list_name).th( ##)";var 地址规则=".json(list_id)";var 前="?ac=list&pg=#PN#&t=";var 后="";头部导航();
+    }else{
+        var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(class)");
+var 标题规则=".json(type_id)";var 标题规则1=".json(type_title)";var 地址规则=".json(type_id)";var 前="?ac=list&pg=#PN#&t=";var 后="";头部导航();
+    }
 }else{
 var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(class)");
 var 标题规则=".json(type_name)";var 标题规则1=".json(type_title)";var 地址规则=".json(type_id)";var 前="?ac=list&pg=#PN#&t=";var 后="";头部导航();
@@ -63,8 +68,13 @@ return JSON.stringify(res);
 }
 var 源码=getVar("源码");
 if(baseURL.indexOf("/art/json")!=-1){
-var 列表=e2Arr(源码,".json(data)");
-var 标题规则=".json(news_name)";var 地址规则=".c(?ac=detail&ids=).json(news_id)";var 图片规则=".json(news_pic)";var 简介规则=".c(<font color'#0997F7'><b>).json(news_keywords).ct(</b></font><br>)";var 图片底部规则=".json(news_addtime)";var 左上规则=".tx(<p style'background-color:#7091fc'><font color'#FFFFFF' size'40px'>).json(news_type).ct(</font></p>)";var 右上规则=".tx(<p style'background-color:#CC00FF'><font color'#FFFFFF'>).json(news_remark).ct(</font></p>)";通用列表();
+    if(e2Arr(源码,".json(list)").length<1){
+        var 列表=e2Arr(源码,".json(data)");
+        var 标题规则=".json(news_name)";var 地址规则=".c(?ac=detail&ids=).json(news_id)";var 图片规则=".json(news_pic)";var 简介规则=".c(<font color'#0997F7'><b>).json(news_keywords).ct(</b></font><br>)";var 图片底部规则=".json(news_addtime)";var 左上规则=".tx(<p style'background-color:#7091fc'><font color'#FFFFFF' size'40px'>).json(news_type).ct(</font></p>)";var 右上规则=".tx(<p style'background-color:#CC00FF'><font color'#FFFFFF'>).json(news_remark).ct(</font></p>)";通用列表();
+    }else{
+        var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(list)");
+var 标题规则=".json(art_name)";var 地址规则=".c(?ac=detail&ids=).json(art_id)";var 图片规则=".json(art_pic)";var 简介规则=".c(<font color'#0997F7'><b>).json(art_from).ct(</b></font><br>)";var 图片底部规则=".json(art_time)";var 左上规则=".tx(<p style'background-color:#7091fc'><font color'#FFFFFF' size'40px'>).json(type_name).ct(</font></p>)";var 右上规则=".tx(<p style'background-color:#CC00FF'><font color'#FFFFFF'>).json(art_remarks).ct(</font></p>)";通用列表();
+    }
 }else{
 var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(list)");
 var 标题规则=".json(art_name)";var 地址规则=".c(?ac=detail&ids=).json(art_id)";var 图片规则=".json(art_pic)";var 简介规则=".c(<font color'#0997F7'><b>).json(art_from).ct(</b></font><br>)";var 图片底部规则=".json(art_time)";var 左上规则=".tx(<p style'background-color:#7091fc'><font color'#FFFFFF' size'40px'>).json(type_name).ct(</font></p>)";var 右上规则=".tx(<p style'background-color:#CC00FF'><font color'#FFFFFF'>).json(art_remarks).ct(</font></p>)";通用列表();
@@ -77,7 +87,11 @@ res.desc=简介;
 return JSON.stringify(res);
 }
 if(URL.indexOf("/art/json")!=-1){
-var 简介=e2Rex(getVar("源码"),".json(data).json(news_content)");选集列表();
+    if(e2Arr(源码,".json(list)").length<1){
+        var 简介=e2Rex(getVar("源码"),".json(data).json(news_content)");选集列表();
+    }else{
+        var 简介=e2Rex(getVar("源码"),".json(list).json(art_content)");选集列表();
+    }
 }else{
 var 简介=e2Rex(getVar("源码"),".json(list).json(art_content)");选集列表();
 }
@@ -116,8 +130,13 @@ return JSON.stringify(res);
 var URL=getVar("Url")+"?ac=list&wd="+getVar("KEY");
 var 源码=getCode();
 if(URL.indexOf("/art/json")!=-1){
-var 列表=e2Arr(源码,".json(data)");
-var 标题规则=".json(news_name)";var 地址规则=".c(?ac=detail&ids=).json(news_id)";var 图片规则=".json(news_pic)";var 简介规则=".json(news_addtime).c().json(news_type)";var 作者规则=".json(news_remark)";搜索列表();
+    if(e2Arr(源码,".json(list)").length<1){
+        var 列表=e2Arr(源码,".json(data)");
+        var 标题规则=".json(news_name)";var 地址规则=".c(?ac=detail&ids=).json(news_id)";var 图片规则=".json(news_pic)";var 简介规则=".json(news_addtime).c().json(news_type)";var 作者规则=".json(news_remark)";搜索列表();
+    }else{
+        var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(list)");
+var 标题规则=".json(art_name)";var 地址规则=".c(?ac=detail&ids=).json(art_id)";var 图片规则=".json(art_pic)";var 简介规则=".json(type_name).c().json(art_time).c().json(art_remarks)";var 作者规则=".json(art_from)";搜索列表();
+    }
 }else{
 var 列表=e2Arr(源码.replace(/<.*?>/g,""),".json(list)");
 var 标题规则=".json(art_name)";var 地址规则=".c(?ac=detail&ids=).json(art_id)";var 图片规则=".json(art_pic)";var 简介规则=".json(type_name).c().json(art_time).c().json(art_remarks)";var 作者规则=".json(art_from)";搜索列表();
