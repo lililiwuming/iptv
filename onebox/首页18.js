@@ -311,7 +311,7 @@ var 源码=getVar("源码");var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({name:"地址",url:getVar("地址"),head:{"referer":"https://ccavb.tv/"}});
+JSON.stringify({name:"地址",url:getVar("地址")+"&type=.m3u8",head:{"referer":"https://ccavb.tv/"}});
 ####
 
 #####
