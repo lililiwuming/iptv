@@ -302,16 +302,16 @@ var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".
 ##筛选数据
 var a="分类+最新上傳=最新上傳+熱門影片=熱門影片";var b="";for(var i=1;i<999;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则
-var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则=".json(posterPath)";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则="@js=var id=JSON.parse(CODE).aneID;var 前=id.split('-')[0];var 后=id.split('-')[1];'https://ccavb.tv/static/img/'+前+'/'+后+'/'+id+'_1.jpg'";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
 var 分类=e2Arr(getVar("源码"),".json(pageProps)");var 线路="";var 简介="";var 列表规则=".json(data).i(1).z(http.+)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".t()";
 ##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则=".json(posterPath)";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+var 源码=getVar("源码");var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则="@js=var id=JSON.parse(CODE).aneID;var 前=id.split('-')[0];var 后=id.split('-')[1];'https://ccavb.tv/static/img/'+前+'/'+后+'/'+id+'_1.jpg'";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({name:"地址",url:getVar("地址")+"&type=.m3u8",head:{"referer":"https://ccavb.tv/"}});
+JSON.stringify({name:"地址",url:getVar("地址"),head:{"Referer":"https://ccavb.tv/","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) "}});
 ####
 
 #####
