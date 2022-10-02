@@ -298,7 +298,7 @@ getVar("baseURL")+"/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/category/分类/翻页.j
 getVar("baseURL")+"/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/search/关键字/翻页.json";
 ###rule
 ##首页规则
-var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则=".json(posterPath).ct(@{'Referer':'https://ccavb.tv/'})";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则="@js=var id=JSON.parse(CODE).aneID;var 前=id.split('-')[0];var 后=id.split('-')[1];'https://ccavb.tv/static/img/'+前+'/'+后+'/'+id+'_1.jpg'";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##筛选数据
 var a="分类+最新上傳=最新上傳+熱門影片=熱門影片";var b="";for(var i=1;i<999;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则

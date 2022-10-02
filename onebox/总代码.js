@@ -432,7 +432,7 @@ function 通用列表(){
             var 地址=地址+"&key="+日期+"&keytime="+getVar("TIME_");
         }
         var 标题=e2Rex(CODE,标题规则);
-        var 预图片=e2Rex(CODE,图片规则);
+        var 预图片=图片规则.indexOf("@js=")!=-1?eval(图片规则.split("@js=")[1]):e2Rex(CODE,图片规则);
         if(预图片.indexOf("/mac:")!=-1){
             var 图片="http:"+预图片.split("/mac:")[1];
         }else if(预图片.indexOf("=http")!=-1){
