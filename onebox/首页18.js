@@ -145,11 +145,11 @@ web
 ###分类
 网页18站源
 ###标题
-黄色仓库
+黄色仓库(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/hsck.png
 ###BaseURL
-var url="http://hsck.net/";var jx=e2Rex(getHttp(url),".z(http[^\"]+)");var code=JZ(JSON.stringify({url:jx+url,redirect:false}));code.head.Location;
+var code=JZ(JSON.stringify({url:"http://hscangku.com/",redirect:false}));code.head.Location;
 ###首页地址
 getVar("baseURL")+"/";
 ###分类地址
@@ -250,7 +250,7 @@ web
 ###分类
 网页18站源
 ###标题
-风月同天
+风月同天(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/fytt.png
 ###BaseURL
