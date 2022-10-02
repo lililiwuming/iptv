@@ -201,7 +201,7 @@ var 列表=e2Arr(getVar("源码"),".get(div.video-img-box.mb-e-20)");var 标题�
 ##选集规则
 var 分类=getVar("源码").match(/<video[\s\S]+?<\/h4>/g);var 简介=e2Rex(getVar("源码"),".get(div.info-header)");var 线路="";var 列表规则=".z(var hlsUrl.+?;)";var 标题规则=".get(h4).t()";var 选集规则="播放";var 选集地址规则=".ty(').tz(')";
 ##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.video-img-box.mb-e-20)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=URL;var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.title a).t()";var 地址规则=".get(.title a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.video-img-box.mb-e-20)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.title a).t()";var 地址规则=".get(.title a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
@@ -236,7 +236,7 @@ var 列表=e2Arr(getVar("源码"),".get(div.post-item-wrap)");var 标题规则="
 ##选集规则
 var 分类=e2Arr(getVar("源码"),".z(\[\{.*?source.*?\}\])");;var 简介="";var 线路="";var 列表规则=".json()";var 标题规则=".var(name)";var 选集规则=".json(source_label).th(Login##)";var 选集地址规则=".json(source_file)";
 ##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.post-item-wrap)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=URL;var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h3).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(div.categories-wrap).t().tx(&nbsp;).get(span.duration-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.post-item-wrap)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h3).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(div.categories-wrap).t().tx(&nbsp;).get(span.duration-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
@@ -271,12 +271,47 @@ var 列表=e2Arr(getVar("源码"),".get(div.stui-vodlist__box)");var 标题规�
 ##选集规则
 var 分类=e2Arr(getVar("源码"),".c()");var 线路="";var 简介="";var 列表规则=".ty(player_data=).json(url).dn(64).dn(utf8)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".c()";
 ##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.stui-vodlist__box)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=URL;var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h4).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(a).a(data-original)";var 简介规则=".get(span.pic-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.stui-vodlist__box)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h4).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(a).a(data-original)";var 简介规则=".get(span.pic-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
 JSON.stringify({name:"地址",url:getVar("地址")});
+####
+
+####
+###type
+web
+###分类
+网页18站源
+###标题
+CCAVB
+###图片
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/ccavb.png
+###BaseURL
+"https://ccavb.tv";
+###首页地址
+getVar("baseURL")+"/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh.json";
+###分类地址
+getVar("baseURL")+"/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/category/分类/翻页.json";
+###搜索地址
+getVar("baseURL")+"/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/search/关键字/翻页.json";
+###rule
+##首页规则
+var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则=".json(posterPath)";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+##筛选数据
+var a="分类+最新上傳=最新上傳+熱門影片=熱門影片";var b="";for(var i=1;i<999;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
+##分类规则
+var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则=".json(posterPath)";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+##选集规则
+var 分类=e2Arr(getVar("源码"),".json(pageProps)");var 线路="";var 简介="";var 列表规则=".json(data).i(1).z(http.+)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".t()";
+##搜索规则
+var 源码=getVar("源码");var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(videoName)";var 地址规则=".c(https://ccavb.tv/_next/data/Riv7u8mPj1hXHNmZFMuRK/zh/video/).json(aneID).ct(.json)";var 图片规则=".json(posterPath)";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##搜索翻页
+var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
+"翻页"+b;
+##免嗅探规则
+JSON.stringify({name:"地址",url:getVar("地址"),head:{"referer":"https://ccavb.tv/"}});
 ####
 
 #####
