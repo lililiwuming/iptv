@@ -311,7 +311,7 @@ var 源码=getVar("源码");var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-JSON.stringify({name:"地址",url:getVar("地址"),head:{"Referer":"https://ccavb.tv/","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"}});
+JSON.stringify({name:"地址",url:getVar("地址")});
 ####
 
 #####
