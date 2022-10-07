@@ -260,8 +260,9 @@ alert("请重新登陆阿里云盘网页");
     var u=getVar("地址").split("?wd=")[1].split("###")[0];
     var 转码1080='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
     var 转码720='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
-    var 备用='http://211.101.244.151:3000/apis/my-yun-play/'+file_id+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
-    JSON.stringify([{name:"原始文件播放",url:u,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"不限ip转码",url:备用},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720}]);
+    var 备用='http://211.101.244.151:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/'+'/FHD/index.m3u8';
+    var 备用1='http://198.52.118.199:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/'+'/FHD/index.m3u8';
+    JSON.stringify([{name:"原始文件播放",url:u,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"不限ip转码",url:备用},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
 }
 ######文档预览8
 var cm=android.webkit.CookieManager.getInstance();
