@@ -216,14 +216,14 @@ if(getVar("地址").indexOf("$$")!=-1){
     if(类型=="audio"){
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,get_audio_play_info:true,file_id:file_id})}));
     }else{
-    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,file_id:file_id,expire_sec:600})}));
+    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,file_id:file_id,expires_sec:0})}));
     }
     if(JSON.parse(code).code){
         alert("登陆已过期，请重新在m浏览器登陆");
     }else{
     if(JSON.parse(code).audio_template_list){
         var resp=JZ(JSON.stringify({url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
-        JSON.stringify({url:resp.head.location,head:{"User-Agent":"Lavf/58.12.100","Connection":"keep-alive","Referer":"https://www.aliyundrive.com/"}});
+        JSON.stringify({url:resp.head.location,head:{"User-Agent":"okhttp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}});
     }else{
     //var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
             var file_data={};
@@ -238,7 +238,7 @@ if(getVar("地址").indexOf("$$")!=-1){
             var 转码720='http://116.85.31.19:4000/apis/yun-play/'+_d+'/'+access_token+'/'+share_token+'/HD/index.m3u8';
             var 备用='http://211.101.244.151:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
             var 备用1='http://198.52.118.199:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
-        JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"不限ip转码",url:备用},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
+        JSON.stringify([{name:"不限ip转码",url:备用},{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"User-Agent":"okhtp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
     }
     }
 }else{
@@ -258,11 +258,12 @@ alert("请重新登陆阿里云盘网页");
     var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
     var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
     var u=getVar("地址").split("?wd=")[1].split("###")[0];
+    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_download_url",head:{"Authorization":access_token},postJson:JSON.stringify({drive_id:drive_id,file_id:file_id,expires_sec:0})}));
     var 转码1080='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
     var 转码720='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
     var 备用='http://211.101.244.151:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
     var 备用1='http://198.52.118.199:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
-    JSON.stringify([{name:"原始文件播放",url:u,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"不限ip转码",url:备用},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
+    JSON.stringify([{name:"不限ip转码",url:备用},{name:"原始文件播放",url:JSON.parse(code).internal_url,head:{"User-Agent":"okhttp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
 }
 ######文档预览8
 var cm=android.webkit.CookieManager.getInstance();
