@@ -238,7 +238,7 @@ if(getVar("地址").indexOf("$$")!=-1){
             var 转码720='http://116.85.31.19:4000/apis/yun-play/'+_d+'/'+access_token+'/'+share_token+'/HD/index.m3u8';
             var 备用='http://211.101.244.151:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
             var 备用1='http://198.52.118.199:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
-        JSON.stringify([{name:"不限ip转码",url:备用},{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"User-Agent":"okhtp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
+        JSON.stringify([{name:"不限ip转码",url:备用},{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"User-Agent":"okhttp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}},{name:"转码1080P可投屏",url:转码1080},{name:"转码720P可投屏",url:转码720},{name:"不限ip转码",url:备用1}]);
     }
     }
 }else{
