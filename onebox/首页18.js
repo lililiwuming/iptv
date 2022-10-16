@@ -110,7 +110,7 @@ web
 ###分类
 网页18站源
 ###标题
-肉视频
+肉视频(VPN)
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/rouvideo.png
 ###BaseURL
