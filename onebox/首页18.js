@@ -41,7 +41,7 @@ web
 ###分类
 网页18站源
 ###标题
-搬淫家(VPN)
+搬淫家
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/byj.png
 ###BaseURL
