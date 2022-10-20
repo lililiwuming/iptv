@@ -109,7 +109,7 @@ eval(readStr("QJS"));
 if(getVar("地址").indexOf("远程$")!=-1){
     var u=getVar("地址").split("远程$")[1];
     var 本地数据=_.read(u.replace(/[:\.\/\?\s]+/g,"")+".txt")+"";
-    if(本地数据.length()>500){
+    if(本地数据.length>500){
         var code=本地数据;
     }else{
         var code=getHttp(u);
