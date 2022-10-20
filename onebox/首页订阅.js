@@ -247,7 +247,7 @@ web
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/h1080p.png
 ###BaseURL
-"http://h1080p.com";
+"https://h1080p.com";
 ###首页地址
 getVar("baseURL")+"/";
 ###分类地址
