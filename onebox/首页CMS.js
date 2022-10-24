@@ -273,11 +273,11 @@ cms
 ###分类
 优质资源
 ###标题
-一帆资源(VPN)
+海外看资源(VPN)
 ###图片
-http://113.107.160.110:39000/tupian.php?text=一帆资源(VPN)
+http://113.107.160.110:39000/tupian.php?text=海外看资源(VPN)
 ###BaseURL
-"http://api.if101.tv/v1/vod";
+"http://api.haiwaikan.com/v1/vod";
 ###首页地址
 getVar("baseURL")+"?ac=list&pg=1";
 ###分类地址
