@@ -255,6 +255,7 @@ var access_token=JSON.parse(code).access_token;
     var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
     var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_download_url",head:{"Authorization":access_token},postJson:JSON.stringify({drive_id:drive_id,get_audio_play_info:true,file_id:file_id})}));
+    alert(code)
     JSON.stringify([{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }else{
         var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
