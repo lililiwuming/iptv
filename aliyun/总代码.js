@@ -222,8 +222,8 @@ if(getVar("地址").indexOf("$$")!=-1){
         alert("登陆已过期，请重新在m浏览器登陆");
     }else{
     if(JSON.parse(code).audio_template_list){
-        //var resp=JZ(JSON.stringify({url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
-        JSON.stringify({url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"User-Agent":"okhttp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}});
+        var resp=JZ(JSON.stringify({url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
+        JSON.stringify({url:resp.head.Location,head:{"User-Agent":"okhttp/4.2.2","Connection":"Keep-Alive","Referer":"https://aliyundrive.com/"}});
     }else{
     //var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
             var file_data={};
