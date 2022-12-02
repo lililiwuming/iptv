@@ -372,7 +372,7 @@ cms
 ###图片
 http://113.107.160.110:39000/tupian.php?text=海外看资源(VPN)
 ###BaseURL
-"http://api.haiwaikan.com/v1/vod";
+"https://haiwaikan.com/api.php/provide/vod/";
 ###首页地址
 getVar("baseURL")+"?ac=list&pg=1";
 ###分类地址
