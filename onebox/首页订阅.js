@@ -185,11 +185,6 @@ iptv
 ###数据
 随机直播
 ##
-抖音,http://mmitv.top/test/douyin.php?id=top
-花椒,http://mmitv.top/test/hjzb.php?id=top
-6间房,http://mmitv.top/test/6room.php?id=top
-千帆,http://mmitv.top/test/qf56.php?id=top
-我秀,http://mmitv.top/test/woxiu.php?id=top
 快手,http://mmitv.top/test/ks.php
 热歌榜,https://api.uomg.com/api/rand.music?sort=热歌榜
 新歌榜,https://api.uomg.com/api/rand.music?sort=新歌榜
@@ -221,20 +216,90 @@ getVar("baseURL")+"/list/分类-翻页.html";
 getVar("baseURL")+"/search.php?searchword=关键字&searchtype=&page=翻页";
 ###rule
 ##首页规则
-var 列表=getVar("源码").match(/<li>[\s]*?<div class="v_img"[\s\S]*?<\/li>/g);var 标题规则=".get(.v_title a).t()";var 地址规则=".get(.v_title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(div.v_note).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=getVar("源码").match(/<li>[\s]*?<div class="v_img"[\s\S]*?<\/li>/g);if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.v_title a).t()";var 地址规则=".get(.v_title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(div.v_note).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##筛选数据
 var a="分类+电影=1+电视剧=2+动漫=4+喜剧片=6+爱情片=7+恐怖片=8+动作片=9+科幻片=10+大陆剧=20+TVB=21+韩剧=22+美剧=23+日剧=24";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则
-var 列表=getVar("源码").match(/<li>[\s]*?<div class="v_img"[\s\S]*?<\/li>/g);var 标题规则=".get(.v_title a).t()";var 地址规则=".get(.v_title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(div.v_note).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=getVar("源码").match(/<li>[\s]*?<div class="v_img"[\s\S]*?<\/li>/g);if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.v_title a).t()";var 地址规则=".get(.v_title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(div.v_note).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##选集规则
 var 分类=e2Rex(getVar("源码"),".get(ul#play_link)").match(/<li[\s\S]*?\/li>/g);var 线路=e2Rex(getVar("源码"),".get(ul.from_list)").match(/<li[\s\S]*?\/li>/g);var 简介=e2Rex(getVar("源码"),".get(p.p_txt)");var 列表规则=".get(a)";var 标题规则=".get(li).t()";var 选集规则=".get(a).t()";var 选集地址规则=".get(a).a(href)";
 ##搜索规则
-var 源码=getVar("源码");var 列表=源码.match(/<li>[\s]*?<div class="v_img[\s\S]*?<\/li>/g);if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.v_title a).t()";var 地址规则=".get(.v_title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(div.v_note).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE=""};
+var 源码=getVar("源码");var 列表=源码.match(/<li>[\s]*?<div class="v_img[\s\S]*?<\/li>/g);if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.v_title a).t()";var 地址规则=".get(.v_title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(div.v_note).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
 "web="+getVar("地址");
+####
+
+####
+###type
+web
+###分类
+网页影视站源
+###标题
+闲人资源站
+###图片
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/xianren.png
+###BaseURL
+"https://1.13.254.61";
+###首页地址
+getVar("baseURL")+"/";
+###分类地址
+getVar("baseURL")+"/index.php/vod/type/id/分类/page/翻页.html";
+###搜索地址
+getVar("baseURL")+"/index.php/vod/search/wd/关键字/page/翻页.html";
+###rule
+##首页规则
+var 列表=e2Arr(getVar("源码"),".get(ul.stui-vodlist li[class=clearfix])");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则=".get(span.time).t()";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##筛选数据
+var a="分类+电视剧=1+电影=2+福利=22+直播=20+综艺=24+动漫=4+纪录片=23+韩剧=28+番剧=25+国漫=26+动画=27+美漫=29";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页+"+b;a+"\n"+b;
+##分类规则
+var 列表=e2Arr(getVar("源码"),".get(ul.stui-vodlist li[class=clearfix])");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则=".get(span.time).t()";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##选集规则
+var 分类=e2Arr(getVar("源码"),".get(div#playlist)");var 线路="";var 简介=e2Rex(getVar("源码"),".get(div.stui-content__detail).t()");var 列表规则=".get(ul.stui-content__playlist li)";var 标题规则=".get(h3).t()";var 选集规则=".get(a.copy_text).t()";var 选集地址规则=".get(a).a(href)";
+##搜索规则
+var 源码=getVar("源码");var 列表=e2Arr(源码,".get(ul.stui-vodlist li[class=clearfix])");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##搜索翻页
+var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
+"翻页"+b;
+##免嗅探规则
+"web="+getVar("地址");
+####
+
+####
+###type
+web
+###分类
+网页影视站源
+###标题
+Auete影视
+###图片
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/auete.png
+###BaseURL
+"https://auete.com";
+###首页地址
+getVar("baseURL")+"/";
+###分类地址
+getVar("baseURL")+"/分类/翻页.html";
+###搜索地址
+getVar("baseURL")+"/search.php?searchword=关键字&page=翻页";
+###rule
+##首页规则
+var 列表=e2Arr(getVar("源码"),".get(ul.threadlist li)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.title a).t()";var 地址规则=".get(.title a).a(href)";var 图片规则=".get(img).a(src)";var 简介规则=".get(button).st().t().c().get(p).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##筛选数据
+var a="分类+电影=Movie+电视剧=Tv+综艺=Zy+动漫=Dm+动作片=Movie/dzp+喜剧片=Movie/xjp+爱情片=Movie/aqp+科幻片=Movie/khp+恐怖片=Movie/kbp+剧情片=Movie/jqp+战争片=Movie/zzp+大陆剧=Tv/neidi+香港剧=Tv/tvbgj+台湾剧=Tv/taiju+日本剧=Tv/riju+韩国剧=Tv/hanju+欧美剧=Tv/oumei";var b="第1页=index";for(var i=2;i<50;i++){b=b+"+第"+i+"页=index"+i;}var b="翻页+"+b;a+"\n"+b;
+##分类规则
+var 列表=e2Arr(getVar("源码"),".get(ul.threadlist li)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(.title a).t()";var 地址规则=".get(.title a).a(href)";var 图片规则=".get(img).a(src)";var 简介规则=".get(button).st().t().c().get(p).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##选集规则
+var 分类=e2Arr(getVar("源码"),".get(div#player_list)");var 简介=e2Rex(getVar("源码"),".get(div.message).t()");var 线路="";var 列表规则=".get(ul li)";var 标题规则=".get(h2).t()";var 选集规则=".get(a).t()";var 选集地址规则=".get(a).a(href)";
+##搜索规则
+var 源码=getVar("源码");var 列表=e2Arr(源码,".get(ul.threadlist li)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".get(span).st().t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##搜索翻页
+var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
+"翻页"+b;
+##免嗅探规则
+var uu=getVar("地址");var resp=JZ(uu);var script=e2Rex(resp.code,".get(div#video script).t().or().get(div#player script).t()");function base64decode(str){return e2Rex(str,".dn64()")}eval(script);if(pn=="i8i"){JSON.stringify({url:now,head:{"referer":"https://auete.com/js/player/i8i.html","user-agent":"Mozilla/5.0"}})}else if(pn=="m3u8hd"){if(now.indexOf("9yun")!=-1){var b="https://auete.com/api/9yun.php?url="+now.split("9yun")[0];var a=JZ(JSON.stringify({url:b,redirect:false,head:{"User-Agent":"Mozilla/5.0"}}));while(a.head.location||a.head.Location){var finalurl=a.head.location||a.head.Location;if(finalurl.indexOf(".mp4")>40){var a={"head":{"cookie":"ccccc"}}}else{var a=JZ(JSON.stringify({url:finalurl,redirect:false,head:{"User-Agent":"Mozilla/5.0 Android"}}))}}JSON.stringify({url:finalurl})}else{"web="+uu}}else{if(now.indexOf("http")!=-1){JSON.stringify({url:now,head:{"referer":"https://auete.com/js/player/i8i.html","user-agent":"Mozilla/5.0"}})}else{"web="+uu}}
 ####
 
 ####
@@ -256,15 +321,15 @@ getVar("baseURL")+"/index.php/vod/show/id/分类/page/翻页.html";
 getVar("baseURL")+"/index.php/vod/search/wd/关键字/page/翻页.html";
 ###rule
 ##首页规则
-var 列表=e2Arr(getVar("源码"),".get(div.swiper-slide)");var 标题规则=".get(div[class~=.*title]).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(src).or().get(a).a(style).z2([\\(]\\(.+?\\)[\\)])";var 简介规则=".get(div[class~=.*ins]).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.swiper-slide)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div[class~=.*title]).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(src).or().get(a).a(style).z2([\\(]\\(.+?\\)[\\)])";var 简介规则=".get(div[class~=.*ins]).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##筛选数据
 var a="分类+电影=1+电视剧=2+动漫=3+番剧=28+剧场版=30+综艺=31+内地剧=2/area/内地+港剧=2/area/香港+台剧=2/area/台湾+韩剧=2/area/韩国+日本剧=2/area/日本+美剧=2/area/美国+动作片=1/class/动作+喜剧片=1/class/喜剧+爱情片=1/class/爱情+科幻片=1/class/科幻+恐怖片=1/class/恐怖+剧情片=1/class/剧情";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##选集规则
 var 分类=e2Arr(getVar("源码"),".get(div.module-play-list)");var 线路=e2Arr(getVar("源码"),".get(div.module-tab-items .module-tab-item)");var 简介=e2Rex(getVar("源码"),".get(div.module-info-content).t()");var 列表规则=".get(a)";var 标题规则=".t()";var 选集规则=".get(a).t()";var 选集地址规则=".get(a).a(href)";
 ##搜索规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-card-item.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("搜索地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE=""};
+var 列表=e2Arr(getVar("源码"),".get(div.module-card-item.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
@@ -291,15 +356,15 @@ getVar("baseURL")+"/vodshow/分类--------翻页---.html";
 getVar("baseURL")+"/vodsearch/关键字----------翻页---.html";
 ###rule
 ##首页规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)").filter((item,index)=>index%2===0);var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)").filter((item,index)=>index%2===0);if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##筛选数据
 var a="分类+电影=1+电视剧=2+动漫=5+纪录=4+国产剧=13+港台剧=14+日韩剧=15+欧美剧=16+动作片=6+喜剧片=7+爱情片=8+科幻片=9+恐怖片=10+剧情片=11";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##选集规则
 var 分类=e2Arr(getVar("源码"),".get(div.module-play-list)");var 线路=e2Arr(getVar("源码"),".get(div.module-tab-items div.module-tab-item)");var 简介=e2Rex(getVar("源码"),".get(div.module-info-content).t()");var 列表规则=".get(a)";var 标题规则=".t()";var 选集规则=".get(a).t()";var 选集地址规则=".get(a).a(href)";
 ##搜索规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-card-item.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("搜索地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE=""};
+var 列表=e2Arr(getVar("源码"),".get(div.module-card-item.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
@@ -326,15 +391,15 @@ getVar("baseURL")+"/vodshow/分类-----翻页---.html";
 getVar("baseURL")+"/vodsearch/关键字----------翻页---.html";
 ###rule
 ##首页规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##筛选数据
 var a="分类+电影=1---+电视剧=2---+福利=124---+动漫=4---+Netflix电影=1---Netflix+Netflix剧=2---Netflix+剧情片=1---剧情+科幻片=1---科幻+动作片=1---动作+喜剧片=1---喜剧+爱情片=1---爱情+大陆剧=2-大陆--+香港剧=2-香港--+韩剧=2-韩国--+美剧=2-美国--+日剧=2-日本--";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
 ##分类规则
-var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
+var 列表=e2Arr(getVar("源码"),".get(div.module-items a.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##选集规则
 var 分类=e2Arr(getVar("源码"),".get(div.module-play-list)");var 线路=e2Arr(getVar("源码"),".get(div.module-tab-items div.module-tab-item)");var 简介=e2Rex(getVar("源码"),".get(div.module-info-content).t()");var 列表规则=".get(a)";var 标题规则=".t()";var 选集规则=".get(a).t()";var 选集地址规则=".get(a).a(href)";
 ##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.module-items div.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("搜索地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(div.module-card-item-title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";};
+var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.module-items div.module-item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.module-card-item-title a).t()";var 地址规则=".get(div.module-card-item-title a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
@@ -404,7 +469,7 @@ var 列表=e2Arr(getVar("源码").replace(/\s+/g,""),".z(\\{.+).json(data).json(
 ##选集规则
 var 标识=e2Rex(getVar("源码"),".ty(HNF_GLOBAL_INIT)").match(/"sStreamName":"(.+?)"/)[1];var 分类=[];var a={};var data=[];data.push({name:"P2p线路",url:"http://txtest-xp2p.p2p.huya.com/src/"+标识+".xs"},{name:"Hw.hls线路",url:"https://hw.hls.huya.com/src/"+标识+".m3u8"},{name:"Txdirect.hls线路",url:"http://36.101.206.161/txdirect.hls.huya.com/src/"+标识+".m3u8"},{name:"Tx.hls线路",url:"http://121.51.249.48/tx.hls.huya.com/src/"+标识+".m3u8"});a.data=data;a.title="线路";分类.push(a);var 分类=e2Arr(JSON.stringify(分类),".json()");var 线路="";var 简介=e2Rex(getVar("name"),".t()");var 列表规则=".json(data)";var 标题规则=".json(title)";var 选集规则=".json(name)";var 选集地址规则=".json(url)";
 ##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(源码,".json(response).json(3).json(docs)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("搜索地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(game_roomName)";var 地址规则=".c(/).json(room_id)";var 图片规则=".json(game_screenshot)";var 简介规则=".json(game_introduction)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE=""};
+var 源码=getVar("源码");var 列表=e2Arr(源码,".json(response).json(3).json(docs)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("搜索地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(game_roomName)";var 地址规则=".c(/).json(room_id)";var 图片规则=".json(game_screenshot)";var 简介规则=".json(game_introduction)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE=""}
 ##搜索翻页
 var b="";for(var i=40;i<1000;i=i+40){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
