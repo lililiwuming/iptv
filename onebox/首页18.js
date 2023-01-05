@@ -230,7 +230,7 @@ getVar("baseURL")+"/page/翻页/?s=关键字";
 ##首页规则
 var 列表=e2Arr(getVar("源码"),".get(div.post-item-wrap)");var 标题规则=".get(h3).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(div.categories-wrap).t().tx(&nbsp;).get(span.duration-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##筛选数据
-var code=getHttp(getVar("baseURL")+"/playlist/");var arr=e2Arr(code,".get(li.cat-item a)");var sort=["分类"];for(let i=0;i<arr.length;i++){let a=e2Rex(arr[i],".t().ct(=)");let b=e2Rex(arr[i],".href()");sort.push(a+b);};var pn=["翻页+第1页="];for(let i=2;i<=99;i++){let a="第"+i+"页="let b="page/"+i+"\\/";pn.push(a+b);};sort.join("+")+"\n"+pn.join("+");
+var a="分类+中國主播=chinese-live-porn+自拍流出=selfie-porn+韓國主播=korean-live-porn+主播福利=private-show-porn+网红福利=kol-selfie-porn+91大神=master-91porn+国产AV=chinese-av-porn";var b="";for(var i=1;i<999;i++){b=b+"+第"+i+"页="+i;}var b="翻页+"+b;a+"\n"+b;
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.post-item-wrap)");var 标题规则=".get(h3).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(div.categories-wrap).t().tx(&nbsp;).get(span.duration-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
@@ -269,7 +269,7 @@ var a="分类+国产=ChinaPorn+日本=JapanPorn+欧美=WesternPorn+韩国=KoreaP
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.stui-vodlist__box)");var 标题规则=".get(h4).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(a).a(data-original)";var 简介规则=".get(span.pic-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".c()");var 线路="";var 简介="";var 列表规则=".ty(player_data=).json(url).dn(64).dn(utf8)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".c()";
+var 分类=e2Arr(getVar("源码"),".c()");var 线路="";var 简介="";var 列表规则=".ty(player_data=).json(url).dn64().dn(utf8)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".t()";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.stui-vodlist__box)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h4).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(a).a(data-original)";var 简介规则=".get(span.pic-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
