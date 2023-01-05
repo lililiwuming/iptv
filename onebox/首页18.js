@@ -223,14 +223,14 @@ https://gitcode.net/egwang186/iptv/-/raw/master/onebox/cable.png
 ###首页地址
 getVar("baseURL");
 ###分类地址
-"分类翻页";
+getVar("baseURL")+"/category/分类/翻页";
 ###搜索地址
 getVar("baseURL")+"/page/翻页/?s=关键字";
 ###rule
 ##首页规则
 var 列表=e2Arr(getVar("源码"),".get(div.post-item-wrap)");var 标题规则=".get(h3).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(div.categories-wrap).t().tx(&nbsp;).get(span.duration-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##筛选数据
-var a="分类+中國主播=chinese-live-porn+自拍流出=selfie-porn+韓國主播=korean-live-porn+主播福利=private-show-porn+网红福利=kol-selfie-porn+91大神=master-91porn+国产AV=chinese-av-porn";var b="";for(var i=1;i<999;i++){b=b+"+第"+i+"页="+i;}var b="翻页+"+b;a+"\n"+b;
+var a="分类+中國主播=chinese-live-porn+自拍流出=selfie-porn+韓國主播=korean-live-porn+主播福利=private-show-porn+网红福利=kol-selfie-porn+91大神=master-91porn+国产AV=chinese-av-porn";var b="第1页=";for(var i=2;i<999;i++){b=b+"+第"+i+"页=page/"+i+"/";}var b="翻页+"+b;a+"\n"+b;
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.post-item-wrap)");var 标题规则=".get(h3).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(div.categories-wrap).t().tx(&nbsp;).get(span.duration-text).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
