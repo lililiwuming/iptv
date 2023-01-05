@@ -25,7 +25,7 @@ var 源码=getHttp(JSON.stringify({url:"https://xchina.xyz/videos.html",head:{"U
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.videos div.item)");var 标题规则=".get(div.text a).t()";var 地址规则=".get(div.text a).a(href)";var 图片规则=".get(img).a(src)";var 简介规则=".get(div.tag).t()";var 图片底部规则=".get(div.duration)";var 左上规则=".tx(<p style='background-color:#7091fc'><font color='#FFFFFF' size='40px'>).get(div.series).t().ct(</font></p>)";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".ty(video.src).ty(\").tz(\")");var 简介=getVar("msg");var 线路="";var 列表规则=".t()";var 标题规则=getVar("name");var 选集规则=".t()";var 选集地址规则=".t()";
+var 分类=e2Arr(getVar("源码"),".ty(video.src).ty(\").tz(\")");var 简介=getVar("简介");var 线路="";var 列表规则=".t()";var 标题规则=getVar("标题");var 选集规则=".t()";var 选集地址规则=".t()";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.videos div.item)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(div.text a).t()";var 地址规则=".get(div.text a).a(href)";var 图片规则=".get(img).a(src)";var 简介规则=".get(div.tag).t()";var 图片底部规则=".get(div.duration)";var 左上规则=".get(div.series)";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
@@ -60,7 +60,7 @@ var code=getHttp(getVar("baseURL")+"/community/");var arr=e2Arr(code,".get(div.c
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.cell.video)");var 标题规则=".get(h5).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(span.badge).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var uri=e2Rex(getVar("源码"),".get(div#player-fluid).a(style).z(/.+/)");var uri="https://storage.banyinjia8.com"+uri.replace("tmb","hls");var hd=getVar("msg");var list=["1080p","720p","480p","playlist"];var title=["1080p","720p","480p","默认"];var j=list.indexOf(hd)>-1?list.indexOf(hd):0;var res=[];for(var i=j;i<list.length;i++){var 标题=title[i];var 地址=uri+list[i]+".m3u8";res.push({name:标题,url:地址});};var 分类=e2Arr(JSON.stringify(res),".c()");;var 简介="";var 线路="";var 列表规则=".json()";var 标题规则=".var(name)";var 选集规则=".json(name)";var 选集地址规则=".json(url)";
+var uri=e2Rex(getVar("源码"),".get(div#player-fluid).a(style).z(/.+/)");var uri="https://storage.banyinjia8.com"+uri.replace("tmb","hls");var hd=getVar("msg");var list=["1080p","720p","480p","playlist"];var title=["1080p","720p","480p","默认"];var j=list.indexOf(hd)>-1?list.indexOf(hd):0;var res=[];for(var i=j;i<list.length;i++){var 标题=title[i];var 地址=uri+list[i]+".m3u8";res.push({name:标题,url:地址});};var 分类=e2Arr(JSON.stringify(res),".c()");;var 简介="";var 线路="";var 列表规则=".json()";var 标题规则=".var(标题)";var 选集规则=".json(name)";var 选集地址规则=".json(url)";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.cell.video)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(h5).t()";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-src)";var 简介规则=".get(span.badge).t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
@@ -95,7 +95,7 @@ var a="分类+xcdsw";var b="翻页+全部=";a+"\n"+b;
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".json(pingtai)");var 标题规则=".json(title)";var 地址规则=".c(/xcdsw/).json(address)";var 图片规则=".json(xinimg)";var 简介规则=".json(Number).ct(位主播)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".all()");var 简介=getVar("name");var 线路="";var 列表规则=".json(zhubo)";var 标题规则=getVar("name");var 选集规则=".json(title)";var 选集地址规则=".c(http://ip111.cn/?wd=).json(address)";
+var 分类=e2Arr(getVar("源码"),".all()");var 简介=getVar("标题");var 线路="";var 列表规则=".json(zhubo)";var 标题规则=getVar("标题");var 选集规则=".json(title)";var 选集地址规则=".c(http://ip111.cn/?wd=).json(address)";
 ##搜索规则
 var 源码=getHttp(JSON.stringify({url:"http://api.vipmisss.com:81/xcdsw/json.txt"}));var 列表=e2Arr(源码,".json(pingtai)").filter(item=>item.indexOf(getVar("关键字"))!=-1);if(!列表[0]){var 列表=["未匹配到任何平台"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="未匹配到任何平台";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(title)";var 地址规则=".c(/xcdsw/).json(address)";var 图片规则=".json(xinimg)";var 简介规则=".json(Number).ct(位主播)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
@@ -129,7 +129,7 @@ var code=getHttp(getVar("baseURL")+"/cat");var arr=e2Arr(code,".get(div.grid).i(
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".get(div.shadow.p-1)");var 标题规则=".get(img).a(alt)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(src)";var 简介规则=".get(div.absolute).st().t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".get(script).i(-1).t()");;var 简介="";var 线路="";var 列表规则=".json(props).json(pageProps).json(video)";var 标题规则=".var(name)";var 选集规则=".json(name)";var 选集地址规则=".json(videoUrl)";
+var 分类=e2Arr(getVar("源码"),".get(script).i(-1).t()");;var 简介="";var 线路="";var 列表规则=".json(props).json(pageProps).json(video)";var 标题规则=".var(标题)";var 选集规则=".json(name)";var 选集地址规则=".json(videoUrl)";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(源码,".get(div.shadow.p-1)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(img).a(alt)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(src)";var 简介规则=".get(div.absolute).st().t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
@@ -306,7 +306,7 @@ var a="分类+最新上傳=最新上傳+熱門影片=熱門影片";var b="";for(
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");var 标题规则=".json(videoName)";var 地址规则=".c(/zh/video/).json(aneID).ct(.json)";var 图片规则="@js=var id=JSON.parse(CODE).aneID;var 前=id.split('-')[0];var 后=id.split('-')[1];if(id.indexOf('FC2-')==0){'https://ccavb.tv/static/img/'+前+'/'+后.substr(0,2)+'/'+后+'/'+id+'_1.jpg'}else{'https://ccavb.tv/static/img/'+前+'/'+后+'/'+id+'_1.jpg'}";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".json(pageProps)");var 线路="";var 简介="";var 列表规则=".json(data).i(1).z(http.+)";var 标题规则=getVar("标题");var 选集规则=".var(name)";var 选集地址规则=".t()";
+var 分类=e2Arr(getVar("源码"),".json(pageProps)");var 线路="";var 简介="";var 列表规则=".json(data).i(1).z(http.+)";var 标题规则=getVar("标题");var 选集规则=".var(标题)";var 选集地址规则=".t()";
 ##搜索规则
 var 源码=getVar("源码");var 列表=e2Arr(getVar("源码"),".z(\\{\"aneID\":.+?\\})");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("baseURL");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回刷新即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(videoName)";var 地址规则=".c(/zh/video/).json(aneID).ct(.json)";var 图片规则="@js=var id=JSON.parse(CODE).aneID;var 前=id.split('-')[0];var 后=id.split('-')[1];if(id.indexOf('FC2-')==0){'https://ccavb.tv/static/img/'+前+'/'+后.substr(0,2)+'/'+后+'/'+id+'_1.jpg'}else{'https://ccavb.tv/static/img/'+前+'/'+后+'/'+id+'_1.jpg'}";var 简介规则=".json(videoType)";var 图片底部规则=".json(airDate)";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
