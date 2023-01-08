@@ -86,4 +86,4 @@ for(var i in list){
 }
 return JSON.stringify(items);
 }
-eval(getVar("详情规则"));正文处理();
+var 正文=readStr("正文");正文处理();
