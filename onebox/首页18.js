@@ -5,9 +5,9 @@ iptv
 ###分类
 iptv
 ###数据
-VCtv
+台湾p2p
 ##
-远程$https://raw.fastgit.org/vamoschuck/TV/main/M3U
+远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/台湾p2p.txt
 ####
 
 ####
