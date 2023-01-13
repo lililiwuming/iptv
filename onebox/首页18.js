@@ -1,4 +1,14 @@
 #####网页18站源
+####
+###type
+iptv
+###分类
+iptv
+###数据
+VCtv
+##
+远程$https://raw.fastgit.org/vamoschuck/TV/main/M3U
+####
 
 ####
 ###type
