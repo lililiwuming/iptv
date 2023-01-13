@@ -37,7 +37,7 @@ Miami TV Latino,https://5ee7c2b857b7f.streamlock.net/latino/smil:WEB/playlist.m3
 Miami TV Latino,http://iptvtree.net:8080/pachaman/Hnd64CdxlK85f/18344
 Miami TV Latino,http://pfsv.io:80/56138374/95116/44240
 Miami TV Latino,http://pfsv.io:80/56138374/95116/129208
-点播VOD#genre#
+点播VOD,#genre#
 ZUKO-137c,http://cdnvideo.oywine.com:8091/zimu/20180101/ZUKO-137c/650kb/hls/index.m3u8
 XVSR-302c,http://cdnvideo.oywine.com:8091/zimu/20180101/XVSR-302c/650kb/hls/index.m3u8
 XVSR-280c,http://cdnvideo.oywine.com:8091/zimu/20180101/XVSR-280c/650kb/hls/index.m3u8
