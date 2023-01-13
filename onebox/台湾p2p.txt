@@ -37,35 +37,3 @@ Miami TV Latino,https://5ee7c2b857b7f.streamlock.net/latino/smil:WEB/playlist.m3
 Miami TV Latino,http://iptvtree.net:8080/pachaman/Hnd64CdxlK85f/18344
 Miami TV Latino,http://pfsv.io:80/56138374/95116/44240
 Miami TV Latino,http://pfsv.io:80/56138374/95116/129208
-点播VOD,#genre#
-ZUKO-137c,http://cdnvideo.oywine.com:8091/zimu/20180101/ZUKO-137c/650kb/hls/index.m3u8
-XVSR-302c,http://cdnvideo.oywine.com:8091/zimu/20180101/XVSR-302c/650kb/hls/index.m3u8
-XVSR-280c,http://cdnvideo.oywine.com:8091/zimu/20180101/XVSR-280c/650kb/hls/index.m3u8
-UMSO-163c,http://cdnvideo.oywine.com:8091/zimu/20180101/UMSO-163c/650kb/hls/index.m3u8
-XVSR-283c,http://cdnvideo.oywine.com:8091/zimu/20180101/XVSR-283c/650kb/hls/index.m3u8
-SQTE-189c,http://cdnvideo.oywine.com:8091/zimu/20180101/SQTE-189c/650kb/hls/index.m3u8
-TKI-064c,http://cdnvideo.oywine.com:8091/zimu/20180101/TKI-064c/650kb/hls/index.m3u8
-SDNM-125c,http://cdnvideo.oywine.com:8091/zimu/20180101/SDNM-125c/650kb/hls/index.m3u8
-T28-514c,http://cdnvideo.oywine.com:8091/zimu/20180101/T28-514c/650kb/hls/index.m3u8
-SDMU-725,http://cdnvideo.oywine.com:8091/zimu/20180101/SDMU-725c/650kb/hls/index.m3u8
-SW-514c,http://cdnvideo.oywine.com:8091/zimu/20180101/SW-514c/650kb/hls/index.m3u8
-SDAB-047c,http://cdnvideo.oywine.com:8091/zimu/20180101/SDAB-047c/650kb/hls/index.m3u8
-SCOP-473c,http://cdnvideo.oywine.com:8091/zimu/20180101/SCOP-473c/650kb/hls/index.m3u8
-SUPA-244c,http://cdnvideo.oywine.com:8091/zimu/20180101/SUPA-244c/650kb/hls/index.m3u8
-RTP-106c,http://cdnvideo.oywine.com:8091/zimu/20180101/RTP-106c/650kb/hls/index.m3u8
-STAR-837c,http://cdnvideo.oywine.com:8091/zimu/20180101/STAR-837c/650kb/hls/index.m3u8
-PRED-024c,http://cdnvideo.oywine.com:8091/zimu/20180101/PRED-024c/650kb/hls/index.m3u8
-STAR-830c,http://cdnvideo.oywine.com:8091/zimu/20180101/STAR-830c/650kb/hls/index.m3u8
-PPPD-606c,http://cdnvideo.oywine.com:8091/zimu/20180101/PPPD-606c/650kb/hls/index.m3u8
-SSNI-046c,http://cdnvideo.oywine.com:8091/zimu/20180101/SSNI-046c/650kb/hls/index.m3u8
-NGOD-062c,http://cdnvideo.oywine.com:8091/zimu/20180101/NGOD-062c/650kb/hls/index.m3u8
-MVSD-337c,http://cdnvideo.oywine.com:8091/zimu/20180101/MVSD-337c/650kb/hls/index.m3u8
-MUDR-021c,http://cdnvideo.oywine.com:8091/zimu/20180101/MUDR-021c/650kb/hls/index.m3u8
-MOND-141c,http://cdnvideo.oywine.com:8091/zimu/20180101/MOND-141c/650kb/hls/index.m3u8
-JUY-292c,http://cdnvideo.oywine.com:8091/zimu/20180101/JUY-292c/650kb/hls/index.m3u8
-MEYD-302c,http://cdnvideo.oywine.com:8091/zimu/20180101/MEYD-302c/650kb/hls/index.m3u8
-JUY-288c,http://cdnvideo.oywine.com:8091/zimu/20180101/JUY-288c/650kb/hls/index.m3u8
-MEYD-301c,http://cdnvideo.oywine.com:8091/zimu/20180101/MEYD-301c/650kb/hls/index.m3u8
-IPX-044c,http://cdnvideo.oywine.com:8091/zimu/20180101/IPX-044c/650kb/hls/index.m3u8
-MADM-062c,http://cdnvideo.oywine.com:8091/zimu/20180101/MADM-062c/650kb/hls/index.m3u8
-IPX-041c,http://cdnvideo.oywine.com:8091/zimu/20180101/IPX-041c/650kb/hls/index.m3u8
