@@ -235,7 +235,7 @@ JSON.stringify(res);
         var type=选集.split("|")[0];
         var 选集标题=选集.split("|")[1];
     }else{
-        var type=getVar("name")+"-无子分类";
+        var type=getVar("标题")+"-无子分类";
         var 选集标题=选集;
     }
     var 当前条目=[];当前条目.push({title:选集标题,url:"http://ip111.cn/?wd="+选集地址});
