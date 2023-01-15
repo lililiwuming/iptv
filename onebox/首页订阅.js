@@ -74,7 +74,7 @@ iptv
 ###数据
 央卫地方
 ##
-远程$https://raw.fastgit.org/QiaoJi6/FreeD/master/live.txt
+远程$http://home.jundie.top:81/Cat/tv/live.txt
 ####
 
 ####
