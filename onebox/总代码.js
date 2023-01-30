@@ -150,7 +150,7 @@ function 选集列表(){
         LIST.forEach((item, index)=>{
         addLIST.forEach((item2, index2) => {
         if (item.title == item2.title) {
-            addLIST[index2].url += "#"+item.url;
+            addLIST[index2].url += "#"+item.url.split("ip111.cn/?wd=")[1];
         } else {
             addLIST.push(item);
         }
@@ -215,7 +215,7 @@ for (let i = 0; i < s.length; i++) {
         LIST.forEach((item, index)=>{
         addLIST.forEach((item2, index2) => {
         if (item.title == item2.title) {
-            addLIST[index2].url += "#"+item.url;
+            addLIST[index2].url += "#"+item.url.split("ip111.cn/?wd=")[1];
         } else {
             addLIST.push(item);
         }
@@ -276,7 +276,7 @@ for (let z of s[i].get()) {
         LIST.forEach((item, index)=>{
         addLIST.forEach((item2, index2) => {
         if (item.title == item2.title) {
-            addLIST[index2].url += "#"+item.url;
+            addLIST[index2].url += "#"+item.url.split("ip111.cn/?wd=")[1];
         } else {
             addLIST.push(item);
         }
