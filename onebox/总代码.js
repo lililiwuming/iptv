@@ -313,10 +313,13 @@ for(var i=0;i<urls.length;i++){
         var resp = JZ(JSON.stringify({ url: urls[i], redirect: false }));
         var u = resp.head.Location || resp.head.location;
         if(!u){
-            u=uu+"&type=.m3u8";
+            u=urls[i]+"&type=.m3u8";
         }
     }else if(urls[i].indexOf("mitv://")!=-1){
         var u=urls[i].replace("mitv://","P2p://");
+    }else if(urls[i].indexOf("www.youtube.com/watch?v=")!=-1){
+        var resp=getHttp(JSON.stringify({url:"https://www.azrotv.com/extras/youtube/",post:{"url":urls[i]}}));
+        var u=e2Rex(resp,".get(textarea).t()");
     }else{
         var u=urls[i];
     }
