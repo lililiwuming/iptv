@@ -152,7 +152,7 @@ function 选集列表(){
            let cur = obj[title]
            if (cur) {
            let index = cur.index
-           addLIST[index].url += url
+           addLIST[index].url += "#"+url
            } else {
             let index = addLIST.length
             obj[title] = {title,index}
@@ -220,7 +220,7 @@ for (let i = 0; i < s.length; i++) {
            let cur = obj[title]
            if (cur) {
            let index = cur.index
-           addLIST[index].url += url
+           addLIST[index].url += "#"+url
            } else {
             let index = addLIST.length
             obj[title] = {title,index}
@@ -284,7 +284,7 @@ for (let z of s[i].get()) {
        let cur = obj[title]
        if (cur) {
        let index = cur.index
-       addLIST[index].url += url
+       addLIST[index].url += "#"+url
        } else {
         let index = addLIST.length
         obj[title] = {title,index}
