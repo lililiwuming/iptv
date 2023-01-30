@@ -146,19 +146,16 @@ function 选集列表(){
   for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
         let LIST=z.list;
-        let obj = {}
-        let addLIST = []
-        LIST.forEach(({title, url}) => {
-           let cur = obj[title]
-           if (cur) {
-           let index = cur.index
-           addLIST[index].url += "#"+url
-           } else {
-            let index = addLIST.length
-            obj[title] = {title,index}
-           addLIST.push({title, url})
-           }
+        var addLIST = [{title:LIST[0].title, url: LIST[0].url}];
+        LIST.forEach((item, index)=>{
+        addLIST.forEach((item2, index2) => {
+        if (item.title == item2.title) {
+            addLIST[index2].url += "#"+item.url;
+        } else {
+            addLIST.push(item);
+        }
         })
+        });
         z.list=addLIST;
       if(z.list.length/100 > 1){
         var zz=[];
@@ -214,19 +211,16 @@ var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
         let LIST=z.list;
-        let obj = {}
-        let addLIST = []
-        LIST.forEach(({title, url}) => {
-           let cur = obj[title]
-           if (cur) {
-           let index = cur.index
-           addLIST[index].url += "#"+url
-           } else {
-            let index = addLIST.length
-            obj[title] = {title,index}
-           addLIST.push({title, url})
-           }
+        var addLIST = [{title:LIST[0].title, url: LIST[0].url}];
+        LIST.forEach((item, index)=>{
+        addLIST.forEach((item2, index2) => {
+        if (item.title == item2.title) {
+            addLIST[index2].url += "#"+item.url;
+        } else {
+            addLIST.push(item);
+        }
         })
+        });
         z.list=addLIST;
         if(items.length==0) {
             items.push(z);
@@ -278,19 +272,16 @@ var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
 for (let z of s[i].get()) {
     let LIST=z.list;
-    let obj = {}
-    let addLIST = []
-    LIST.forEach(({title, url}) => {
-       let cur = obj[title]
-       if (cur) {
-       let index = cur.index
-       addLIST[index].url += "#"+url
-       } else {
-        let index = addLIST.length
-        obj[title] = {title,index}
-       addLIST.push({title, url})
-       }
-    })
+    var addLIST = [{title:LIST[0].title, url: LIST[0].url}];
+        LIST.forEach((item, index)=>{
+        addLIST.forEach((item2, index2) => {
+        if (item.title == item2.title) {
+            addLIST[index2].url += "#"+item.url;
+        } else {
+            addLIST.push(item);
+        }
+        })
+        });
     z.list=addLIST;
     if(items.length==0) {
         items.push(z);
