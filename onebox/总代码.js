@@ -145,7 +145,7 @@ function 选集列表(){
   var s = _.submit(d, 分类.length); //n 改为你想开启的线程数
   for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
-        let LIST=z.list;
+        /*let LIST=z.list;
         var addLIST = [{title:LIST[0].title, url: LIST[0].url}];
         LIST.forEach((item, index)=>{
         addLIST.forEach((item2, index2) => {
@@ -156,7 +156,7 @@ function 选集列表(){
         }
         })
         });
-        z.list=addLIST;
+        z.list=addLIST;*/
       if(z.list.length/100 > 1){
         var zz=[];
         for (let j = 0; j < z.list.length;){
@@ -210,7 +210,7 @@ if(code.indexOf("#genre#")!=-1){
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
-        let LIST=z.list;
+        /*let LIST=z.list;
         var addLIST = [{title:LIST[0].title, url: LIST[0].url}];
         LIST.forEach((item, index)=>{
         addLIST.forEach((item2, index2) => {
@@ -221,7 +221,7 @@ for (let i = 0; i < s.length; i++) {
         }
         })
         });
-        z.list=addLIST;
+        z.list=addLIST;*/
         if(items.length==0) {
             items.push(z);
         }else{
@@ -271,7 +271,7 @@ d.push(fn(index));
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
 for (let z of s[i].get()) {
-    let LIST=z.list;
+    /*let LIST=z.list;
     var addLIST = [{title:LIST[0].title, url: LIST[0].url}];
         LIST.forEach((item, index)=>{
         addLIST.forEach((item2, index2) => {
@@ -282,7 +282,7 @@ for (let z of s[i].get()) {
         }
         })
         });
-    z.list=addLIST;
+    z.list=addLIST;*/
     if(items.length==0) {
         items.push(z);
     }else{
