@@ -137,7 +137,23 @@ function 选集列表(){
             let 选集地址=e2Rex(列表[j],选集地址规则);
             LIST.push({title:选集,url:选集地址});
         }
-    return {title:标题,list:LIST};
+        let obj = {}
+        let addLIST = []
+        LIST.forEach(({name, value}) => {
+           let cur = obj[name]
+           if (cur) {
+           let index = cur.index
+           addLIST[index].value += value
+           } else {
+            let index = addLIST.length
+            obj[name] = {
+              name,
+              index
+            }
+           addLIST.push({name, value})
+           }
+        })
+    return {title:标题,list:addLIST};
     };
     }
     d.push(fn(index));
@@ -198,6 +214,24 @@ if(code.indexOf("#genre#")!=-1){
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
     for (let z of s[i].get()) {
+        let LIST=z.list;
+        let obj = {}
+        let addLIST = []
+        LIST.forEach(({name, value}) => {
+           let cur = obj[name]
+           if (cur) {
+           let index = cur.index
+           addLIST[index].value += value
+           } else {
+            let index = addLIST.length
+            obj[name] = {
+              name,
+              index
+            }
+           addLIST.push({name, value})
+           }
+        })
+        z.list=addLIST;
         if(items.length==0) {
             items.push(z);
         }else{
@@ -247,6 +281,24 @@ d.push(fn(index));
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
 for (let z of s[i].get()) {
+        let LIST=z.list;
+        let obj = {}
+        let addLIST = []
+        LIST.forEach(({name, value}) => {
+           let cur = obj[name]
+           if (cur) {
+           let index = cur.index
+           addLIST[index].value += value
+           } else {
+            let index = addLIST.length
+            obj[name] = {
+              name,
+              index
+            }
+           addLIST.push({name, value})
+           }
+        })
+        z.list=addLIST;
     if(items.length==0) {
         items.push(z);
     }else{
