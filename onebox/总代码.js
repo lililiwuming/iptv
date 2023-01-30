@@ -148,18 +148,15 @@ function 选集列表(){
         let LIST=z.list;
         let obj = {}
         let addLIST = []
-        LIST.forEach(({name, value}) => {
-           let cur = obj[name]
+        LIST.forEach(({title, url}) => {
+           let cur = obj[title]
            if (cur) {
            let index = cur.index
-           addLIST[index].value += value
+           addLIST[index].url += url
            } else {
             let index = addLIST.length
-            obj[name] = {
-              name,
-              index
-            }
-           addLIST.push({name, value})
+            obj[title] = {title,index}
+           addLIST.push({title, url})
            }
         })
         z.list=addLIST;
@@ -219,18 +216,15 @@ for (let i = 0; i < s.length; i++) {
         let LIST=z.list;
         let obj = {}
         let addLIST = []
-        LIST.forEach(({name, value}) => {
-           let cur = obj[name]
+        LIST.forEach(({title, url}) => {
+           let cur = obj[title]
            if (cur) {
            let index = cur.index
-           addLIST[index].value += value
+           addLIST[index].url += url
            } else {
             let index = addLIST.length
-            obj[name] = {
-              name,
-              index
-            }
-           addLIST.push({name, value})
+            obj[title] = {title,index}
+           addLIST.push({title, url})
            }
         })
         z.list=addLIST;
@@ -283,24 +277,21 @@ d.push(fn(index));
 var s=_.submit(d, code.length); //n 改为你想开启的线程数
 for (let i = 0; i < s.length; i++) {
 for (let z of s[i].get()) {
-        let LIST=z.list;
-        let obj = {}
-        let addLIST = []
-        LIST.forEach(({name, value}) => {
-           let cur = obj[name]
-           if (cur) {
-           let index = cur.index
-           addLIST[index].value += value
-           } else {
-            let index = addLIST.length
-            obj[name] = {
-              name,
-              index
-            }
-           addLIST.push({name, value})
-           }
-        })
-        z.list=addLIST;
+    let LIST=z.list;
+    let obj = {}
+    let addLIST = []
+    LIST.forEach(({title, url}) => {
+       let cur = obj[title]
+       if (cur) {
+       let index = cur.index
+       addLIST[index].url += url
+       } else {
+        let index = addLIST.length
+        obj[title] = {title,index}
+       addLIST.push({title, url})
+       }
+    })
+    z.list=addLIST;
     if(items.length==0) {
         items.push(z);
     }else{
