@@ -180,7 +180,7 @@ var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网�
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-"web="+getVar("地址");
+"web="+getVar("地址")+'@{"referer":"https://tcs-devops.aliyuncs.com/"}';
 ####
 
 ####
