@@ -173,15 +173,15 @@ var a="分类+电影=0+国产=1+美剧=2+韩剧=3+日剧=4+泰剧=5+动漫=6+恐
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##选集规则
- var key=e2Rex(getVar("源码"),".json(ooo).dn64()");var 分类=[];var 新选集=[];var 选集=e2Arr(getVar("源码"),".json(bg)");for(var i in 选集){新选集.push(选集[i]+"&m3u8key="+key)}分类.push({title:"播放选集",list:新选集});var 分类=e2Arr(JSON.stringify(分类),".json()");var 线路="";var 简介=e2Rex(getVar("源码"),".json(t).dn64().dn(utf8)");var 列表规则=".json(list)";var 标题规则=".json(title)";var 选集规则=".tz($)";var 选集地址规则=".c(https://jx.i5mi.com/?url=).ty($).en64()";
+ var key=e2Rex(getVar("源码"),".json(ooo).dn64()");var 分类=[];var 新选集=[];var 选集=e2Arr(getVar("源码"),".json(bg)");for(var i in 选集){新选集.push(选集[i]+"?m3u8key="+key)}分类.push({title:"播放选集",list:新选集});var 分类=e2Arr(JSON.stringify(分类),".json()");var 线路="";var 简介=e2Rex(getVar("源码"),".json(t).dn64().dn(utf8)");var 列表规则=".json(list)";var 标题规则=".json(title)";var 选集规则=".tz($)";var 选集地址规则=".c(http://ip111.cn/?wd=).ty($).en64()";
 ##搜索规则
 var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
 var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
 "翻页"+b;
 ##免嗅探规则
-var uu="https://jx.i5mi.com/?url="+e2Rex(getVar("地址"),".ty(?url=).dn64()");
-"web="+uu+'@{"referer":"https://tcs-devops.aliyuncs.com/"}';
+var uu=e2Rex(getVar("地址"),".ty(?wd=).dn64()")+"&v="+Math.random();
+JSON.stringify({name:"地址",url:uu});
 ####
 
 ####
