@@ -173,7 +173,7 @@ var a="分类+电影=0+国产=1+美剧=2+韩剧=3+日剧=4+泰剧=5+动漫=6+恐
 ##分类规则
 var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##选集规则
-var 分类=e2Arr(getVar("源码"),".json()");var 线路=["播放选集"];var 简介=e2Rex(getVar("源码"),".json(t).dn64().dn(utf8)");var 列表规则=".json(bg)";var 标题规则=".t()";var 选集规则=".tz($)";var 选集地址规则=".ty($)";
+ var key=e2Rex(getVar("源码"),".json(ooo).dn64()");var 分类=[];var 新选集=[];var 选集=e2Rex(getVar("源码"),".json(bg)");for(var i in 选集){新选集.push(选集[i]+"?m3u8key="+key)}分类.push({title:"播放选集",list:新选集});var 线路="";var 简介=e2Rex(getVar("源码"),".json(t).dn64().dn(utf8)");var 列表规则=".json(list)";var 标题规则=".json(title)";var 选集规则=".tz($)";var 选集地址规则=".ty($)";
 ##搜索规则
 var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
 ##搜索翻页
