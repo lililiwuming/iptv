@@ -154,6 +154,41 @@ web
 ###分类
 网页影视站源
 ###标题
+七喵影视
+###图片
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/qmapi.png
+###BaseURL
+"https://oss-qmapi.666bus.cn";
+###首页地址
+getVar("baseURL")+"/api/video-1-list.json?tj=&yema=1&sosuo1=";
+###分类地址
+getVar("baseURL")+"/api/video-分类-list.json?tj=&yema=翻页&sosuo1=";
+###搜索地址
+getVar("baseURL")+"/api/video-0-list.json?tj=&sosuo1=关键字&yema=翻页";
+###rule
+##首页规则
+var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##筛选数据
+var a="分类+电影=0+国产=1+美剧=2+韩剧=3+日剧=4+泰剧=5+动漫=6+恐怖=7";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页"+b;a+"\n"+b;
+##分类规则
+var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##选集规则
+var 分类=e2Arr(getVar("源码"),".json()");var 线路=["播放选集"];var 简介=".json(t).dn64().dn(utf8)";var 列表规则=".json(bg)";var 标题规则=".t()";var 选集规则=".tz($)";var 选集地址规则=".ty($)";
+##搜索规则
+var 列表=e2Arr(getVar("源码"),".json(lb)");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".json(t).dn64().dn(utf8)";var 地址规则=".c(/api/video-).json(id).ct(.json)";var 图片规则=".json(img)";var 简介规则=".json(sj)";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
+##搜索翻页
+var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
+"翻页"+b;
+##免嗅探规则
+JSON.stringify({name:"地址",url:getVar("地址")});
+####
+
+####
+###type
+web
+###分类
+网页影视站源
+###标题
 闲人资源站
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/xianren.png
