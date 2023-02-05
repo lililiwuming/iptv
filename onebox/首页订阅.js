@@ -83,6 +83,17 @@ iptv
 ###分类
 iptv
 ###数据
+ipv6直播
+##
+远程$http://wp.anxwl.cn/down.php/fa85f887ab0ad69495763d956130cbc6.txt
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
 Youtube(播放需VPN)
 ##
 中天新闻,https://www.youtube.com/watch?v=_QbRXRnHMVY
