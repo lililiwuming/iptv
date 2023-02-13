@@ -244,6 +244,7 @@ if(getVar("地址").indexOf("$$")!=-1){
     }
 }else{
 var 类型=getVar("地址").split("?wd=")[1].split("###")[4];
+var playurl=getVar("地址").split("?wd=")[1].split("###")[0];
 var cm=android.webkit.CookieManager.getInstance();
 var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
 if(ALICOOKIE.indexOf("access_token")!=-1&&ALICOOKIE.indexOf("refresh_token")!=-1){
@@ -252,12 +253,13 @@ var code=getHttp(JSON.stringify({url:"https://auth.aliyundrive.com/v2/account/to
 if(JSON.parse(code).access_token){
 var access_token=JSON.parse(code).access_token;
     if(类型=="audio"){
-    var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
+    /*var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
     var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_download_url",head:{"Authorization":access_token},postJson:JSON.stringify({drive_id:drive_id,get_audio_play_info:true,file_id:file_id})}));
-    JSON.stringify([{name:"原始文件",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    JSON.stringify([{name:"原始文件",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);*/
+    JSON.stringify([{name:"原始文件",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }else{
-        var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
+        /*var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
         var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
         var u=getVar("地址").split("?wd=")[1].split("###")[0];
         var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_download_url",head:{"Authorization":access_token},postJson:JSON.stringify({drive_id:drive_id,file_id:file_id,expires_sec:0})}));
@@ -265,7 +267,8 @@ var access_token=JSON.parse(code).access_token;
         //var 转码720='http://116.85.31.19:4000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
         var 转码1080='http://113.107.160.110:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
         var 转码720='http://113.107.160.110:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
-        JSON.stringify([{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080},{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        JSON.stringify([{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080},{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);*/
+        JSON.stringify([{name:"原始文件",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }
 }else{
     alert("登陆已过期，请重新在m浏览器登陆");
