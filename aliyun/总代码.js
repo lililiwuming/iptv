@@ -337,7 +337,7 @@ JSON.stringify([{name:name,url:url}]);
 ######多链接10
 if(getVar("url")&&getVar("url")!="null"){
 if(getVar("url").indexOf("aliyundrive.com/s/")!=-1){
-var list=getVar("url").match(/[\s\S]*?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
+var list=getVar("url").match(/[\s\S]{30}?https:\/\/www\.aliyundrive\.com\/s\/.*/g);
 var items=[];
 for(var i in list){
     var title=list[i].replace(/\s/g,"").replace(/<.+?>/g,"").split("https://")[0]||"加个标题吧，能从历史记录找到我";
