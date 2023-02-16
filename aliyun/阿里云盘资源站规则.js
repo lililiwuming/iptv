@@ -4,7 +4,7 @@
     "title":"阿里小站",
     "rule":{
         "分类":'var a="影视$video$$软件$software$$游戏$games$$音乐$music$$动漫$comic$$书籍$books$$学习$learn$$互帮互助$help$$其他$other";var a=a.split("$$");var 前="https://pan666.cn/api/discussions?include=user,lastPostedUser,tags,tags.parent,firstPost&filter[tag]=";var 后="&sort&page[offset]=#PN#";var items=[];for(var i in a){var title=a[i].split("$")[0];var url=前+a[i].split("$")[1]+后;items.push({title:title,url:url});}JSON.stringify(items);',
-        "翻页数据":'翻页+全部=',
+        "翻页数据":'"翻页+全部="',
         "列表规则":'var 列表=e2Arr(getCode(),".json(data)");var 地址规则=".c(https://pan666.cn/api/discussions/).json(attributes).json(slug)";var 标题规则=".json(attributes).json(title)";var 图片规则=".json(tok)";var 简介规则=".c(发布时间：).json(attributes).json(createdAt).c(最近回复时间：).json(attributes).json(lastPostedAt)";var NEXTPAGE=e2Rex(getCode(),".json(links).json(next)");var PREPAGE=e2Rex(getCode(),".json(links).json(prev)");',
         "详情规则":'var 回复=e2Arr(getHttp(getVar("地址")),".json(included)").filter(item=>JSON.parse(item).type=="posts");var 正文=[];for(var i in 回复){正文.push(JSON.parse(回复[i]).attributes.contentHtml);}var 正文=正文.join("\\n");'
     }
@@ -31,7 +31,7 @@
     "title":"TG频道订阅(VPN)",
     "rule":{
         "分类":'var a="人人影视$https://tx.me/s/dianyingshare#PN#$$云盘资源发布$https://tx.me/s/sharealiyun#PN#$$阿里云资源$https://tx.me/s/al_cloud#PN#$$欧美日韩影视$https://tx.me/s/dianyingshare#PN#$$V云盘$https://tx.me/s/aliyun69#PN#$$WAYOU资源每日更新$https://tx.me/s/WaYouZiYuan#PN#$$影视必应阁$https://tx.me/s/moviebyg#PN#$$4K影视资源$https://tx.me/s/remux_2160p#PN#$$阿里云影视$https://tx.me/s/aliyunys#PN#";var a=a.split("$$");var items=[];for(var i in a){var title=a[i].split("$")[0];var url=a[i].split("$")[1];items.push({title:title,url:url});}JSON.stringify(items);',
-        "翻页数据":'翻页+全部=',
+        "翻页数据":'"翻页+全部="',
         "列表规则":'var 列表=e2Arr(getCode(),".get(div.tgme_widget_message_bubble)");var 地址规则=".get(a.tgme_widget_message_photo_wrap).a(href)";var 标题规则=".c(发表时间:).get(time).a(datetime).c( 标题:).get(div.tgme_widget_message_text).t().z([\\\\s\\\\S]{40})";var 图片规则=".get(a.tgme_widget_message_photo_wrap).a(style).ty(\').tz(\')";var 简介规则=".get(div.tgme_widget_message_text).t()";var NEXTPAGE="https://tx.me"+getCode().match(/rel="prev" href="(.+?)"/)[1];var PREPAGE="https://tx.me"+getCode().match(/rel="canonical" href="(.+?)"/)[1];',
         "详情规则":'var 正文=getVar("简介");'
     }
@@ -40,7 +40,7 @@
     "title":"星火资源[qq文档]",
     "rule":{
         "分类":'var a="影视音乐$tab=ppx5bp&subId=ppx5bp&startrow=33#PN#$$电视剧,纪录片$tab=qvnx1e&subId=qvnx1e&startrow=33#PN#$$动漫漫画$tab=kwi9g7&subId=kwi9g7&startrow=33#PN#$$小说.电子书.图片$tab=1nylx9&subId=1nylx9&startrow=33#PN#$$教程.课程.软件$tab=BB08J2&subId=BB08J2&startrow=33#PN#";var a=a.split("$$");var padId="300000000$TzIVdaOubWOP";var items=[];for(var i in a){var title=a[i].split("$")[0];var url="https://docs.qq.com/dop-api/get/sheet?"+a[i].split("$")[1]+"&padId="+padId+"&outformat=1";items.push({title:title,url:url});}JSON.stringify(items);',
-        "翻页数据":'翻页+全部=',
+        "翻页数据":'"翻页+全部="',
         "列表规则":'var 原始=JSON.parse(getCode().replace(/"(\\d+)"/g, \'"qq_$1"\')).data.initialAttributedText.text[0][0][0].c[1];var list=[];for(var key in 原始){if(原始[key].qq_2&&原始[key].qq_2[1].length>1){list.push(原始[key].qq_2);}};var 列表=[];for(var i=0;i<list.length;i=i+3){var title="["+list[i][1]+"]"+list[i+1][1];var url=list[i][1];var detail=title+" 链接:"+list[i+2][1];列表.push(JSON.stringify({title:title,url:url,detail:detail}));}var 地址规则=".json(url)";var 标题规则=".json(title)";var 图片规则=".json(url)";var 简介规则=".json(detail)";var NEXTPAGE="";var PREPAGE="";',
         "详情规则":'var 正文=getVar("简介");'
     }
