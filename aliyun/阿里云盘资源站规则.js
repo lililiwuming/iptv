@@ -66,7 +66,7 @@ function 通用列表(){
 eval(getVar("列表规则"));通用列表();
 ######详情列表
 function 正文处理(){
-    var list=正文.match(/[\s\S]{30}?https:\/\/www\.aliyundrive\.com\/s\/.+/g);
+    var list=正文.match(/[\s\S]{2,30}?https:\/\/www\.aliyundrive\.com\/s\/.+/g);
 var items=[];
 for(var i in list){
     var title=list[i].replace(/.+?阿里云盘.+/g,"").replace(/<.+?>/g,"").split("https://www.aliyundrive.com/s/")[0]||"没获取到标题，去看原文吧";
