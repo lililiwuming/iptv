@@ -226,7 +226,7 @@ if(getVar("地址").indexOf("$$")!=-1){
         var 转码HQ='http://113.107.160.110:3000/apis/yun-audio/'+file_id+'/'+share_id+'/'+access_token+'/'+share_token+'/HQ/master.mp3';
         JSON.stringify([{name:"高音质转码",url:转码HQ},{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }else{
-         var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
+         //var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
             /*var file_data={};
             var 路径=getVar("地址").split("?wd=")[1].split("$$")[6];
             var 最后文件夹名=路径.split(";")[路径.split(';').length-2];
@@ -239,8 +239,7 @@ if(getVar("地址").indexOf("$$")!=-1){
             //var 转码720='http://116.85.31.19:4000/apis/yun-play/'+_d+'/'+access_token+'/'+share_token+'/HD/index.m3u8';
             var 转码1080='http://113.107.160.110:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/FHD/index.m3u8';
             var 转码720='http://113.107.160.110:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/HD/index.m3u8';
-        //JSON.stringify([{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080},{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
-        JSON.stringify([{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080},{name:"原始文件播放",url:resp.head.location,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        JSON.stringify([{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080},{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
         //JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }
     }
