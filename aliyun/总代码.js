@@ -139,7 +139,10 @@ var 记录=[];
 if(getVar("标题")&&getVar("地址")&&getVar("标题")!='null'&&getVar("地址").indexOf("$$root")==-1){
 var title=getVar("标题");
 var url=getVar("地址");
-记录.push({title:title,url:url});
+var img=getVar("图片");
+var type=getVar("作者");
+var detail=getVar("简介");
+记录.push({title:title,url:url,img:img,type:type,detail:detail});
 if(_.read(filename)){
 var 新记录=记录.concat(JSON.parse(_.read(filename)).filter(d=>d.url!=记录[0].url));
 }else{
