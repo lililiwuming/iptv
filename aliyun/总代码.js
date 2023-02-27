@@ -259,7 +259,7 @@ if(getVar("地址").indexOf("$$")!=-1){
     if(JSON.parse(code).audio_template_list){
         //var resp=JZ(JSON.stringify({url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
         var 转码HQ='http://113.107.160.110:3000/apis/yun-audio/'+file_id+'/'+share_id+'/'+access_token+'/'+share_token+'/HQ/master.mp3';
-        JSON.stringify([{name:"高音质转码",url:转码HQ},{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        JSON.stringify([{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Referer":"https://www.aliyundrive.com/"},{name:"高音质转码",url:转码HQ}}]);
     }else{
          //var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
             /*var file_data={};
@@ -276,7 +276,7 @@ if(getVar("地址").indexOf("$$")!=-1){
             var 转码2K会员专享='http://113.107.160.110:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/QHD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
             var 转码720='http://113.107.160.110:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/HD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
             var 本地转码2K会员专享='http://127.0.0.1:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/QHD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
-        JSON.stringify([{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享},{name:"720P转码",url:转码720},{name:"高画质转码(会员2K)",url:转码2K会员专享},{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享},{name:"720P转码",url:转码720},{name:"高画质转码(会员2K)",url:转码2K会员专享}]);
         //JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }
     }
@@ -306,7 +306,7 @@ var access_token=JSON.parse(code).access_token;
         var 转码1080='http://113.107.160.110:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
         var 本地转码1080='http://127.0.0.1:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/FHD/index.m3u8';
         var 转码720='http://113.107.160.110:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
-        JSON.stringify([{name:"本地1080P转码",url:本地转码1080},{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080},{name:"原始文件播放",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        JSON.stringify([{name:"原始文件播放",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地1080P转码",url:本地转码1080},{name:"720P转码",url:转码720},{name:"1080P转码",url:转码1080}]);
         //JSON.stringify([{name:"原始文件",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }
 }else{
