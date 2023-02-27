@@ -86,12 +86,32 @@ alert("请重新登陆阿里云盘网页");
 }
 var 目录数据=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v3/file/list",head:JSON.parse(HEAD),postJson:data}));
 var items=JSON.parse(目录数据).items;
+function SIZE(size){
+    size=(size/1024).toFixed(2);
+    if(size>1024){
+        size=size/1024;
+        if(size>1024){
+            size=size/1024;
+            if(size>1024){
+                size=size/1024;
+                return size.toFixed(1)+"T";
+            }else{
+                return size.toFixed(1)+"G";
+            }
+        }else{
+            return size.toFixed(1)+"M";
+        }
+    }else{
+        return size+"Kb";
+    }
+}
 if(JSON.parse(目录数据).items){
     if(xxx_id.indexOf("share_id")!=-1){
         for(var i in items){
            if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
            items[i].url="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("地址").split("$$")[3];
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
+           items[i].size=SIZE(items[i].size);
            }else if(items[i].type=="folder"){
             if(file_id=="root"){
                 FNAME=";";
@@ -101,10 +121,12 @@ if(JSON.parse(目录数据).items){
             items[i].url="q:root?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
             items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/folder.png";
+            items[i].size=SIZE(items[i].size);
            }else{
            items[i].url="q:video?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd;
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
            items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/otherfile.png";
+           items[i].size=SIZE(items[i].size);
            }
         }
     }else if(xxx_id.indexOf("drive_id")!=-1){
@@ -112,6 +134,7 @@ if(JSON.parse(目录数据).items){
             if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
             items[i].url="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("地址").split("$$")[2];
             items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
+            items[i].size=SIZE(items[i].size);
             }else if(items[i].type=="folder"){
                 if(file_id=="root"){
                     FNAME=";";
@@ -121,10 +144,12 @@ if(JSON.parse(目录数据).items){
             items[i].url="q:root?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
             items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/folder.png";
+            items[i].size=SIZE(items[i].size);
             }else{
             items[i].url="q:video?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id;
             items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
             items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/otherfile.png";
+            items[i].size=SIZE(items[i].size);
             }
         }
     }
