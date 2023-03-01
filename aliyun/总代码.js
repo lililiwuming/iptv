@@ -421,7 +421,7 @@ if(xxx_id.indexOf("share_id")!=-1){
 if(JSON.parse(code).code){
 alert(JSON.parse(code).code)
 }else{
-var resp=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
+var resp=JZ(JSON.stringify({url:JSON.parse(code).url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
 var url=resp.head.location+'@{"Referer":"https://www.aliyundrive.com/"}';
 JSON.stringify([{url:url}]);
 }
@@ -429,7 +429,7 @@ JSON.stringify([{url:url}]);
     var 过滤=JSON.parse(getVar("目录重组数据")).filter(item=>item.category=="image");
     var items=[];
 for(var i in 过滤){
-    var url=过滤[i].download_url+'@{"Referer":"https://www.aliyundrive.com/"}';
+    var url=过滤[i].url+'@{"Referer":"https://www.aliyundrive.com/"}';
     items.push({url:url});
 }
 JSON.stringify(items);
