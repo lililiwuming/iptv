@@ -109,7 +109,7 @@ if(JSON.parse(目录数据).items){
     if(xxx_id.indexOf("share_id")!=-1){
         for(var i in items){
            if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
-           items[i].url="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("地址").split("$$")[3];
+           items[i].tugourl="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("地址").split("$$")[3];
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
            items[i].size=SIZE(items[i].size);
            }else if(items[i].type=="folder"){
@@ -118,12 +118,12 @@ if(JSON.parse(目录数据).items){
             }else{
                 FNAME=getVar("地址").split("$$")[3];
             }
-            items[i].url="q:root?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+FNAME+items[i].name+";";
+            items[i].tugourl="q:root?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
             items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/folder.png";
             items[i].size=SIZE(items[i].size);
            }else{
-           items[i].url="q:video?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd;
+           items[i].tugourl="q:video?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd;
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
            items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/otherfile.png";
            items[i].size=SIZE(items[i].size);
@@ -132,7 +132,7 @@ if(JSON.parse(目录数据).items){
     }else if(xxx_id.indexOf("drive_id")!=-1){
         for(var i in items){
             if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
-            items[i].url="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("地址").split("$$")[2];
+            items[i].tugouurl="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("地址").split("$$")[2];
             items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
             items[i].size=SIZE(items[i].size);
             }else if(items[i].type=="folder"){
@@ -141,12 +141,12 @@ if(JSON.parse(目录数据).items){
                 }else{
                     FNAME=getVar("地址").split("$$")[2];
                 }
-            items[i].url="q:root?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+FNAME+items[i].name+";";
+            items[i].tugourl="q:root?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
             items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/folder.png";
             items[i].size=SIZE(items[i].size);
             }else{
-            items[i].url="q:video?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id;
+            items[i].tugourl="q:video?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id;
             items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
             items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/otherfile.png";
             items[i].size=SIZE(items[i].size);
@@ -167,7 +167,7 @@ var url=getVar("地址");
 var img=getVar("图片");
 var type=getVar("作者");
 var detail=getVar("简介");
-记录.push({title:title,url:url,img:img,type:type,detail:detail});
+记录.push({title:title,tugourl:url,img:img,type:type,detail:detail});
 if(_.read(filename)){
 var 新记录=记录.concat(JSON.parse(_.read(filename)).filter(d=>d.url!=记录[0].url));
 }else{
@@ -192,9 +192,9 @@ function 过滤非视频(item) {
 var 过滤=JSON.parse(getVar("目录重组数据")).filter(过滤非视频);
 for(var i in 过滤){
 if(过滤[i].url){
-    过滤[i].url="http://ip111.cn/?wd="+过滤[i].url+"###"+过滤[i].drive_id+"###"+过滤[i].file_id+"###"+过滤[i].file_extension+"###"+过滤[i].category;
+    过滤[i].tugourl="http://ip111.cn/?wd="+过滤[i].url+"###"+过滤[i].drive_id+"###"+过滤[i].file_id+"###"+过滤[i].file_extension+"###"+过滤[i].category;
 }else{
-    过滤[i].url="http://ip111.cn/?wd="+过滤[i].thumbnail+"$$"+过滤[i].share_id+"$$"+过滤[i].file_id+"$$"+过滤[i].file_extension+"$$"+过滤[i].category+"$$"+getVar("地址").split("$$")[2]+"$$"+getVar("地址").split("$$")[3]+"$$"+过滤[i].parent_file_id+"$$"+过滤[i].name;
+    过滤[i].tugourl="http://ip111.cn/?wd="+过滤[i].thumbnail+"$$"+过滤[i].share_id+"$$"+过滤[i].file_id+"$$"+过滤[i].file_extension+"$$"+过滤[i].category+"$$"+getVar("地址").split("$$")[2]+"$$"+getVar("地址").split("$$")[3]+"$$"+过滤[i].parent_file_id+"$$"+过滤[i].name;
 }
 }
 JSON.stringify(过滤);
