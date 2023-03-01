@@ -191,7 +191,7 @@ function 过滤非视频(item) {
 }
 var 过滤=JSON.parse(getVar("目录重组数据")).filter(过滤非视频);
 for(var i in 过滤){
-if(过滤[i].download_url){
+if(过滤[i].url){
     过滤[i].url="http://ip111.cn/?wd="+过滤[i].download_url+"###"+过滤[i].drive_id+"###"+过滤[i].file_id+"###"+过滤[i].file_extension+"###"+过滤[i].category;
 }else{
     过滤[i].url="http://ip111.cn/?wd="+过滤[i].thumbnail+"$$"+过滤[i].share_id+"$$"+过滤[i].file_id+"$$"+过滤[i].file_extension+"$$"+过滤[i].category+"$$"+getVar("地址").split("$$")[2]+"$$"+getVar("地址").split("$$")[3]+"$$"+过滤[i].parent_file_id+"$$"+过滤[i].name;
