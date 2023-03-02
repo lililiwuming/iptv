@@ -169,7 +169,7 @@ var type=getVar("作者");
 var detail=getVar("简介");
 记录.push({title:title,tugourl:url,img:img,type:type,detail:detail});
 if(_.read(filename)){
-var 新记录=记录.concat(JSON.parse(_.read(filename)).filter(d=>d.url!=记录[0].url));
+var 新记录=记录.concat(JSON.parse(_.read(filename)).filter(d=>d.tugourl!=记录[0].tugourl));
 }else{
 var 新记录=记录;
 }
