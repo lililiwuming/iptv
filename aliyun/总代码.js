@@ -82,7 +82,7 @@ var access_token=JSON.parse(code).access_token;
 alert("请重新登陆阿里云盘网页");
 }
     var HEAD=JSON.stringify({"Authorization":access_token});
-    var data=JSON.stringify({drive_id:xxx_id.split("-")[1],parent_file_id:file_id,limit:200,all:true,url_expire_sec:14400,image_thumbnail_process:"image/resize,w_160/format,jpeg",image_url_process:"image/resize,w_1920/format,jpeg",video_thumbnail_process:"video/snapshot,t_1000,f_jpg,ar_auto,w_300",order_by:"name",order_direction:"ASC"});
+    var data=JSON.stringify({drive_id:xxx_id.split("-")[1],parent_file_id:file_id,limit:200,all:true,url_expire_sec:86400,image_thumbnail_process:"image/resize,w_160/format,jpeg",image_url_process:"image/resize,w_1920/format,jpeg",video_thumbnail_process:"video/snapshot,t_1000,f_jpg,ar_auto,w_300",order_by:"name",order_direction:"ASC"});
 }
 var 目录数据=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v3/file/list",head:JSON.parse(HEAD),postJson:data}));
 var items=JSON.parse(目录数据).items;
