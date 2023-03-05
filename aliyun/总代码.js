@@ -298,7 +298,7 @@ var access_token=JSON.parse(code).access_token;
 var mydrive_id=ALICOOKIE.match(/drive_id=(.*?)[\s;]/)[1];
 var user_id=ALICOOKIE.match(/user_id=(.*?)[\s;]/)[1];
 var device_id=ALICOOKIE.match(/device_id=(.*?)[\s;]/)[1];
-var HEAD=JSON.stringify({"Authorization":access_token});
+var HEAD=JSON.stringify({"Authorization":'Bearer '+access_token});
     if(类型=="audio"){
     /*var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
     var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
