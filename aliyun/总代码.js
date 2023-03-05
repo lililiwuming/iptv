@@ -254,9 +254,9 @@ if(getVar("地址").indexOf("$$")!=-1){
     var 类型=getVar("地址").split("?wd=")[1].split("$$")[4];
     var u=getVar("地址").split("?wd=")[1].split("$$")[0];
     if(类型=="audio"){
-    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,get_audio_play_info:true,file_id:file_id,expire_sec:1})}));
+    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,get_audio_play_info:true,file_id:file_id,expire_sec:600})}));
     }else{
-    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,file_id:file_id,expire_sec:1})}));
+    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,file_id:file_id,expire_sec:600})}));
     }
     if(JSON.parse(code).code){
         alert("登陆已过期，请重新在m浏览器登陆");
