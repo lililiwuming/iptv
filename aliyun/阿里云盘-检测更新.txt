@@ -1,4 +1,4 @@
-<a class="版本">2303052</a>
+<a class="版本">230306</a>
 <ul class="默认提示">
 <li><font color="blue"><b>已是最新版，本轻站适用土狗浏览器，并需配合以下2个脚本</b></font>
 <p>mqqwpa://im/chat?chat_type=wpa&uin=1260957445</p>
@@ -10,7 +10,7 @@
 <p>mapi:js/https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/阿里云文档预览.js</p>
 </li></ul>
 <ul class="更新提示">
-<li><font color="red"><b>有新版本!!![本地文件支持音视频播放，直播源txt/m3u格式解析，图片预览]点击安装</b></font>
+<li><font color="red"><b>有新版本!!![添加一键回城，本地文件支持音视频播放，直播源txt/m3u格式解析，图片预览]点击安装</b></font>
 <p>mapi:qm/https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/阿里云盘.mkz</p>
 </li>
 </ul>
