@@ -293,7 +293,7 @@ var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
 if(ALICOOKIE.indexOf("access_token")!=-1&&ALICOOKIE.indexOf("refresh_token")!=-1){
 var refresh_token=ALICOOKIE.match(/refresh_token=(.*?)[\s;]/)[1];
 var HEAD=JSON.stringify({client_secret:"dbw2OtmVEeuUvIptb1Coyg",client_id:"YNxT9w7GMdWvEOKa"});
-var code=getHttp(JSON.stringify({url:"https://open.aliyundrive.com/oauth/access_token",head:JSON.parse(HEAD),postJson:JSON.stringify({refresh_token:refresh_token,grant_type:"refresh_token"})}));
+var code=getHttp(JSON.stringify({url:"https://open.aliyundrive.com/oauth/access_token",head:JSON.parse(HEAD),postJson:JSON.stringify({client_secret:"dbw2OtmVEeuUvIptb1Coyg",client_id:"YNxT9w7GMdWvEOKa",refresh_token:refresh_token,grant_type:"refresh_token"})}));
 alert(code)
 if(JSON.parse(code).access_token){
 var access_token=JSON.parse(code).access_token;
