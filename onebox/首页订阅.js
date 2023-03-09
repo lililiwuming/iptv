@@ -102,6 +102,10 @@ Youtube(播放需VPN)
 凤凰资讯台,https://www.youtube.com/watch?v=8ysjF7BCtRE
 民视新闻,https://www.youtube.com/watch?v=P8DRJChuQQQ
 东森新闻,https://www.youtube.com/watch?v=R2iMq5LKXco
+新西兰华人电视台,https://www.youtube.com/watch?v=M_k7sKNAq6o
+Tvbs新闻台,https://www.youtube.com/watch?v=SfeCNoTVLr0
+The Good Life音乐电台,https://www.youtube.com/watch?v=36YnV9STBqc
+舒缓音乐电台,https://www.youtube.com/watch?v=Ej1KLUTrKsw
 ####
 
 ####
