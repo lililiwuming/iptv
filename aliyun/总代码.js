@@ -281,7 +281,7 @@ if(getVar("地址").indexOf("$$")!=-1){
             var 转码2K会员专享='http://113.107.160.110:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/QHD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
             var 转码720='http://113.107.160.110:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/HD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
             var 本地转码2K会员专享='http://127.0.0.1:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/QHD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
-        JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Range":"bytes=10485760-157286339","Referer":"https://www.aliyundrive.com/","User-Agent":"okhttp/4.2.2"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享},{name:"720P转码",url:转码720},{name:"高画质转码(会员2K)",url:转码2K会员专享}]);
+        JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享},{name:"720P转码",url:转码720},{name:"高画质转码(会员2K)",url:转码2K会员专享}]);
         //JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }
     }
@@ -319,7 +319,7 @@ var HEAD=JSON.stringify({"Authorization":access_token});
         var 转码720='http://113.107.160.110:3000/apis/my-yun-play/'+file_id+'/'+drive_id+'/'+access_token+'/HD/index.m3u8';
         var time=new Date().getTime();
         var fourhour=Math.floor(time / 1000)+14400;
-        JSON.stringify([{name:"新原画",url:JSON.parse(code).items[0].download_url,head:{"Range":"bytes=10485760-157286339","Referer":"https://www.aliyundrive.com/","User-Agent":"okhttp/4.2.2"}},{name:"原画",url:playurl,head:{"Range":"bytes=10485760-157286339","Referer":"https://www.aliyundrive.com/","User-Agent":"okhttp/4.2.2"}},{name:"本地1080P转码",url:本地高画质转码},{name:"720P转码",url:转码720},{name:"高画质转码",url:高画质转码}]);
+        JSON.stringify([{name:"新原画",url:JSON.parse(code).items[0].download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"原画",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地1080P转码",url:本地高画质转码},{name:"720P转码",url:转码720},{name:"高画质转码",url:高画质转码}]);
         //JSON.stringify([{name:"原始文件",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }
 }else{
