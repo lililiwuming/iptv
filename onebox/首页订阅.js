@@ -17,9 +17,9 @@ iptv
 ###分类
 iptv
 ###数据
-TV88
+野火云端
 ##
-远程$https://cdn.staticaly.com/gh/tvbw/mytv/main/tv88
+远程$https://pastebin.com/raw/tuXBQs7U
 ####
 
 ####
