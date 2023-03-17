@@ -134,32 +134,14 @@ for(var i=0;i<分类.length;i++){
 //开始根据网址，线路判断前缀
 if(标题=="xhzy"){
       选集地址=选集地址;
-}else if(URL.indexOf("api.yunboys.cn")!=-1){
-      选集地址="https://jx.yunboys.cn/?url="+选集地址;
-}else if(URL.indexOf("www.bcwzg.com")!=-1){
-      选集地址="https://xs.bcyingshi.ink/?url="+选集地址;
-}else if(URL.indexOf("moefun.goingstock.net")!=-1){
-      选集地址="https://www.goingstock.net/addons/dp/player/dp.php?key=0&from=player_1&id=&uid=https://www.goingstock.net/&url="+选集地址;
-}else if(URL.indexOf("ttky8.com")!=-1){
-      选集地址="http://ip111.cn/?wd="+选集地址;
-}else if(URL.indexOf("acgcn.ml")!=-1){
-      选集地址="http://ip111.cn/?wd="+选集地址;
-}else if(URL.indexOf("api.lmlemon.com/")!=-1){
-      选集地址="http://api.lmlemon.com/api/viode/json?url="+选集地址;
-}else if(标题.indexOf("Tcm3u8")!=-1){
-      选集地址="http://ip111.cn/?wd=https://api.iopenyun.com:88/vips/?url="+选集地址;
-}else if(标题.indexOf("bjhu")!=-1){
-      选集地址="http://124.223.69.144:8999/web/115?url="+选集地址;
 }else if(标题=="mogu"){
       选集地址="https://player.mogujx.com/parse/index.php?vid="+选集地址;
-}else if(标题=="timi"){
-      选集地址="http://jx.timizy.top/?url="+选集地址;
+}else if(URL.indexOf("api.yjiexi.com")!=-1){
+      选集地址="http://player.yjiexi.com/player?url="+选集地址;
 }else if(标题=="mdm3u8"){
       选集地址="https://m3u8.mudan01.online/?url="+选集地址;
 }else if(标题=="tankem3u8"){
       选集地址="https://api.tangk2.com/dplayer/?url="+选集地址;
-}else if(标题=="aliyun"){
-      选集地址="https://jx.beiyan.cc:4433/?url="+选集地址;
 }else if(URL.indexOf("hikan.xyz")!=-1){
       选集地址="https://www.dmplay.xyz/d?url="+选集地址;
 }else if(URL.indexOf("xinlangapi.com")!=-1){
@@ -170,27 +152,6 @@ if(标题=="xhzy"){
       选集地址="http://qiqi.520say.cn/json/dd.php?url="+选集地址;
 }else if(标题=="autue"){
       选集地址=e2Rex(选集地址,".dn64()");
-}else if(标题=="Mika"){
-      选集地址="https://mika.ovooa.com/api/player/xg.php?key=200OK&url="+选集地址;
-}else if(URL.indexOf("app.netflixmi.com")!=-1){
-      选集地址="https://player.naifeimi.com/?url="+选集地址;
-}else if(URL.indexOf("yanaifei.cn")!=-1||URL.indexOf("45.125.46.41:4433")!=-1){
-      /*if(标题=="VIP"){
-      选集地址="http://www.yanaifei.cn/addons/dplayer/?pid="+选集地址;  
-      }else if(标题=="qq"){
-      选集地址="http://www.yanaifei.cn/addons/dplayer/qq.php?url="+选集地址;
-      }else if(标题=="VIP3"){
-      选集地址="http://www.yanaifei.cn/addons/dplayer/rrjx.php?fid="+选集地址;
-      }else if(标题=="VIP2"){
-      选集地址="http://www.yanaifei.cn/addons/dplayer/ddjx.php?url="+选集地址;
-      }else if(标题=="LIBVIO"){
-      选集地址="http://www.yanaifei.cn/addons/dplayer/lbjx.php?url="+选集地址;
-      }else{
-      选集地址=选集地址;
-      }*/
-      选集地址="https://www.nfjx.xyz/player/?url="+选集地址;
-}else if(URL.indexOf("apicdn.vipm3u8.com")!=-1){
-      选集地址="https://player.vipparsing.com/player?token=4732bUERfVb60lWNSLrsd5-2s1r70KeA89C3VwrGYYdByboQT9o4OzxIr5-8/cX9-sO6&vid="+选集地址;
 }else if(选集地址.indexOf("html")!=-1||选集地址.indexOf("www.bilibili.com")!=-1||选集地址.indexOf("share.weiyun.")!=-1){
       选集地址="http://113.107.160.110:39000/?url="+选集地址;
 }else if(选集地址.indexOf(":6688/player")!=-1){
@@ -211,24 +172,6 @@ if(标题=="xhzy"){
    选集地址="https://js.jisujiexi.vip/home/api?type=ys&uid=196395&key=aejlnoprsABDNUZ159&url="+选集地址;
 }else if(选集地址.indexOf(".m3u8")>15||选集地址.indexOf(".mp4")>15){
       选集地址="http://ip111.cn/?wd="+选集地址;
-}else if(URL.indexOf("qbzyz.com")!=-1){
-      if(选集地址.indexOf("//")!=-1){
-      选集地址="http:"+选集地址;
-      }else{
-      选集地址="http://parse.qbzyz.com/parse?resources="+选集地址;
-      }
-}else if(标题=="mysp"||标题=="xmzy"||标题=="ttck"){
-      选集地址="http://player.sxmj.wang/m3u8.php?url="+选集地址+'@{"Referer":"http://www.moyuyingshi.com"}';
-}else if(标题=="mao"){
-      选集地址="http://app.sxmj.wang/player.php?url="+选集地址;
-}else if(标题=="xyb"){
-      选集地址="https://good-vip.mmiyue.com/zhichi/HaoR.php?id="+选集地址+'@{"Referer":"https://www.laohanzong2.com/"}';
-}else if(标题=="bst"){
-      选集地址="https://hj.52svip.cc/bst/tmzz.php?type=bestv&url="+选集地址;
-}else if(标题=="weibo"){
-      选集地址="https://hj.52svip.cc/q/weibojx.php?url="+选集地址;
-}else if(标题=="4kdym"||标题=="8kvod"){
-      选集地址="http://ip111.cn/?wd="+decodeURIComponent(选集地址);
 }else if(标题=="789pan"||标题=="pll"){
       选集地址="http://dp.jiexi.work/jsonno.php?url="+选集地址;
 }else if(标题=="zbkplayer"){
