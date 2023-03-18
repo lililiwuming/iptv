@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name 获取阿里云盘token
 // @version 2
-// @run-at end
+// @run-at 加载完毕
 // @match https://www.aliyundrive.com
 
 // ==/UserScript==

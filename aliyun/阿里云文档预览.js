@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name 阿里云文档预览
 // @version 1
-// @run-at start
+// @run-at 加载开始
 // @match https://office-cn-beijing.imm.aliyuncs.com
 
 // ==/UserScript==
