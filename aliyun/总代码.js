@@ -394,6 +394,11 @@ var items=[];
 for(var i in list){
     var title=list[i].replace(/\s/g,"").replace(/<.+?>/g,"").split("https://")[0]||"加个标题吧，能从历史记录找到我";
     var share_id=list[i].match(/aliyundrive\.com\/s\/([0-9a-zA-Z]+)/)[1];
+    if(list[i].search(/\/s\/.+?\/folder\/.+/)!=-1){
+        file_id=list[i].match(/aliyundrive\.com\/s\/.+?\/folder\/([0-9a-zA-Z]+)/)[1];
+    }else{
+        file_id="root";
+    }
     if(list[i].indexOf("提取码")!=-1){
         var pwd=list[i].match(/提取码.*?([0-9a-zA-Z]+)/)[1];
     }else if(list[i].indexOf("密码")!=-1){
@@ -401,7 +406,7 @@ for(var i in list){
     }else{
         var pwd="";
     }
-    var url="q:root?url=share_id-"+share_id+"$$root$$"+pwd;
+    var url="q:root?url=share_id-"+share_id+"$$"+file_id+"$$"+pwd;
     items.push({name:title,url:url,detail:url});
 }
 JSON.stringify(items);
