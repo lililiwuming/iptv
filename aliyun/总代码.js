@@ -314,8 +314,8 @@ var HEAD=JSON.stringify({"Authorization":access_token});
     var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
     var u=getVar("地址").split("?wd=")[1].split("###")[0];
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v1/file/get_path",postJson:JSON.stringify({drive_id:drive_id,file_id:file_id}),head:JSON.parse(HEAD)}));
-    var 转码HQ='http://113.107.160.110:3000/apis/my-yun-audio/'+file_id+'/'+drive_id+'/'+access_token+'/'+user_id+'/'+device_id+'/HQ/master.mp3';
-    JSON.stringify([{name:"原始文件",url:JSON.parse(code).items[0].download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地高音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    var 转码HQ='http://113.107.160.110:3000/apis/my-yun-audio/'+file_id+'/'+drive_id+'/'+access_token+'/HQ/master.mp3';
+    JSON.stringify([{name:"原始文件",url:JSON.parse(code).items[0].download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"LQ低音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }else{
         var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
         var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
