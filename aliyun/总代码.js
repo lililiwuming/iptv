@@ -196,7 +196,7 @@ var 过滤=JSON.parse(getVar("目录重组数据")).filter(过滤非视频);
     return parseInt(前)-parseInt(后)
     });
 for(var i in 过滤){
-if(过滤[i].url){
+if(过滤[i].tugourl.indexOf("drive_id")!=-1){
     过滤[i].tugourl="http://ip111.cn/?wd="+过滤[i].url+"###"+过滤[i].drive_id+"###"+过滤[i].file_id+"###"+过滤[i].file_extension+"###"+过滤[i].category;
 }else{
     过滤[i].tugourl="http://ip111.cn/?wd="+过滤[i].thumbnail+"$$"+过滤[i].share_id+"$$"+过滤[i].file_id+"$$"+过滤[i].file_extension+"$$"+过滤[i].category+"$$"+getVar("地址").split("$$")[2]+"$$"+getVar("地址").split("$$")[3]+"$$"+过滤[i].parent_file_id+"$$"+过滤[i].name;
@@ -310,7 +310,12 @@ var HEAD=JSON.stringify({"Authorization":access_token});
     var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/v2/file/get_download_url",head:{"Authorization":access_token},postJson:JSON.stringify({drive_id:drive_id,get_audio_play_info:true,file_id:file_id})}));
     JSON.stringify([{name:"原始文件",url:JSON.parse(code).url,head:{"Referer":"https://www.aliyundrive.com/"}}]);*/
-    JSON.stringify([{name:"原始文件",url:playurl,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
+    var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
+    var u=getVar("地址").split("?wd=")[1].split("###")[0];
+    var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v1/file/get_path",postJson:JSON.stringify({drive_id:mydrive_id,file_id:file_id}),head:JSON.parse(HEAD)}));
+    var 转码HQ='http://113.107.160.110:3000/apis/my-yun-audio/'+file_id+'/'+drive_id+'/'+access_token+'/HQ/master.mp3';
+    JSON.stringify([{name:"原始文件",url:JSON.parse(code).items[0].download_url,head:{"Referer":"https://www.aliyundrive.com/"},{name:"本地高音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
     }else{
         var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
         var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
