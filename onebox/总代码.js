@@ -163,11 +163,11 @@ function 选集列表(){
             zz.push(z.list.slice(j, j+=100));
         }
         for(let k=0;k<zz.length;k++){
-            let 尾=(k+1)*100;
+            /*let 尾=(k+1)*100;
             let 头=尾-100+1;
             if(尾>z.list.length){
                 尾=z.list.length;
-            }
+            }*/
             items.push({title:z.title+"|"+zz[k][0].title,list:zz[k]});
         }
       }else{
@@ -176,16 +176,20 @@ function 选集列表(){
     }
   }
     res.data=items;
+    var et=e2Rex("null",".time()");
+    e3('提示框("重组数据完成'+(et-st)+'毫秒")')
     return JSON.stringify(res);
 }
 if(code.indexOf("#genre#")!=-1){
-    var 分类=code.split(/.+?#genre#.*/).filter(item=>item.indexOf("://")!=-1);
-    var 线路=code.match(/.+?#genre#.*/g);
+    var st=e2Rex("null",".time()");
+    var 分类=code.split(/.+#genre#.*/g).filter(item=>item.indexOf("://")!=-1);
+    var 线路=code.match(/.+#genre#.*/g);
     var 列表规则=".z(.+?,.+?://.+)";
     var 标题规则=".tz(,#genre#)";
     var 选集地址规则=".c(http://ip111.cn/?wd=).ty(,)";
     var 选集规则=".tz(,)";选集列表();
 }else if(code.indexOf("#EXTINF:")!=-1){
+    var st=e2Rex("null",".time()");
     var code=code.match(/#EXTINF:.+[\s]+[^#"]+?:\/\/.+/g);
     var res={};var items=[];var d=[];
     for (let index = 0; index < code.length; index++) {
@@ -240,15 +244,19 @@ for (let i = 0; i < s.length; i++) {
     }
   }
 res.data=items;
+var et=e2Rex("null",".time()");
+e3('提示框("重组数据完成'+(et-st)+'毫秒")')
 JSON.stringify(res);
 }else if(code.search(/\$c_start.+?\$c_end/)!=-1){
-    var 分类=code.split(/\$c_start.+?\$c_end/).filter(item=>item.indexOf("://")!=-1);
-    var 线路=code.match(/\$c_start.+?\$c_end/g);
+    var st=e2Rex("null",".time()");
+    var 分类=code.split(/\$c_start.+\$c_end/).filter(item=>item.indexOf("://")!=-1);
+    var 线路=code.match(/\$c_start.+\$c_end/g);
     var 列表规则=".z(.+?,.+?://.+)";
     var 标题规则=".ty(c_start).tz($c_end)";
     var 选集地址规则=".c(http://ip111.cn/?wd=).ty(,)";
     var 选集规则=".tz(,)";选集列表();
 }else{
+    var st=e2Rex("null",".time()");
     var code=code.match(/.+?,.+?:\/\/.+/g);
     var res={};var items=[];var d=[];
     for (let index = 0; index < code.length; index++) {
@@ -301,6 +309,8 @@ for (let z of s[i].get()) {
 }
 }
 res.data=items;
+var et=e2Rex("null",".time()");
+e3('提示框("重组数据完成'+(et-st)+'毫秒")')
 JSON.stringify(res);
 }
 ######直播免嗅探3
