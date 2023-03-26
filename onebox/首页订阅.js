@@ -315,7 +315,7 @@ web
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/lgyy.png
 ###BaseURL
-"https://www.lgyy.cc";
+"https://www.lgyy.vip";
 ###首页地址
 getVar("baseURL")+"/";
 ###分类地址
