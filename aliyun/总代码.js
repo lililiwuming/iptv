@@ -120,12 +120,12 @@ if(JSON.parse(目录数据).items){
             }
             items[i].tugourl="q:root?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
-            items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/folder.png";
+            items[i].thumbnail="res://folder.png";
             items[i].size=SIZE(items[i].size);
            }else{
            items[i].tugourl="q:video?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd;
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
-           items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/otherfile.png";
+           items[i].thumbnail="res://otherfile.png";
            items[i].size=SIZE(items[i].size);
            }
         }
@@ -143,12 +143,12 @@ if(JSON.parse(目录数据).items){
                 }
             items[i].tugourl="q:root?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+FNAME+items[i].name+";";
             items[i].文件类型="<font color='red'><b>[文件夹]</b></font>";
-            items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/folder.png";
+            items[i].thumbnail="res://folder.png";
             items[i].size=SIZE(items[i].size);
             }else{
             items[i].tugourl="q:video?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id;
             items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
-            items[i].thumbnail="https://gitcode.net/egwang186/iptv/-/raw/master/aliyun/otherfile.png";
+            items[i].thumbnail="res://otherfile.png";
             items[i].size=SIZE(items[i].size);
             }
         }
