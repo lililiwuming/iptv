@@ -137,7 +137,7 @@ web
 ###标题
 骚火影视
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/saohuotv.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/saohuotv.png
 ###BaseURL
 "https://saohuo.vip";
 ###首页地址
@@ -172,7 +172,7 @@ web
 ###标题
 七喵影视
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/qmapi.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/qmapi.png
 ###BaseURL
 "https://oss-qmapi.666bus.cn";
 ###首页地址
@@ -208,7 +208,7 @@ web
 ###标题
 闲人资源站
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/xianren.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/xianren.png
 ###BaseURL
 "https://1.13.254.61";
 ###首页地址
@@ -243,7 +243,7 @@ web
 ###标题
 Auete影视
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/auete.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/auete.png
 ###BaseURL
 "https://auete.com";
 ###首页地址
@@ -278,7 +278,7 @@ web
 ###标题
 氢视频
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/h1080p.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/h1080p.png
 ###BaseURL
 "https://h1080p.com";
 ###首页地址
@@ -313,7 +313,7 @@ web
 ###标题
 蓝光影院
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/lgyy.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/lgyy.png
 ###BaseURL
 "https://www.lgyy.vip";
 ###首页地址
@@ -348,7 +348,7 @@ web
 ###标题
 555电影
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/555dy.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/555dy.png
 ###BaseURL
 "https://www.555dy1.com";
 ###首页地址
@@ -383,7 +383,7 @@ web
 ###标题
 特狗影视
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/tegouys.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/tegouys.png
 ###BaseURL
 "https://www.tegouys.com";
 ###首页地址
@@ -418,7 +418,7 @@ web
 ###标题
 虎牙直播
 ###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/huya.png@{"User-Agent":"Mozilla/5.0"}
+https://gitcode.net/egwang186/iptv/-/raw/master/onebox/huya.png
 ###BaseURL
 "https://m.huya.com";
 ###首页地址
