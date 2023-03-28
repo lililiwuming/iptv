@@ -111,7 +111,7 @@ if(JSON.parse(目录数据).items){
            if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
            items[i].tugourl="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("地址").split("$$")[3];
            if(items[i].thumbnail){
-            items[i].thumbnail=items[i].thumbnail+'@{"User-Agent":"Mozilla/5.0","Referer":"https://www.aliyundrive.com/"}';
+            items[i].thumbnail=items[i].thumbnail+"@{'User-Agent':'Mozilla/5.0','Referer':'https://www.aliyundrive.com/'}";
            }else{
             items[i].thumbnail="res://document.png";
            }
@@ -139,7 +139,7 @@ if(JSON.parse(目录数据).items){
             if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
             items[i].tugourl="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("地址").split("$$")[2];
             if(items[i].thumbnail){
-                items[i].thumbnail=items[i].thumbnail+'@{"User-Agent":"Mozilla/5.0","Referer":"https://www.aliyundrive.com/"}';
+                items[i].thumbnail=items[i].thumbnail+"@{'User-Agent':'Mozilla/5.0','Referer':'https://www.aliyundrive.com/'}";
             }else{
                 items[i].thumbnail="res://document.png";
             }
