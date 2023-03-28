@@ -110,7 +110,9 @@ if(JSON.parse(目录数据).items){
         for(var i in items){
            if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
            items[i].tugourl="q:"+items[i].category+"?url=share_id-"+items[i].share_id+"$$"+items[i].file_id+"$$"+pwd+"$$"+getVar("地址").split("$$")[3];
-           if(!items[i].thumbnail){
+           if(items[i].thumbnail){
+            items[i].thumbnail=items[i].thumbnail+'@{"User-Agent":"Mozilla/5.0","Referer":"https://www.aliyundrive.com/"}';
+           }else{
             items[i].thumbnail="res://document.png";
            }
            items[i].文件类型="<font color='red'><b>["+items[i].file_extension+"文件]</b></font>";
@@ -137,7 +139,7 @@ if(JSON.parse(目录数据).items){
             if(items[i].category=="video"||items[i].category=="doc"||items[i].category=="image"){
             items[i].tugourl="q:"+items[i].category+"?url=drive_id-"+items[i].drive_id+"$$"+items[i].file_id+"$$"+getVar("地址").split("$$")[2];
             if(items[i].thumbnail){
-                items[i].thumbnail=items[i].thumbnail+'@{"Referer":"https://www.aliyundrive.com/"}';
+                items[i].thumbnail=items[i].thumbnail+'@{"User-Agent":"Mozilla/5.0","Referer":"https://www.aliyundrive.com/"}';
             }else{
                 items[i].thumbnail="res://document.png";
             }
