@@ -50,9 +50,9 @@ iptv
 ###分类
 iptv
 ###数据
-野火直播
+4K频道
 ##
-远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/野火直播.txt
+远程$https://raw.fastgit.org/youshandefeiyang/IPTV/main/main/IPTV.m3u
 ####
 
 ####
@@ -61,9 +61,31 @@ iptv
 ###分类
 iptv
 ###数据
-EdemTV
+爱尚TV
 ##
-远程$https://gitcode.net/egwang186/iptv/-/raw/master/onebox/EdemTV_with_EPG_logo.m3u
+远程$https://raw.fastgit.org/youshandefeiyang/IPTV/main/main/aishang.m3u
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
+全球直播
+##
+远程$https://raw.fastgit.org/fanmingming/live/main/tv/m3u/global.m3u
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
+调频广播
+##
+远程$https://raw.fastgit.org/fanmingming/live/main/radio/m3u/index.m3u
 ####
 
 ####
@@ -117,7 +139,6 @@ iptv
 ###数据
 随机直播
 ##
-快手,http://mmitv.top/test/ks.php
 热歌榜,https://api.uomg.com/api/rand.music?sort=热歌榜
 新歌榜,https://api.uomg.com/api/rand.music?sort=新歌榜
 飙升榜,https://api.uomg.com/api/rand.music?sort=飙升榜
