@@ -254,7 +254,7 @@ if(getVar("地址").indexOf("$$")!=-1){
         if(JSON.parse(Acode).access_token){
            var access_token=JSON.parse(Acode).access_token;
         }else{
-            alert("登陆已过期，请重新在m浏览器登陆");
+            alert("登陆已过期，请重新在浏览器登陆");
         }
     }else{
         alert("COOKIE缺失,请重新安装新版脚本并重新登陆阿里云盘网页");
@@ -269,12 +269,21 @@ if(getVar("地址").indexOf("$$")!=-1){
     var code=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v2/file/get_share_link_download_url",head:{"Authorization":access_token,"X-Share-Token":share_token},postJson:JSON.stringify({share_id:share_id,file_id:file_id,expire_sec:600})}));
     }
     if(JSON.parse(code).code){
-        alert("登陆已过期，请重新在m浏览器登陆");
+        alert("登陆已过期，请重新在浏览器登陆");
     }else{
     if(JSON.parse(code).audio_template_list){
         //var resp=JZ(JSON.stringify({url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/"}}));
         var 转码HQ='http://113.107.160.110:3000/apis/yun-audio/'+file_id+'/'+share_id+'/'+access_token+'/'+share_token+'/HQ/master.mp3';
-        JSON.stringify([{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/","User-Agent":"Aliapp(AYSD/4.1.2)","User-Agent":"Dalvik/2.1.0"}},{name:"高音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        var 本地转码HQ='http://127.0.0.1:3000/apis/yun-audio/'+file_id+'/'+share_id+'/'+access_token+'/'+share_token+'/HQ/master.mp3';
+        var 播放模式=getVar("播放模式")||"全部";
+        if(播放模式=="全部"||播放模式=="null"){
+            JSON.stringify([{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"高音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地高音质转码",url:本地转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        }else if(播放模式=="本地转码"){
+            JSON.stringify([{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"本地高音质转码",url:本地转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        }else{
+            JSON.stringify([{name:"原始文件",url:JSON.parse(code).audio_template_list[JSON.parse(code).audio_template_list.length-1].url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"高音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+        }
+        
     }else{
          //var rz=JZ(JSON.stringify({url:JSON.parse(code).download_url,redirect:false,head:{"Referer":"https://www.aliyundrive.com/","User-Agent":"Aliapp(AYSD/4.1.2)","Authorization":access_token}}));
             /*var file_data={};
@@ -293,9 +302,9 @@ if(getVar("地址").indexOf("$$")!=-1){
             var 本地转码2K会员专享='http://127.0.0.1:3000/apis/yun-play/'+share_id+'/'+file_id+'/'+access_token+'/'+share_token+'/QHD/'+mydrive_id+'/'+user_id+'/'+device_id+'/index.m3u8';
             var 播放模式=getVar("播放模式")||"全部";
             if(播放模式=="全部"||播放模式=="null"){
-                JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"720P转码",url:转码720,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"高画质转码(会员2K)",url:转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+                JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"720P转码",url:转码720,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"高画质转码(会员2K)",url:转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}}]);
             }else if(播放模式=="本地转码"){
-                JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+                JSON.stringify([{name:"原始文件播放",url:JSON.parse(code).download_url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"本地高画质转码(会员2K)",url:本地转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}}]);
             }else{
                 JSON.stringify([{name:"高画质转码(会员2K)",url:转码2K会员专享,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"720P转码",url:转码720,head:{"Referer":"https://www.aliyundrive.com/"}}]);
             }
@@ -323,7 +332,15 @@ var HEAD=JSON.stringify({"Authorization":access_token});
     var u=getVar("地址").split("?wd=")[1].split("###")[0];
     var xincode=getHttp(JSON.stringify({url:"https://api.aliyundrive.com/adrive/v1/file/get_path",postJson:JSON.stringify({drive_id:drive_id,file_id:file_id}),head:JSON.parse(HEAD)}));
     var 转码HQ='http://113.107.160.110:3000/apis/my-yun-audio/'+file_id+'/'+drive_id+'/'+access_token+'/'+user_id+'/'+device_id+'/LQ/master.mp3';
-    JSON.stringify([{name:"原始文件",url:JSON.parse(xincode).items[0].download_url,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"LQ低音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    var 本地转码HQ='http://127.0.0.1:3000/apis/my-yun-audio/'+file_id+'/'+drive_id+'/'+access_token+'/'+user_id+'/'+device_id+'/LQ/master.mp3';
+    var 播放模式=getVar("播放模式")||"全部";
+    if(播放模式=="全部"||播放模式=="null"){
+    JSON.stringify([{name:"原始文件",url:JSON.parse(xincode).items[0].download_url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"LQ低音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}},{name:"本地LQ低音质转码",url:本地转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    }else if(播放模式=="本地转码"){
+        JSON.stringify([{name:"原始文件",url:JSON.parse(xincode).items[0].download_url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"本地LQ低音质转码",url:本地转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    }else{
+        JSON.stringify([{name:"原始文件",url:JSON.parse(xincode).items[0].download_url,head:{"Authorization":access_token,"Referer":"https://www.aliyundrive.com/"}},{name:"LQ低音质转码",url:转码HQ,head:{"Referer":"https://www.aliyundrive.com/"}}]);
+    }
     }else{
         var file_id=getVar("地址").split("?wd=")[1].split("###")[2];
         var drive_id=getVar("地址").split("?wd=")[1].split("###")[1];
@@ -346,7 +363,7 @@ var HEAD=JSON.stringify({"Authorization":access_token});
             }
     }
 }else{
-    alert("登陆已过期，请重新在m浏览器登陆");
+    alert("登陆已过期，请重新在浏览器登陆");
 }
 }else{
 alert("请重新登陆阿里云盘网页");
@@ -361,7 +378,7 @@ var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
         if(JSON.parse(Acode).access_token){
            var access_token=JSON.parse(Acode).access_token;
         }else{
-            alert("登陆已过期，请重新在m浏览器登陆");
+            alert("登陆已过期，请重新在浏览器登陆");
         }
     }else{
         alert("请重新登陆阿里云盘网页");
@@ -380,7 +397,7 @@ if(JSON.parse(code).code){
   if(JSON.parse(code).code=="NotSupportedFileType"){
     alert("此文档格式不支持预览");
   }else{
-    alert("登陆已过期，请重新在m浏览器登陆");
+    alert("登陆已过期，请重新在浏览器登陆");
   }
 }else{
 var url=JSON.parse(code).preview_url+"??"+JSON.parse(code).access_token;
@@ -448,7 +465,7 @@ var ALICOOKIE=cm.getCookie("www.aliyundrive.com");
         if(JSON.parse(Acode).access_token){
            var access_token=JSON.parse(Acode).access_token;
         }else{
-            alert("登陆已过期，请重新在m浏览器登陆");
+            alert("登陆已过期，请重新在浏览器登陆");
         }
     }else{
         alert("请重新登陆阿里云盘网页");
