@@ -557,8 +557,8 @@ function 选集列表(){
     return JSON.stringify(res);
 }
 if(code.indexOf("#genre#")!=-1){
-    var 分类=code.split(/.+?#genre#.*/).filter(item=>item.indexOf("://")!=-1);
-    var 线路=code.match(/.+?#genre#.*/g);
+    var 分类=code.split(/.+#genre#.*/g).filter(item=>item.indexOf("://")!=-1);
+    var 线路=code.match(/.+#genre#.*/g);
     var 列表规则=".z(.+?,.+?://.+)";
     var 标题规则=".tz(,#genre#)";
     var 选集地址规则=".c(http://ip111.cn/?wd=).ty(,)";
@@ -608,7 +608,7 @@ for (let i = 0; i < s.length; i++) {
 res.data=items;
 JSON.stringify(res);
 }else if(code.search(/\$c_start.+?\$c_end/)!=-1){
-    var 分类=code.split(/\$c_start.+?\$c_end/).filter(item=>item.indexOf("://")!=-1);
+    var 分类=code.split(/\$c_start.+?\$c_end/g).filter(item=>item.indexOf("://")!=-1);
     var 线路=code.match(/\$c_start.+?\$c_end/g);
     var 列表规则=".z(.+?,.+?://.+)";
     var 标题规则=".ty(c_start).tz($c_end)";
