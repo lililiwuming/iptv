@@ -266,7 +266,7 @@ Auete影视
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/auete.png
 ###BaseURL
-"https://auete.com";
+"https://auete.org";
 ###首页地址
 getVar("baseURL")+"/";
 ###分类地址
