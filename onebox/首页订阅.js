@@ -227,41 +227,6 @@ web
 ###分类
 网页影视站源
 ###标题
-闲人资源站
-###图片
-https://gitcode.net/egwang186/iptv/-/raw/master/onebox/xianren.png
-###BaseURL
-"https://1.13.254.61";
-###首页地址
-getVar("baseURL")+"/";
-###分类地址
-getVar("baseURL")+"/index.php/vod/type/id/分类/page/翻页.html";
-###搜索地址
-getVar("baseURL")+"/index.php/vod/search/wd/关键字/page/翻页.html";
-###rule
-##首页规则
-var 列表=e2Arr(getVar("源码"),".get(ul.stui-vodlist li[class=clearfix])");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则=".get(span.time).t()";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
-##筛选数据
-var a="分类+电视剧=1+电影=2+福利=22+直播=20+综艺=24+动漫=4+纪录片=23+韩剧=28+番剧=25+国漫=26+动画=27+美漫=29";var b="";for(var i=1;i<50;i++){b=b+"+第"+i+"页="+i;}var b="翻页+"+b;a+"\n"+b;
-##分类规则
-var 列表=e2Arr(getVar("源码"),".get(ul.stui-vodlist li[class=clearfix])");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则=".get(span.time).t()";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
-##选集规则
-var 分类=e2Arr(getVar("源码"),".get(div#playlist)");var 线路="";var 简介=e2Rex(getVar("源码"),".get(div.stui-content__detail).t()");var 列表规则=".get(ul.stui-content__playlist li)";var 标题规则=".get(h3).t()";var 选集规则=".get(a.copy_text).t()";var 选集地址规则=".get(a).a(href)";
-##搜索规则
-var 源码=getVar("源码");var 列表=e2Arr(源码,".get(ul.stui-vodlist li[class=clearfix])");if(!列表[0]){var 列表=["网页可能有搜索验证，去网页看看吧"];var 标题规则=".t()";var 地址规则=getVar("当前请求地址");var 图片规则=".get(img).a(data-original)";var 简介规则="长按网页打开，验证后返回重新搜索即可";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}else{var 标题规则=".get(a).a(title)";var 地址规则=".get(a).a(href)";var 图片规则=".get(img).a(data-original)";var 简介规则=".t()";var 图片底部规则="";var 左上规则="";var 右上规则="";var NEXTPAGE="";var PREPAGE="";}
-##搜索翻页
-var b="";for(var i=1;i<50;i=i+1){b=b+"+第"+i+"页="+i;}
-"翻页"+b;
-##免嗅探规则
-"web="+getVar("地址");
-####
-
-####
-###type
-web
-###分类
-网页影视站源
-###标题
 Auete影视
 ###图片
 https://gitcode.net/egwang186/iptv/-/raw/master/onebox/auete.png
