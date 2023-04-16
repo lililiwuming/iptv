@@ -17,6 +17,17 @@ iptv
 ###分类
 iptv
 ###数据
+TcatIPTV
+##
+远程$https://raw.fastgit.org/TCatCloud/IPTV/Files/IPTV.m3u
+####
+
+####
+###type
+iptv
+###分类
+iptv
+###数据
 野火云端
 ##
 远程$https://pastebin.com/raw/tuXBQs7U
