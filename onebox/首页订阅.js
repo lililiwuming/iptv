@@ -109,7 +109,16 @@ iptv
 ##
 远程$http://home.jundie.top:81/Cat/tv/live.txt
 ####
-
+####
+###type
+iptv
+###分类
+iptv
+###数据
+TVbox蓝朋友
+##
+远程$https://raw.fastgit.org/bluefriendCN/tvbox/main/live.txt
+####
 ####
 ###type
 iptv
