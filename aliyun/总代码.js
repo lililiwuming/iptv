@@ -450,11 +450,34 @@ for(var i in list){
     items.push({name:title,url:url,detail:url});
 }
 JSON.stringify(items);
+}else if(getVar("url").indexOf("stariverpan.com/web/share/")!=-1){
+    var list=getVar("url").match(/[\s\S]*?https:\/\/wx\.stariverpan\.com\/web\/.*/g);
+    var items=[];
+    try{
+        var ipfstoken=JSON.parse(readStr("当前ipfs配置")).token;
+    }catch(e){
+        alert("未添加ipfs配置")
+    }
+    for(var i in list){
+        var title=list[i].replace(/\s/g,"").replace(/<.+?>/g,"").split("https://")[0]||"加个标题吧，能从历史记录找到我";
+        var share_id=e2Rex(list[i].match(/shareId=([0-9a-zA-Z]+)/)[1],".dn64()");
+        var postdata=JSON.stringify({id:share_id});
+        var HEAD=JSON.stringify({"Authorization":"Bearer "+ipfstoken});
+        var code=getHttp(JSON.stringify({url:"https://productapi.stariverpan.com/cmsprovider/v2.0/cloud/checkShareId",head:JSON.parse(HEAD),postJson:postdata}));
+        if(JSON.parse(code).data){
+            var pwd=JSON.parse(code).data;
+        }else{
+            var pwd="";
+        }
+        var url="q:ipfsshareinfo?tugourl="+ipfstoken+"$$"+share_id+"$$"+pwd;
+        items.push({name:title,url:url,detail:url});
+    }
+    JSON.stringify(items);
 }else{
-    alert("请输入完整阿里云盘分享链接");
+    alert("请输入完整分享链接");
 }
 }else{
-    alert("请输入阿里云盘分享链接");
+    alert("请输入分享链接");
 }
 ######图片预览11
 var cm=android.webkit.CookieManager.getInstance();
